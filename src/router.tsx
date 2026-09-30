@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState, type AnchorHTMLAttributes, type MouseEvent, type ReactNode } from "react"
+import { preload } from "./pages/registry"
 import { findRoute, SITE } from "./routes"
 
 // Minimal History-API router. Pages are prerendered to static HTML, so this
@@ -32,7 +33,10 @@ export function RouterProvider({ initialPath, children }: { initialPath: string;
   const [path, setPath] = useState(normalize(initialPath))
 
   useEffect(() => {
-    const onPop = () => setPath(normalize(location.pathname))
+    const onPop = () => {
+      const next = normalize(location.pathname)
+      void preload(next).then(() => { setPath(next); applyHead(next) })
+    }
     addEventListener("popstate", onPop)
     return () => removeEventListener("popstate", onPop)
   }, [])
@@ -40,18 +44,20 @@ export function RouterProvider({ initialPath, children }: { initialPath: string;
   const navigate = (to: string) => {
     const url = new URL(to, location.href)
     const next = normalize(url.pathname)
-    if (next !== path || url.hash === "") {
-      history.pushState(null, "", url.pathname + url.search + url.hash)
-      setPath(next)
-      applyHead(next)
-    }
-    requestAnimationFrame(() => {
+    void preload(next).then(() => {
+      if (next !== path || url.hash === "") {
+        history.pushState(null, "", url.pathname + url.search + url.hash)
+        setPath(next)
+        applyHead(next)
+      }
+      requestAnimationFrame(() => {
       const target = url.hash ? document.getElementById(decodeURIComponent(url.hash.slice(1))) : null
       if (target) target.scrollIntoView()
       else scrollTo(0, 0)
       // move focus to the new page so screen readers announce it
       const main = document.getElementById("main")
       if (!url.hash && main) main.focus({ preventScroll: true })
+      })
     })
   }
 

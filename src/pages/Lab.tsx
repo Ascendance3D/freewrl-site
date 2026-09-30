@@ -53,7 +53,7 @@ const EXHIBITS: Exhibit[] = [
     encoding: "VRML97",
     size: "44 KB",
     origin: <>From the FreeX3D examples on the upstream site. <a href="/legacy/FreeX3D/models/teapot-noShaders.wrl">/legacy/FreeX3D/models/</a></>,
-    credit: "Upstream FreeWRL / FreeX3D project",
+    credit: "The upstream FreeWRL and FreeX3D project",
     alt: "A gold teapot over a green ground under a blue-to-red graded sky.",
     about: <>The plain teapot that the upstream shader examples start from. The Toon and Sobel versions need desktop GLSL, so the web preview cannot run them. Their screenshots are below.</>,
     start: "click",
@@ -84,7 +84,7 @@ function SourceView({ url, file }: { url: string; file: string }) {
   }
   return (
     <details className="source-view" onToggle={(e) => (e.currentTarget.open ? load() : undefined)}>
-      <summary className="mono">View source — {file}</summary>
+      <summary className="mono">View source: {file}</summary>
       <pre className="listing__body" tabIndex={0}>
         <code>{failed ? "Could not load the file." : text ?? "Loading…"}</code>
       </pre>
@@ -122,7 +122,7 @@ export default function Lab() {
           <div className="exhibit-row__text">
             <h2 id={`x-${x.id}`} className="exhibit-row__title">{x.title}</h2>
             <p>{x.about}</p>
-            <Facts rows={[["File", <code>{x.file}</code>], ["Encoding", x.encoding], ["Size", x.size], ["Source", x.origin], ["Credit", x.credit]]} />
+            <Facts rows={[["File", <code key="f">{x.file}</code>], ["Encoding", x.encoding], ["Size", x.size], ["Source", x.origin], ["Credit", x.credit]]} />
             <SourceView url={x.url} file={x.file} />
           </div>
         </section>

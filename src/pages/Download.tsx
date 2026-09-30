@@ -47,8 +47,8 @@ export default function Download() {
                 ["Graphics", "OpenGL 4.1 Core"],
                 ["Signed", "Developer ID, hardened runtime, notarized, stapled"],
                 ["Opens", ".wrl .wrz .wrlz .x3d .x3dz .x3dv .x3dvz"],
-                ["Source commit", latest.sourceCommit ? <a href={`${SITE.github}/commit/${latest.sourceCommit}`}><code>{latest.sourceCommit.slice(0, 12)}</code></a> : "—"],
-                ["Release notes", <a href={latest.url}>on GitHub</a>],
+                ["Source commit", latest.sourceCommit ? <a key="c" href={`${SITE.github}/commit/${latest.sourceCommit}`}><code>{latest.sourceCommit.slice(0, 12)}</code></a> : "—"],
+                ["Release notes", <a key="n" href={latest.url}>on GitHub</a>],
               ]}
             />
           </div>

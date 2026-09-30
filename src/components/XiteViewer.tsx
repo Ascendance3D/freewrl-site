@@ -97,12 +97,21 @@ export function XiteViewer(props: ViewerProps) {
       const el = canvas.current
       canvas.current = null
       if (!el) return
-      try { el.browser.endUpdate(); void el.browser.replaceWorld(null) } catch { /* already gone */ }
-      for (const c of el.shadowRoot?.querySelectorAll("canvas") ?? []) {
-        const gl = (c.getContext("webgl2") ?? c.getContext("webgl")) as WebGLRenderingContext | null
-        gl?.getExtension("WEBGL_lose_context")?.loseContext()
+      // Order matters: stop rendering, detach, clear the world, and only then
+      // release the GPU context. Losing it first makes X_ITE's resize handler throw.
+      const canvases = [...(el.shadowRoot?.querySelectorAll("canvas") ?? [])]
+      const release = () => {
+        for (const c of canvases) {
+          const gl = (c.getContext("webgl2") ?? c.getContext("webgl")) as WebGLRenderingContext | null
+          gl?.getExtension("WEBGL_lose_context")?.loseContext()
+        }
       }
+      try { el.browser.endUpdate() } catch { /* already stopped */ }
       el.remove()
+      Promise.resolve()
+        .then(() => el.browser.replaceWorld(null))
+        .catch(() => undefined)
+        .then(() => setTimeout(release, 250))
     }
     // src/alt/clocks are fixed per viewer instance
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -147,7 +156,7 @@ export function XiteViewer(props: ViewerProps) {
             <div className="viewer__state" role="status">
               {status === "idle" && start === "click" && (
                 <button type="button" className="btn btn--live" onClick={() => setWanted(true)}>
-                  Load live world{sizeLabel ? ` — ${sizeLabel}` : ""}
+                  Load live world{sizeLabel ? ` (${sizeLabel})` : ""}
                 </button>
               )}
               {status === "idle" && start === "visible" && <span className="mono">Live world loads when you scroll here</span>}

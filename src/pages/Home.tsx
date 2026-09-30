@@ -93,7 +93,7 @@ export default function Home() {
           <li>
             <span className="manifesto__no mono">04</span>
             <Link to="/lab" className="manifesto__word">Build a world.</Link>
-            <span className="manifesto__note">Examples you can turn, read, download and open in FreeWRL.</span>
+            <span className="manifesto__note">Worlds to turn around and read. Take any of them home and open it in FreeWRL.</span>
           </li>
         </ol>
       </section>
@@ -141,8 +141,8 @@ export default function Home() {
             rows={[
               ["Reads", <>VRML97 <code>.wrl</code>, X3D XML <code>.x3d</code>, X3D Classic <code>.x3dv</code>, gzipped too</>],
               ["Version", "6.7.0"],
-              ["macOS", "14 Sonoma or newer, Apple Silicon — signed beta"],
-              ["Linux", "Build from source — tested on Ubuntu 24.04"],
+              ["macOS", "14 Sonoma or newer, Apple Silicon. Signed beta."],
+              ["Linux", "Build from source. Tested on Ubuntu 24.04."],
               ["Windows, Android", "Not maintained now. Old upstream builds remain on SourceForge."],
               ["Licence", "GNU LGPL 3.0 or later"],
               ["Written in", "C, with OpenGL"],

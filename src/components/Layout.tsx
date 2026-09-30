@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react"
+import { useState, type ReactNode } from "react"
 import releases from "../data/releases.json"
 import { Link, useRouter } from "../router"
 import { ROUTES, SITE } from "../routes"
@@ -18,9 +18,10 @@ export function Layout({ children }: { children: ReactNode }) {
 }
 
 function Masthead() {
-  const [open, setOpen] = useState(false)
   const { path } = useRouter()
-  useEffect(() => setOpen(false), [path])
+  const [openOn, setOpenOn] = useState<string | null>(null)
+  const open = openOn === path
+  const setOpen = (v: boolean) => setOpenOn(v ? path : null)
   const nav = ROUTES.filter((r) => r.nav)
   return (
     <header className="masthead">

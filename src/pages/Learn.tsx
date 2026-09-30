@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react"
+import { useMemo, useState } from "react"
 import { XiteViewer } from "../components/XiteViewer"
 import { PageHead } from "../components/primitives"
 import { Link } from "../router"
@@ -16,13 +16,15 @@ export default function Learn() {
   const text = manual ?? built.text
   const blocked = manual !== null ? checkSource(manual) : null
   // Only hand the viewer text that passed the check; keep the last good one otherwise.
-  const lastGood = useRef<string[]>(LESSONS.map((l) => l.build(l.initial).text))
-  if (!blocked) lastGood.current[step] = manual ?? built.text
-  const viewerSource = lastGood.current[step]
+  const [lastGood, setLastGood] = useState<(string | null)[]>(() => LESSONS.map(() => null))
+  const viewerSource = manual === null ? built.text : (lastGood[step] ?? built.text)
 
   const set = (key: string, value: number | string) =>
     setValues((all) => all.map((x, i) => (i === step ? { ...x, [key]: value } : x)))
-  const edit = (t: string | null) => setEdited((all) => all.map((x, i) => (i === step ? t : x)))
+  const edit = (t: string | null) => {
+    setEdited((all) => all.map((x, i) => (i === step ? t : x)))
+    if (t === null || !checkSource(t)) setLastGood((all) => all.map((x, i) => (i === step ? t : x)))
+  }
 
   const save = () => {
     const url = URL.createObjectURL(new Blob([text], { type: "model/vrml" }))

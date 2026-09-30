@@ -25,12 +25,13 @@ function list(files: Manifest["files"], dir: string): Entry[] {
 export default function Tests() {
   const [manifest, setManifest] = useState<Manifest | null>(null)
   const [failed, setFailed] = useState(false)
-  const [dir, setDir] = useState("")
+  const [dir, setDir] = useState(() => {
+    const h = typeof location === "undefined" ? "" : decodeURIComponent(location.hash.slice(1))
+    return h.endsWith("/") ? h : ""
+  })
 
   useEffect(() => {
     fetch("/data/tests-manifest.json").then((r) => (r.ok ? r.json() : Promise.reject(r.status))).then(setManifest).catch(() => setFailed(true))
-    const fromHash = decodeURIComponent(location.hash.slice(1))
-    if (fromHash.endsWith("/")) setDir(fromHash)
   }, [])
   const go = (d: string) => {
     setDir(d)

@@ -4,14 +4,14 @@ import { SITE } from "../routes"
 export default function Build() {
   return (
     <>
-      <PageHead kicker="Build" title={<>Build it<br />yourself.</>}>
+      <PageHead kicker="Build" title={<>Build it yourself.</>}>
         <p>
           FreeWRL 6.7 builds on Ubuntu 24.04 with autotools, and on Apple Silicon macOS with Xcode.
           The steps below are the ones used and checked in the project’s pull requests.
         </p>
       </PageHead>
 
-      <section className="frame section" aria-labelledby="linux">
+      <section className="frame section railed" aria-labelledby="linux">
         <SectionHead index="01" id="linux" title="Linux" kicker="Tested: Ubuntu 24.04, x86_64, GCC 13.3. X11 window, Duktape JavaScript." />
         <div className="split">
           <Commands title="Build and install">{`git clone ${SITE.github}.git
@@ -47,7 +47,7 @@ freewrl --version        # Program version: 6.7.0`}</Commands>
         />
       </section>
 
-      <section className="frame section" aria-labelledby="macos">
+      <section className="frame section railed" aria-labelledby="macos">
         <SectionHead index="02" id="macos" title="macOS, Apple Silicon" kicker="macOS 14 or newer, Xcode, no Homebrew needed." />
         <div className="split">
           <Commands title="Dependencies, then the app">{`git clone ${SITE.github}.git && cd freewrl
@@ -66,7 +66,7 @@ xcodebuild -project FreeWRL.xcodeproj -scheme FreeWRL \\
         </div>
       </section>
 
-      <section className="frame section" aria-labelledby="limits">
+      <section className="frame section railed" aria-labelledby="limits">
         <SectionHead index="03" id="limits" title="Limits" />
         <ul className="prose changes">
           <li>macOS stops at OpenGL 4.1. There is no Metal renderer. Lines are always one pixel wide.</li>
@@ -76,7 +76,7 @@ xcodebuild -project FreeWRL.xcodeproj -scheme FreeWRL \\
         </ul>
       </section>
 
-      <section className="frame section" aria-labelledby="legacy-build">
+      <section className="frame section railed" aria-labelledby="legacy-build">
         <SectionHead index="04" id="legacy-build" title="Old build notes" />
         <p className="prose">
           The upstream site had build pages for Ubuntu 12.04, Windows (2011), macOS on Intel and the iPhone. They are

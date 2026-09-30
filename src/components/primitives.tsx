@@ -62,12 +62,15 @@ export function SectionHead({ index, title, kicker, id }: { index: string; title
 }
 
 /** Page opener used by every inner page. */
-export function PageHead({ kicker, title, children }: { kicker: string; title: ReactNode; children?: ReactNode }) {
+export function PageHead({ kicker, title, children, aside }: { kicker: string; title: ReactNode; children?: ReactNode; aside?: ReactNode }) {
   return (
     <header className="page-head frame">
-      <p className="page-head__kicker mono">{kicker}</p>
-      <h1 className="page-head__title display">{title}</h1>
-      {children && <div className="page-head__lede">{children}</div>}
+      <div className="page-head__inner">
+        <p className="page-head__kicker mono">{kicker}</p>
+        <h1 className="page-head__title">{title}</h1>
+        {children && <div className="page-head__lede">{children}</div>}
+        {aside && <aside className="page-head__aside" aria-label="Page facts">{aside}</aside>}
+      </div>
     </header>
   )
 }

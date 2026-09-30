@@ -15,14 +15,14 @@ const WAYS: [string, string, ReactNode][] = [
 export default function Contribute() {
   return (
     <>
-      <PageHead kicker="Contribute" title={<>Dreamers<br />wanted.</>}>
+      <PageHead kicker="Contribute" title={<>Dreamers wanted.</>}>
         <p>
           FreeWRL is a small project with a long history. You do not need to know C or OpenGL to help. Testing, writing docs,
           teaching and building example worlds help as much as code does.
         </p>
       </PageHead>
 
-      <section className="frame section" aria-labelledby="ways">
+      <section className="frame section railed" aria-labelledby="ways">
         <SectionHead index="01" id="ways" title="Ways in" />
         <ol className="ways">
           {WAYS.map(([title, line, how], i) => (
@@ -36,7 +36,7 @@ export default function Contribute() {
         </ol>
       </section>
 
-      <section className="frame section" aria-labelledby="where">
+      <section className="frame section railed" aria-labelledby="where">
         <SectionHead index="02" id="where" title="Where to talk" />
         <div className="prose">
           <p><a href={SITE.issues}>GitHub Issues</a> — bugs and concrete problems with the current builds.</p>

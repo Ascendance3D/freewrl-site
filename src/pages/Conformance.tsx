@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react"
 import upstream from "../data/conformance.upstream.json"
 import measured from "../data/conformance.measured.json"
-import { PageHead, SectionHead } from "../components/primitives"
+import { Facts, PageHead, SectionHead } from "../components/primitives"
 import { Link } from "../router"
 import { SITE } from "../routes"
 
@@ -47,9 +47,28 @@ export default function Conformance() {
     .filter((c) => c.nodes.length > 0)
   const searching = q !== "" || status !== "all"
 
+  // Three groups for the bar; the exact upstream words stay in the table.
+  const groupOf = (st: string) => (/not implemented/i.test(st) ? "no" : /^extra/i.test(st) ? "extra" : "yes")
+  const GROUPS: [string, string][] = [["yes", "Complete (any form)"], ["extra", "Extra"], ["no", "Not implemented"]]
+  const groupCount = (g: string) => statuses.filter(([st]) => groupOf(st) === g).reduce((n, [, c]) => n + c, 0)
+
   return (
     <>
-      <PageHead kicker="Conformance" title={<>Claimed.<br />Not yet measured.</>}>
+      <PageHead
+        kicker="Conformance"
+        title="Claimed. Not yet measured."
+        aside={
+          <Facts
+            className="facts--stack"
+            rows={[
+              ["Standard", upstream.source.spec],
+              ["Upstream rows", `${total} nodes and features`],
+              ["Measured", `${results.length} on current builds`],
+              ["Captured", <><a key="s" href="/legacy/conformance.html">conformance.html</a>, {upstream.source.captured}</>],
+            ]}
+          />
+        }
+      >
         <p>
           The upstream FreeWRL site listed every X3D node and marked it Complete, Extra or Not Implemented. That list is
           kept here as it was published. It is <strong>the upstream project’s claim</strong>. It is not a test result for the
@@ -57,58 +76,83 @@ export default function Conformance() {
         </p>
       </PageHead>
 
-      <section className="frame section" aria-labelledby="summary">
-        <SectionHead index="01" id="summary" title="Two columns, kept apart" />
-        <div className="split">
-          <table className="table">
-            <caption className="mono">Upstream claim — {upstream.source.spec}</caption>
-            <thead><tr><th>Status as written upstream</th><th className="num">Nodes</th></tr></thead>
-            <tbody>
-              {statuses.map(([s, n]) => (
-                <tr key={s}><td><span className={claimClass(s)}>{s}</span></td><td className="num mono">{n}</td></tr>
-              ))}
-              <tr><th scope="row">Total rows</th><td className="num mono">{total}</td></tr>
-            </tbody>
-          </table>
-          <div className="prose">
-            <p className="mono">Measured on current builds: {results.length} {results.length === 1 ? "result" : "results"}</p>
-            <p>
-              {results.length === 0
-                ? "No node has been re-tested yet. Every row below says “not yet tested” in the measured column."
-                : "Rows with a result show the build and date it came from."}
+      <section className="frame section railed" aria-labelledby="summary">
+        <SectionHead index="01" id="summary" title="Two columns, kept apart" kicker="What upstream said, and what has been measured since." />
+        <div>
+          <figure className="statusfig">
+            <figcaption className="mono">Upstream claim, {total} rows</figcaption>
+            <div className="statusbar" aria-hidden="true">
+              {GROUPS.map(([g, label]) => {
+                const n = groupCount(g)
+                return n > 0 && <span key={g} className={`statusbar__seg statusbar__seg--${g}`} style={{ flexGrow: n }} title={`${label}: ${n}`} />
+              })}
+            </div>
+            <p className="statusbar__legend mono">
+              {GROUPS.map(([g, label]) => <span key={g} className={`k-${g}`}>{label} {groupCount(g)}</span>)}
             </p>
-            <p>
-              Source: <a href="/legacy/conformance.html">conformance.html</a>, captured {upstream.source.captured}. Status words
-              are copied exactly, including “CNOT IMPLEMENTED”. Some statuses have an asterisk that the page does not explain. The Sound heading says it “does not comply with v4 specs as written”.
-            </p>
-            <p>
-              To help measure, start here: each component links to its folder in the <Link to="/tests">test corpus</Link>.
-              <a href={SITE.issues}> Report results on GitHub</a>.
-            </p>
+          </figure>
+          <div className="ledger">
+            <div className="ledger__col">
+              <p className="mono">Upstream claim</p>
+              <p className="ledger__big">{total}</p>
+              <table className="table">
+                <caption className="mono">Status words as written upstream</caption>
+                <thead><tr><th>Status</th><th className="num">Nodes</th></tr></thead>
+                <tbody>
+                  {statuses.map(([st, n]) => (
+                    <tr key={st}><td><span className={claimClass(st)}>{st}</span></td><td className="num mono">{n}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="ledger__col">
+              <p className="mono">Measured on current builds</p>
+              <p className="ledger__big">{results.length}</p>
+              <p>
+                {results.length === 0
+                  ? "No node has been re-tested yet. Every row below says “not yet tested” in the measured column."
+                  : "Rows with a result show the build and date it came from."}
+              </p>
+              <p className="caption">
+                Source: <a href="/legacy/conformance.html">conformance.html</a>, captured {upstream.source.captured}. Status words
+                are copied exactly, including “CNOT IMPLEMENTED”. Some statuses have an asterisk that the page does not explain. The Sound heading says it “does not comply with v4 specs as written”.
+              </p>
+              <p>
+                To help measure, start here: each component links to its folder in the <Link to="/tests">test corpus</Link>.
+                <a href={SITE.issues}> Report results on GitHub</a>.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="frame section" aria-labelledby="nodes">
-        <SectionHead index="02" id="nodes" title="By component" />
-        <div className="filters" role="search">
-          <label>
-            <span className="mono">Find a node</span>
-            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="e.g. Extrusion" />
-          </label>
-          <label>
-            <span className="mono">Upstream status</span>
-            <select value={status} onChange={(e) => setStatus(e.target.value)}>
-              <option value="all">All</option>
-              {statuses.map(([s]) => <option key={s} value={s}>{s}</option>)}
-            </select>
-          </label>
-          <p className="mono filters__count" role="status">
-            {filtered.reduce((s, c) => s + c.nodes.length, 0)} rows
-          </p>
+      <section className="frame section railed" aria-labelledby="nodes">
+        <div className="rail">
+          <SectionHead index="02" id="nodes" title="By component" />
+          <div className="filters" role="search">
+            <label>
+              <span className="mono">Find a node</span>
+              <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="e.g. Extrusion" />
+            </label>
+            <label>
+              <span className="mono">Upstream status</span>
+              <select value={status} onChange={(e) => setStatus(e.target.value)}>
+                <option value="all">All</option>
+                {statuses.map(([st]) => <option key={st} value={st}>{st}</option>)}
+              </select>
+            </label>
+            <p className="mono filters__count" role="status">
+              {filtered.reduce((n, c) => n + c.nodes.length, 0)} rows
+            </p>
+          </div>
         </div>
 
         <div className="components">
+          {filtered.length === 0 && (
+            <p className="caption components__empty">
+              No node matches “{q}”{status !== "all" ? ` with status ${status}` : ""}. Try a shorter name, or set the status to All.
+            </p>
+          )}
           {filtered.map((c) => {
             const num = /^(\d+)\./.exec(c.name)?.[1]
             const folder = num ? FOLDERS[num] : undefined

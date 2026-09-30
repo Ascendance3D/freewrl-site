@@ -43,7 +43,7 @@ export default function Tests() {
 
   return (
     <>
-      <PageHead kicker="Test corpus" title={<>1.14 GB.<br />38 folders.</>}>
+      <PageHead kicker="Test corpus" title={<>1.14 GB. 38 folders.</>}>
         <p>
           The upstream project kept its test worlds in <code>tests/</code>, one folder per X3D component. It is the
           largest collection of FreeWRL example files there is: 1.14 GB. It is too big for this website, so it will be
@@ -51,7 +51,7 @@ export default function Tests() {
         </p>
       </PageHead>
 
-      <section className="frame section" aria-labelledby="where">
+      <section className="frame section railed" aria-labelledby="where">
         <SectionHead index="01" id="where" title="Where the files are" />
         <Facts
           className="facts--wide"
@@ -64,7 +64,7 @@ export default function Tests() {
         />
       </section>
 
-      <section className="frame section" aria-labelledby="browse">
+      <section className="frame section railed" aria-labelledby="browse">
         <SectionHead index="02" id="browse" title="Browse" kicker="Folder listing from the archive manifest. File links open the original copy." />
         {failed && <p className="edit-status">The manifest could not be loaded.</p>}
         {!manifest && !failed && <p className="mono">Loading the manifest…</p>}

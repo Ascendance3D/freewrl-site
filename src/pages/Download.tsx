@@ -7,7 +7,21 @@ export default function Download() {
   const [latest, ...older] = releases.releases
   return (
     <>
-      <PageHead kicker="Download" title={<>FreeWRL 6.7</>}>
+      <PageHead
+        kicker="Download"
+        title="FreeWRL 6.7"
+        aside={latest && (
+          <Facts
+            className="facts--stack"
+            rows={[
+              ["Latest", <code key="t">{latest.tag}</code>],
+              ["Published", latest.published.slice(0, 10)],
+              ["Platform", "macOS 14+, Apple Silicon (arm64)"],
+              ["File", `${latest.assets[0] ? formatBytes(latest.assets[0].size) : "—"}, ZIP, notarized`],
+            ]}
+          />
+        )}
+      >
         <p>
           There is one binary today: a signed beta for macOS on Apple Silicon. On Linux, you build FreeWRL from source.
           This page lists only the files that have actually been published, with their checksums.
@@ -15,14 +29,16 @@ export default function Download() {
       </PageHead>
 
       {latest && (
-        <section className="frame section release" aria-labelledby="latest">
-          <div className="release__head">
-            <p className="mono">
-              <Tag tone="gold">{latest.prerelease ? "Pre-release" : "Release"}</Tag> {latest.tag} · published {latest.published.slice(0, 10)}
+        <section className="frame section railed release" aria-labelledby="latest">
+          <div className="rail">
+            <SectionHead index="01" id="latest" title="Latest build" />
+            <p className="mono release__tag">
+              <Tag tone="gold">{latest.prerelease ? "Pre-release" : "Release"}</Tag> {latest.tag}
             </p>
-            <h2 id="latest" className="release__name">{latest.name}</h2>
           </div>
-          <div className="release__body">
+          <div>
+            <h3 className="release__name">{latest.name}</h3>
+          <div className="split">
             <div className="release__files">
               {latest.assets.map((a) => (
                 <div key={a.name} className="asset">
@@ -41,6 +57,7 @@ export default function Download() {
               <Commands title="Check the download (macOS Terminal)">{`shasum -a 256 ~/Downloads/${latest.assets[0]?.name ?? "FreeWRL.zip"}`}</Commands>
             </div>
             <Facts
+              className="facts--stack"
               rows={[
                 ["Runs on", "macOS 14 Sonoma or newer, Apple Silicon (arm64)"],
                 ["Not for", "Intel Macs, macOS 13 or older"],
@@ -55,10 +72,11 @@ export default function Download() {
           <p className="release__note caption">
             This is a beta. The release notes say it does not claim complete X3D coverage. Report problems on <a href={SITE.issues}>GitHub Issues</a>.
           </p>
+          </div>
         </section>
       )}
 
-      <section className="frame section" aria-labelledby="linux">
+      <section className="frame section railed" aria-labelledby="linux">
         <SectionHead index="02" id="linux" title="Linux" kicker="No binary package yet. Build from source. Tested on Ubuntu 24.04." />
         <div className="split">
           <Commands title="Ubuntu 24.04 — short version">{`git clone ${SITE.github}.git
@@ -71,7 +89,7 @@ sudo make install`}</Commands>
         </div>
       </section>
 
-      <section className="frame section" aria-labelledby="others">
+      <section className="frame section railed" aria-labelledby="others">
         <SectionHead index="03" id="others" title="Windows, Android, iOS" />
         <div className="prose">
           <p>
@@ -85,22 +103,24 @@ sudo make install`}</Commands>
       </section>
 
       {older.length > 0 && (
-        <section className="frame section" aria-labelledby="older">
+        <section className="frame section railed" aria-labelledby="older">
           <SectionHead index="04" id="older" title="Earlier releases" />
-          <table className="table">
+          <div>
+          <table className="table table--stack">
             <thead><tr><th>Tag</th><th>Published</th><th>File</th><th>SHA-256</th></tr></thead>
             <tbody>
               {older.map((r) => (
                 <tr key={r.tag}>
-                  <td><a href={r.url}>{r.tag}</a></td>
-                  <td className="mono">{r.published.slice(0, 10)}</td>
-                  <td>{r.assets.map((a) => <a key={a.name} href={a.url}>{a.name}</a>)}</td>
-                  <td>{r.assets.map((a) => <code key={a.name} className="hash">{a.sha256}</code>)}</td>
+                  <td data-label="Tag"><a href={r.url}>{r.tag}</a></td>
+                  <td data-label="Published" className="mono">{r.published.slice(0, 10)}</td>
+                  <td data-label="File">{r.assets.map((a) => <a key={a.name} href={a.url}>{a.name}</a>)}</td>
+                  <td data-label="SHA-256">{r.assets.map((a) => <code key={a.name} className="hash">{a.sha256}</code>)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
           <p className="caption">Release list taken from GitHub on {releases.fetched}. <a href={SITE.releases}>All releases on GitHub</a>.</p>
+          </div>
         </section>
       )}
     </>

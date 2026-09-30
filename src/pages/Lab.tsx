@@ -95,7 +95,21 @@ function SourceView({ url, file }: { url: string; file: string }) {
 export default function Lab() {
   return (
     <>
-      <PageHead kicker="Examples · Lab" title={<>Turn it.<br />Read it.<br />Take it home.</>}>
+      <PageHead
+        kicker="Examples · Lab"
+        title="Turn it. Read it. Take it home."
+        aside={
+          <Facts
+            className="facts--stack"
+            rows={[
+              ["On this page", `${EXHIBITS.length} live worlds, 3 shader captures`],
+              ["Formats", "VRML97 .wrl, X3D XML .x3d"],
+              ["Web preview", "X_ITE 16.4.1, in this browser"],
+              ["More", <Link key="t" to="/tests">3,420 test files</Link>],
+            ]}
+          />
+        }
+      >
         <p>
           Real VRML97 and X3D files, live in this page. The web preview is drawn by X_ITE, a JavaScript X3D browser.
           To see a file in FreeWRL, download it and open it there. Neither program claims to draw exactly like the other.
@@ -103,7 +117,7 @@ export default function Lab() {
       </PageHead>
 
       {EXHIBITS.map((x, i) => (
-        <section key={x.id} className={`frame exhibit-row${i % 2 ? " exhibit-row--flip" : ""}`} aria-labelledby={`x-${x.id}`}>
+        <section key={x.id} className="frame exhibit-row" aria-labelledby={`x-${x.id}`}>
           <div className="exhibit-row__view">
             <XiteViewer
               src={x.url}
@@ -120,15 +134,16 @@ export default function Lab() {
             />
           </div>
           <div className="exhibit-row__text">
+            <span className="mono exhibit-row__fig">FIG. L{i + 1}</span>
             <h2 id={`x-${x.id}`} className="exhibit-row__title">{x.title}</h2>
             <p>{x.about}</p>
-            <Facts rows={[["File", <code key="f">{x.file}</code>], ["Encoding", x.encoding], ["Size", x.size], ["Source", x.origin], ["Credit", x.credit]]} />
+            <Facts className="facts--stack" rows={[["File", <code key="f">{x.file}</code>], ["Encoding", x.encoding], ["Size", x.size], ["Source", x.origin], ["Credit", x.credit]]} />
             <SourceView url={x.url} file={x.file} />
           </div>
         </section>
       ))}
 
-      <section className="frame section" aria-labelledby="shaders">
+      <section className="frame section railed" aria-labelledby="shaders">
         <SectionHead
           index="L5"
           id="shaders"
@@ -137,21 +152,21 @@ export default function Lab() {
         />
         <div className="triptych">
           <ArchivalFigure path="FreeX3D/images/Toon-Screenshot_2013-08-11-09-39-56.png" fig="L5a" title="Toon shader" date="2013-08-11" archive="live"
-            alt="A teapot shaded in three flat bands of pink and red on green." sizes="(min-width: 1100px) 32vw, 100vw">
+            alt="A teapot shaded in three flat bands of pink and red on green." sizes="(min-width: 1024px) 24vw, (min-width: 760px) 33vw, 100vw">
             Colour is chosen from ranges of light intensity. Model: <a href="/legacy/FreeX3D/models/teapot-Toon.wrl">teapot-Toon.wrl</a>.
           </ArchivalFigure>
           <ArchivalFigure path="FreeX3D/images/Sobel_Screenshot_2013-08-10-09-41-49.png" fig="L5b" title="Sobel edge detector" date="2013-08-10" archive="live"
-            alt="A test photograph reduced to white edge lines on black by a shader." sizes="(min-width: 1100px) 32vw, 100vw">
+            alt="A test photograph reduced to white edge lines on black by a shader." sizes="(min-width: 1024px) 24vw, (min-width: 760px) 33vw, 100vw">
             An edge-detection shader on a test image. Model: <a href="/legacy/FreeX3D/models/sobel-ComposedShader.wrl">sobel-ComposedShader.wrl</a>.
           </ArchivalFigure>
           <ArchivalFigure path="FreeX3D/images/VertexDeformer-Screenshot_2013-08-10-09-40-43.png" fig="L5c" title="Vertex deformer" date="2013-08-10" archive="live"
-            alt="A flat grid bent into waves by a vertex shader." sizes="(min-width: 1100px) 32vw, 100vw">
+            alt="A flat grid bent into waves by a vertex shader." sizes="(min-width: 1024px) 24vw, (min-width: 760px) 33vw, 100vw">
             A flat 20 × 20 IndexedFaceSet bent on the GPU, driven by a TimeSensor.
           </ArchivalFigure>
         </div>
       </section>
 
-      <section className="frame section" aria-labelledby="more">
+      <section className="frame section railed" aria-labelledby="more">
         <SectionHead index="L6" id="more" title="More worlds" />
         <div className="prose">
           <p>

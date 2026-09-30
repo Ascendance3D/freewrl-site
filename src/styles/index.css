@@ -1,8 +1,9 @@
-/* freewrl.org — design system.
-   Interactive technical editorial + digital museum + Web3D workshop.
+/* freewrl.org — design system, iteration 2.
+   Technical editorial + graphics lab + Web3D workshop + museum catalogue.
+   Make the artifact big. Make the words normal.
+   Two families: Source Serif 4 (reading, headings), IBM Plex Mono (labels, data, code).
    Tailwind is used for its reset (preflight) only; the look is here. */
 @import "tailwindcss/preflight.css" layer(base);
-@import "@fontsource-variable/archivo/wdth.css";
 @import "@fontsource-variable/source-serif-4/wght.css";
 @import "@fontsource-variable/source-serif-4/wght-italic.css";
 @import "@fontsource/ibm-plex-mono/400.css";
@@ -10,12 +11,12 @@
 @import "./components.css";
 
 :root {
-  /* colour: paper + ink, with poster cobalt and gold. Cyan marks live 3D. */
+  /* colour: paper + ink, with poster cobalt and gold. Cyan marks live 3D only. */
   --paper: #f3f1ec;
-  --paper-2: #e8e5dd;
+  --paper-2: #e9e6de;
   --ink: #111216;
   --ink-2: #3b3d45;
-  --ink-3: #5d6069;
+  --ink-3: #5a5d66;
   --rule: #111216;
   --rule-soft: rgb(17 18 22 / 0.16);
   --cobalt: #1a2e8c;
@@ -24,31 +25,45 @@
   --gold: #f2c230;
   --cyan: #2ec4ff;
   --link: #1a2e8c;
+  --accent-text: #1a2e8c;
   --mark: #f2c230;
   --on-dark: #eef0f7;
-  --on-dark-2: #aab3d6;
+  --on-dark-2: #b4bcdc;
 
-  --display: "Archivo Variable", "Archivo", system-ui, sans-serif;
-  --serif: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+  --serif: "Source Serif 4 Variable", "Source Serif 4", Georgia, "Times New Roman", serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
 
-  --frame: min(1480px, 100% - 2 * var(--gutter));
-  --gutter: clamp(16px, 3.2vw, 44px);
-  --space: clamp(56px, 8vw, 120px);
+  /* type: one fluid scale, rem term keeps zoom working */
+  --t-meta: clamp(0.75rem, 0.73rem + 0.08vw, 0.8125rem);
+  --t-small: clamp(0.875rem, 0.86rem + 0.08vw, 0.9375rem);
+  --t-body: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  --t-h3: clamp(1.1875rem, 1.1rem + 0.42vw, 1.5rem);
+  --t-h2: clamp(1.5rem, 1.33rem + 0.85vw, 2.125rem);
+  --t-h1: clamp(1.875rem, 1.5rem + 1.9vw, 3.25rem);
+
+  /* grid */
+  --margin: clamp(20px, 4vw, 56px);
+  --frame: min(1560px, 100% - 2 * var(--margin));
+  --gap: clamp(16px, 2vw, 32px);
+  --space: clamp(48px, 6vw, 104px);
+  --space-s: clamp(24px, 3vw, 48px);
+  /* kept for older rules */
+  --gutter: var(--gap);
 
   color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #0b0c10;
-    --paper-2: #16181f;
-    --ink: #ecebe6;
-    --ink-2: #c4c3be;
-    --ink-3: #9a9ba3;
-    --rule: #ecebe6;
-    --rule-soft: rgb(236 235 230 / 0.18);
-    --link: #9fb0ff;
+    --paper: #0d0e12;
+    --paper-2: #181a21;
+    --ink: #eceae4;
+    --ink-2: #c6c4bd;
+    --ink-3: #9c9da5;
+    --rule: #eceae4;
+    --rule-soft: rgb(236 234 228 / 0.18);
+    --link: #a9b8ff;
+    --accent-text: #a9b8ff;
     --mark: #6b5a17;
   }
 }
@@ -56,39 +71,34 @@
 html { background: var(--paper); color: var(--ink); -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--serif);
-  font-size: clamp(1.02rem, 0.96rem + 0.25vw, 1.15rem);
+  font-size: var(--t-body);
   line-height: 1.6;
-  font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
+  font-kerning: normal;
 }
 main:focus { outline: none; }
+h1, h2, h3, h4 { font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+p { text-wrap: pretty; }
 a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
 a:hover { text-decoration-thickness: 2px; }
+a:active { color: var(--ink); }
 :focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
 code, kbd, pre, .mono { font-family: var(--mono); }
-code { font-size: 0.88em; }
+code { font-size: 0.86em; }
 kbd {
   display: inline-block; min-width: 1.8em; padding: 0.05em 0.4em; text-align: center;
   border: 1px solid var(--rule); border-bottom-width: 2px; font-size: 0.82em; line-height: 1.5;
 }
-.mono { font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.5; }
+.mono { font-size: var(--t-meta); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.5; }
 .muted { color: var(--ink-3); }
 .frame { width: var(--frame); margin-inline: auto; }
-.display {
-  font-family: var(--display);
-  font-stretch: 125%;
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 0.92;
-  letter-spacing: -0.012em;
-}
-.caption { font-style: italic; color: var(--ink-2); font-size: 0.95rem; line-height: 1.5; }
+.caption { font-style: italic; color: var(--ink-2); font-size: var(--t-small); line-height: 1.5; }
 .prose { max-width: 66ch; }
 .prose p + p { margin-top: 1em; }
-.lede { font-size: 1.3em; line-height: 1.4; }
+.lede { font-size: var(--t-h3); line-height: 1.4; }
 
 .skip { position: absolute; left: -9999px; top: 0; }
-.skip:focus { left: var(--gutter); top: 8px; z-index: 50; background: var(--gold); color: #111; padding: 8px 14px; }
+.skip:focus { left: var(--margin); top: 8px; z-index: 50; background: var(--gold); color: #111; padding: 8px 14px; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

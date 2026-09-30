@@ -39,9 +39,11 @@ export default function Home() {
     <>
       <section className="stage" aria-labelledby="home-title">
         <div className="frame stage__grid">
-          <p className="stage__annot stage__annot--tl mono">
-            FIG. 1 — The FreeWRL mark, rebuilt from 19 VRML97 shapes
-          </p>
+          <div className="stage__head">
+            <p className="stage__annot mono">FIG. 1 — The FreeWRL mark, rebuilt from 19 VRML97 shapes</p>
+            <h1 id="home-title" className="stage__title">The old Web was made of pages.</h1>
+            <p className="stage__sub">Some of us thought it would be made of worlds. Maybe we weren’t finished.</p>
+          </div>
           <XiteViewer
             className="viewer--hero"
             src="/worlds/hand-and-eye.wrl"
@@ -52,23 +54,24 @@ export default function Home() {
             clocks={["Clock"]}
             download="/worlds/hand-and-eye.wrl"
           />
-          <div className="stage__copy">
-            <h1 id="home-title" className="stage__title display">
-              The old Web was made of pages.
-            </h1>
-            <p className="stage__sub">
-              Some of us thought it would be made of worlds. Maybe we weren’t finished.
-            </p>
-          </div>
-          <div className="stage__aside">
+          <div className="stage__body">
             <p>
               <strong>FreeWRL</strong> is an open-source browser for VRML97 and X3D, the ISO standards for 3D
               worlds on the Web. It runs natively on your computer. It has been in development since 1998.
             </p>
             <p className="stage__links">
               <Link to="/download" className="btn btn--gold">Download</Link>
-              <Link to="/learn" className="btn btn--line">Make something</Link>
+              <Link to="/learn" className="btn">Make something</Link>
             </p>
+            <Facts
+              className="facts--stack facts--dark"
+              rows={[
+                ["This world", <a key="f" href="#view-source">hand-and-eye.wrl</a>],
+                ["Written in", "VRML97 text, 123 lines, 10 KB"],
+                ["Holds", "22 Shape nodes, 3 Viewpoints"],
+                ["Moves by", "TimeSensor → OrientationInterpolator → the dome"],
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -98,7 +101,7 @@ export default function Home() {
         </ol>
       </section>
 
-      <section className="section frame" aria-labelledby="view-source">
+      <section className="section frame railed" aria-labelledby="view-source">
         <SectionHead index="01" id="view-source" title="View source" kicker="The world at the top of this page, in plain text." />
         <div className="annotated">
           <SourceListing file="hand-and-eye.wrl (excerpt)" lang="VRML97" className="annotated__code">
@@ -119,7 +122,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section frame" aria-labelledby="what-is">
+      <section className="section frame railed" aria-labelledby="what-is">
         <SectionHead index="02" id="what-is" title="What FreeWRL is" />
         <div className="split">
           <div className="prose">
@@ -152,8 +155,14 @@ export default function Home() {
       </section>
 
       <section className="exhibit" aria-labelledby="archive">
-        <div className="frame">
-          <SectionHead index="03" id="archive" title="From the archive" kicker="The project’s own pictures, kept as they were." />
+        <div className="frame railed">
+          <div className="rail">
+            <SectionHead index="03" id="archive" title="From the archive" kicker="The project’s own pictures, kept as they were." />
+            <p className="exhibit__more">
+              <Link to="/history">History &amp; credits</Link>
+              <a href="/legacy/">The old site, archived</a>
+            </p>
+          </div>
           <div className="exhibit__grid">
             <ArchivalFigure
               className="exhibit__lead"
@@ -162,7 +171,7 @@ export default function Home() {
               title="FreeWRL — VRML 3D and Beyond"
               archive="wayback"
               alt="A blue poster: the words FreeWRL, VRML 3D and Beyond, with photos of a data glove, a person in a head-mounted display on a motion chair, a space station, a music synthesizer scene and a jet."
-              sizes="(min-width: 1100px) 66vw, 100vw"
+              sizes="(min-width: 1024px) 50vw, 100vw"
             >
               Poster from the Communications Research Centre Canada. Labels on the poster: CNN’s Space Station, Music
               Synthesizer, Digital Data Glove, CNN’s F-18 Hornet, Flying Chair. Web3D Consortium mark, lower left.
@@ -173,7 +182,7 @@ export default function Home() {
               title="Tic-tac-toe"
               archive="wayback"
               alt="A tic-tac-toe board with yellow walls and blue squares; red spheres and green cones are the pieces."
-              sizes="(min-width: 1100px) 30vw, 100vw"
+              sizes="(min-width: 1024px) 25vw, 100vw"
             >
               A board of spheres and cones in FreeWRL. No caption survives.
             </ArchivalFigure>
@@ -183,22 +192,17 @@ export default function Home() {
               title="Space station"
               archive="wayback"
               alt="A grey spherical space station with a window band, in a FreeWRL window on black."
-              sizes="(min-width: 1100px) 30vw, 100vw"
+              sizes="(min-width: 1024px) 25vw, 100vw"
             >
               A space-station model in a FreeWRL window. The same model appears on the poster.
             </ArchivalFigure>
           </div>
-          <p className="exhibit__more">
-            <Link to="/history">History &amp; credits</Link>
-            <a href="/legacy/">The old site, archived</a>
-          </p>
         </div>
       </section>
 
-      <section className="section frame" aria-labelledby="now">
+      <section className="section frame railed" aria-labelledby="now">
         <SectionHead index="04" id="now" title="Now" />
         <div className="now">
-          <Logo className="now__logo" size={220} />
           {latest && (
             <div className="now__release">
               <p className="mono now__tag">Latest release · {latest.prerelease ? "pre-release" : "release"}</p>
@@ -212,10 +216,11 @@ export default function Home() {
               />
               <p className="stage__links">
                 <Link to="/download" className="btn btn--ink">Download and checksums</Link>
-                <Link to="/build" className="btn btn--line">Build on Linux</Link>
+                <Link to="/build" className="btn">Build on Linux</Link>
               </p>
             </div>
           )}
+          <Logo className="now__logo" size={220} />
         </div>
       </section>
     </>

@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react"
 import { XiteViewer } from "../components/XiteViewer"
-import { PageHead } from "../components/primitives"
+import { Facts, PageHead, SectionHead } from "../components/primitives"
 import { Link } from "../router"
 import { checkSource, COLORS, LESSONS, type Values } from "./lessons"
 
@@ -35,7 +35,20 @@ export default function Learn() {
 
   return (
     <>
-      <PageHead kicker="Learn · no account · nothing to install" title={<>Change one number.<br />Change a world.</>}>
+      <PageHead
+        kicker="Learn · no account · nothing to install"
+        title="Change one number. Change a world."
+        aside={
+          <Facts
+            className="facts--stack"
+            rows={[
+              ["Lessons", `${LESSONS.length}, from one shape to a small world`],
+              ["Language", "VRML97, plain text"],
+              ["Keep it", "Save .wrl and open it in FreeWRL"],
+            ]}
+          />
+        }
+      >
         <p>
           A VRML world is a text file. The controls below change numbers in that text, and the world changes with them.
           The <mark className="param">marked</mark> numbers are the ones each control changes.
@@ -56,18 +69,20 @@ export default function Learn() {
 
       <section className="frame lab-bench" aria-labelledby="lesson-title">
         <div className="lab-bench__view">
+          <span className="mono lab-bench__label">Result</span>
           <XiteViewer
             source={viewerSource}
             file={`lesson-${step + 1}-${lesson.id}.wrl`}
             facts={["VRML97", `${new Blob([text]).size} bytes`]}
             alt={`Live 3D view of lesson ${step + 1}: ${lesson.goal}`}
             clocks={["Clock"]}
-            aspect="4 / 3"
+            aspect="1 / 1"
             onSourceError={setRenderError}
           />
         </div>
 
         <div className="lab-bench__controls">
+          <span className="mono lab-bench__label">Change</span>
           <h2 id="lesson-title" className="lesson__title">
             <span className="mono">Lesson 0{step + 1}</span> {lesson.title}
           </h2>
@@ -119,6 +134,7 @@ export default function Learn() {
         </div>
 
         <div className="lab-bench__source">
+          <span className="mono lab-bench__label">Source</span>
           <div className="listing">
             <div className="listing__head mono">
               <span>lesson-{step + 1}-{lesson.id}.wrl</span>
@@ -159,8 +175,8 @@ export default function Learn() {
         </div>
       </section>
 
-      <section className="frame section next-steps">
-        <h2 className="mono">After lesson 04</h2>
+      <section className="frame section railed next-steps" aria-labelledby="after">
+        <SectionHead index="05" id="after" title="After lesson 04" />
         <p className="prose">
           Look at bigger worlds in the <Link to="/lab">Lab</Link>, and read their source. The X3D specification
           lists every node: <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/Architecture.html">ISO/IEC 19775-1 at web3d.org</a>.

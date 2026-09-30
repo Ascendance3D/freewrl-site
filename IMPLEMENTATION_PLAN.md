@@ -49,9 +49,10 @@ Interactive technical editorial + digital museum + Web3D workshop.
   taken from the CRC poster; gold `#f2c230` for annotation only; cyan
   `#2ec4ff` marks live/interactive 3D only; orange lives only in the logo.
   Dark mode follows the OS.
-- Type: Archivo (variable width, set extended/heavy for display), Source
-  Serif 4 for reading and italic museum captions, IBM Plex Mono for
-  metadata, filenames, code. All self-hosted.
+- Type (iteration 2, see `DESIGN_V2_DIRECTION.md`): Source Serif 4 for
+  headings and reading, IBM Plex Mono for metadata, filenames, code. All
+  self-hosted. Archivo was dropped from the site in V2. It stays a dependency
+  only for `scripts/make-og.mjs`.
 - Square geometry, 1px rules, labelled figures ("FIG. 3"), big media,
   asymmetric 12-column grid. No cards, no pills, no gradients-as-decor.
 

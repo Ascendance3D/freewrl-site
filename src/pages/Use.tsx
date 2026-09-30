@@ -13,14 +13,14 @@ export default function Use() {
   const keys = new Map((use.keys as Key[]).map((k) => [k.key, k]))
   return (
     <>
-      <PageHead kicker="Use" title={<>Open a world.<br />Look around.</>}>
+      <PageHead kicker="Use" title={<>Open a world. Look around.</>}>
         <p>
           Open a file from the command line, or on macOS from Finder. Then move with the mouse or keys. Every key on
           this page was checked in the current FreeWRL source. Parts are adapted from the upstream <a href="/legacy/use.html">use.html</a>.
         </p>
       </PageHead>
 
-      <section className="frame section" aria-labelledby="open">
+      <section className="frame section railed" aria-labelledby="open">
         <SectionHead index="01" id="open" title="Open a world" />
         <div className="split">
           <Commands title="Linux / macOS terminal">{`freewrl world.wrl
@@ -33,7 +33,7 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
         </div>
       </section>
 
-      <section className="frame section" aria-labelledby="modes">
+      <section className="frame section railed" aria-labelledby="modes">
         <SectionHead index="02" id="modes" title="Navigation modes" kicker="A world can limit the modes with NavigationInfo. A key for a mode the world does not allow is ignored." />
         <table className="table table--modes">
           <thead><tr><th>Mode</th><th>Key</th><th>What it does</th></tr></thead>
@@ -49,7 +49,7 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
         </table>
       </section>
 
-      <section className="frame section" aria-labelledby="mouse">
+      <section className="frame section railed" aria-labelledby="mouse">
         <SectionHead index="03" id="mouse" title="Mouse" kicker="Left button unless it says otherwise. The wheel only zooms in PAN mode." />
         <table className="table">
           <thead><tr><th>Mode</th><th>Input</th><th>Result</th></tr></thead>
@@ -61,7 +61,7 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
         </table>
       </section>
 
-      <section className="frame section" aria-labelledby="keys">
+      <section className="frame section railed" aria-labelledby="keys">
         <SectionHead index="04" id="keys" title="Keys" kicker="The same on Linux and macOS. On macOS, Command-key shortcuts go to the menu, not to FreeWRL." />
         <div className="keygrid">
           {GROUPS.map(([title, list]) => (
@@ -83,7 +83,7 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
         </p>
       </section>
 
-      <section className="frame section" aria-labelledby="options">
+      <section className="frame section railed" aria-labelledby="options">
         <SectionHead index="05" id="options" title="Command-line options" kicker="The most useful ones. freewrl --help lists all of them. Use the long forms." />
         <table className="table">
           <thead><tr><th>Option</th><th>What it does</th></tr></thead>
@@ -95,7 +95,7 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
         </table>
       </section>
 
-      <section className="frame section" aria-labelledby="changed">
+      <section className="frame section railed" aria-labelledby="changed">
         <SectionHead index="06" id="changed" title="Changed since the old manual" />
         <ul className="prose changes">
           <li>Slide left and right is <kbd>j</kbd> / <kbd>l</kbd>. The old page said 7 / 9, but those keys roll the view.</li>

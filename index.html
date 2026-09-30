@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreeWRL — Coming soon</title>
+    <meta
+      name="description"
+      content="FreeWRL — the open X3D/VRML browser, reborn for Apple Silicon. Coming soon."
+    />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://freewrl.com/" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FreeWRL" />
+    <meta property="og:title" content="FreeWRL — Coming soon" />
+    <meta
+      property="og:description"
+      content="The open X3D/VRML browser, reborn for Apple Silicon."
+    />
+    <meta property="og:url" content="https://freewrl.com/" />
+    <meta property="og:image" content="https://freewrl.com/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="FreeWRL — the open X3D/VRML browser, coming soon." />
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FreeWRL — Coming soon" />
+    <meta
+      name="twitter:description"
+      content="The open X3D/VRML browser, reborn for Apple Silicon."
+    />
+    <meta name="twitter:image" content="https://freewrl.com/og-image.png" />
+    <meta name="twitter:image:alt" content="FreeWRL — the open X3D/VRML browser, coming soon." />
+    <!-- Follow the OS light/dark preference (shadcn is class-based) -->
+    <script>
+      (function () {
+        try {
+          var mq = window.matchMedia("(prefers-color-scheme: dark)");
+          var apply = function (dark) {
+            document.documentElement.classList.toggle("dark", dark);
+          };
+          apply(mq.matches);
+          mq.addEventListener("change", function (e) { apply(e.matches); });
+        } catch (_) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

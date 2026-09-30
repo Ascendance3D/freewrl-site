@@ -1,5 +1,5 @@
 import releases from "../data/releases.json"
-import heroSource from "../../public/worlds/hand-and-eye.wrl?raw"
+import heroSource from "../../public/worlds/freewrl-landing.wrl?raw"
 import { XiteViewer } from "../components/XiteViewer"
 import { ArchivalFigure, Facts, Logo, SectionHead, SourceListing } from "../components/primitives"
 import { Link } from "../router"
@@ -40,19 +40,19 @@ export default function Home() {
       <section className="stage" aria-labelledby="home-title">
         <div className="frame stage__grid">
           <div className="stage__head">
-            <p className="stage__annot mono">FIG. 1 — The FreeWRL mark, rebuilt from 19 VRML97 shapes</p>
+            <p className="stage__annot mono">FIG. 1 — The FreeWRL landing world · VRML97</p>
             <h1 id="home-title" className="stage__title">The old Web was made of pages.</h1>
             <p className="stage__sub">Some of us thought it would be made of worlds. Maybe we weren’t finished.</p>
           </div>
           <XiteViewer
             className="viewer--hero"
-            src="/worlds/hand-and-eye.wrl"
-            file="hand-and-eye.wrl"
-            facts={["VRML97", "10 KB"]}
-            alt="A 3D hand of five glowing blue fingers around a large blue eye, standing in a slowly turning gold wireframe dome over a blue grid."
+            src="/worlds/freewrl-landing.wrl"
+            file="freewrl-landing.wrl"
+            facts={["VRML97", "48 KB"]}
+            alt="The FreeWRL mark, a hand of five glowing blue fingers around a large blue eye, floats inside an open gold dial above a round stage while a cyan ring slowly turns through it. A blue plaza surrounds it: a slab tower with cantilevered decks, a fan of fins with one magenta fin, a mast with a target sign, cables and a dark skyline."
             poster={{ src: "/brand/freewrl-logo-on-dark-640.webp", alt: "" }}
             clocks={["Clock"]}
-            download="/worlds/hand-and-eye.wrl"
+            download="/worlds/freewrl-landing.wrl"
           />
           <div className="stage__body">
             <p>
@@ -66,10 +66,10 @@ export default function Home() {
             <Facts
               className="facts--stack facts--dark"
               rows={[
-                ["This world", <a key="f" href="#view-source">hand-and-eye.wrl</a>],
-                ["Written in", "VRML97 text, 123 lines, 10 KB"],
-                ["Holds", "22 Shape nodes, 3 Viewpoints"],
-                ["Moves by", "TimeSensor → OrientationInterpolator → the dome"],
+                ["This world", <a key="f" href="#view-source">freewrl-landing.wrl</a>],
+                ["Written in", "VRML97 text, 256 lines, 48 KB (11 KB gzipped)"],
+                ["Holds", "67 Shape nodes, 4 Viewpoints"],
+                ["Moves by", "One TimeSensor → two OrientationInterpolators → the cyan ring and a small orbiting marker"],
               ]}
             />
           </div>
@@ -104,7 +104,7 @@ export default function Home() {
       <section className="section frame railed" aria-labelledby="view-source">
         <SectionHead index="01" id="view-source" title="View source" kicker="The world at the top of this page, in plain text." />
         <div className="annotated">
-          <SourceListing file="hand-and-eye.wrl (excerpt)" lang="VRML97" className="annotated__code">
+          <SourceListing file="freewrl-landing.wrl (excerpt)" lang="VRML97" className="annotated__code">
             {EXCERPT}
           </SourceListing>
           <ol className="annotated__notes">
@@ -115,7 +115,7 @@ export default function Home() {
               </li>
             ))}
             <li className="annotated__more">
-              <a href="/worlds/hand-and-eye.wrl">Full file, 10 KB</a>. Save it, then open it in FreeWRL or any VRML browser.
+              <a href="/worlds/freewrl-landing.wrl">Full file, 48 KB</a>. Save it, then open it in FreeWRL or any VRML browser.
               Or <Link to="/learn">start with one box</Link>.
             </li>
           </ol>

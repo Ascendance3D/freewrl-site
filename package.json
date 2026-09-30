@@ -12,7 +12,7 @@
     "assets:brand": "python3 scripts/make_brand.py",
     "assets:archive": "python3 scripts/make_archive_media.py && python3 scripts/make_tests_manifest.py",
     "data:releases": "node scripts/fetch-releases.mjs",
-    "world:hero": "node scripts/gen-hero-world.mjs"
+    "world:hero": "node scripts/gen-landing-world.mjs"
   },
   "dependencies": {
     "@fontsource-variable/source-serif-4": "5.3.0",

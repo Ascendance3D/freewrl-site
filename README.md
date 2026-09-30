@@ -31,7 +31,7 @@ There is deliberately no `deploy` script. Production changes need Ryan's approva
 | `src/data/history.json` | archived upstream pages + engine README | `scripts/data/build_history.py` |
 | `public/data/tests-manifest.json` | archive `URL_MANIFEST.csv` | `scripts/make_tests_manifest.py` |
 | `public/media/archive/` | archived images, resized to WebP/JPEG | `scripts/make_archive_media.py`; originals stay under `/legacy/` |
-| `public/worlds/hand-and-eye.wrl` | written for this site | `npm run world:hero` |
+| `public/worlds/freewrl-landing.wrl` | written for this site; design notes in `LANDING_WORLD_DIRECTION.md` | `npm run world:hero` (`scripts/gen-landing-world.mjs`) |
 | `public/worlds/four-primitives.x3d` | written for this site | by hand |
 | `public/x_ite/<version>/` | npm `x_ite` (MIT), exact version in `package.json` | `scripts/sync-xite.mjs` (gitignored, runs on dev/build) |
 | `dist/legacy/` | offline copy of freewrl.sourceforge.io, 2026-09-29/30 | `scripts/build-legacy.mjs` adds one banner per page; `tests/` excluded |

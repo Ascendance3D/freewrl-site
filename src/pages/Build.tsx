@@ -44,7 +44,7 @@ freewrl --version        # Program version: 6.7.0`}</Commands>
             ["--with-javascript", "duk: bundled Duktape (tested). stub: no scripts. sm (SpiderMonkey) does not configure on current systems."],
             ["--enable-plugin", "The old NPAPI browser plugin. No current browser loads it; nothing is built."],
             ["make dist / distcheck", "Both pass. A release tarball builds with ./configure && make, without autogen.sh."],
-            ["Known", "132 compiler warnings. No Linux CI yet. The run test used Xvfb and Mesa, not a real GPU."],
+            ["Known", "The build prints compiler warnings. None of them stop it. No Linux CI yet. The run test used Xvfb and Mesa, not a real GPU."],
           ]}
         />
       </section>

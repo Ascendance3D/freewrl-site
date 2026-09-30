@@ -1,6 +1,7 @@
 // Functional QA for the local preview (headless Chrome on the GPU).
 // Usage: node qa/functional.mjs [baseURL]   — exits 1 if any check fails.
 import { chromium } from "playwright-core"
+import { stubAnalytics } from "./analytics-stub.mjs"
 
 const base = process.argv[2] ?? "http://127.0.0.1:8788"
 const GPU = ["--headless=new", "--no-sandbox", "--use-gl=angle", "--use-angle=gl", "--enable-gpu", "--ignore-gpu-blocklist"]
@@ -21,6 +22,7 @@ const sceneText = (page) => page.evaluate(() => document.querySelector("x3d-canv
 
 const browser = await launch()
 const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } })
+await stubAnalytics(ctx)
 const page = await ctx.newPage()
 const errors = []
 watch(page, errors)
@@ -142,6 +144,7 @@ await browser.close()
 {
   const b = await launch()
   const p = await (await b.newContext({ viewport: { width: 1280, height: 800 }, reducedMotion: "reduce" })).newPage()
+  await stubAnalytics(p)
   await p.goto(base + "/", { waitUntil: "networkidle" })
   await waitStatus(p, ".viewer--hero", "ready")
   const enabled = await p.evaluate(() => document.querySelector("x3d-canvas").browser.currentScene.getNamedNode("Clock").enabled)
@@ -154,6 +157,7 @@ await browser.close()
 {
   const b = await chromium.launch({ executablePath: "/usr/bin/google-chrome", headless: true, args: ["--headless=new", "--no-sandbox", "--disable-webgl", "--disable-3d-apis"] })
   const p = await (await b.newContext()).newPage()
+  await stubAnalytics(p)
   const errs = []; watch(p, errs)
   await p.goto(base + "/", { waitUntil: "networkidle" })
   await p.waitForTimeout(800)

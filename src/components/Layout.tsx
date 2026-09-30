@@ -96,7 +96,7 @@ function Footer() {
             The current code line is maintained on GitHub by the Ascendance Open Worlds modernization fork.
             It is not the upstream SourceForge project.
           </p>
-          <p>Live 3D on this site is rendered in your browser by X_ITE. No trackers, no analytics, no accounts.</p>
+          <p>Live 3D on this site is rendered in your browser by X_ITE. No ads, no cookies, no accounts. Visits are counted with cookieless Cloudflare Web Analytics.</p>
         </div>
       </div>
     </footer>

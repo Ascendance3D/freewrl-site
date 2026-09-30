@@ -3,6 +3,7 @@
 // Serve ./dist first (qa/serve.sh), then: node qa/hero-final.mjs [baseURL] [outDir]
 import { mkdirSync, writeFileSync } from "node:fs"
 import { chromium } from "playwright-core"
+import { stubAnalytics } from "./analytics-stub.mjs"
 
 // Exits 1 if any check FAILs. `node qa/hero-final.mjs --self-test` checks that rule without a browser.
 
@@ -62,6 +63,7 @@ const browser = await chromium.launch({
 
 async function open({ width = 1440, reduced = false, scheme = "light", touch = false } = {}) {
   const ctx = await browser.newContext({ viewport: { width, height: width < 600 ? 844 : 900 }, deviceScaleFactor: 1, colorScheme: scheme, reducedMotion: reduced ? "reduce" : "no-preference", hasTouch: touch, isMobile: touch, acceptDownloads: true })
+  await stubAnalytics(ctx)
   const page = await ctx.newPage()
   const errors = []
   page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`))

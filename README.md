@@ -69,7 +69,10 @@ That Worker serves freewrl.org and freewrl.com in production.
   `npx wrangler versions upload --preview-alias <name>`. It is served at
   `https://<name>-freewrl.<account-subdomain>.workers.dev/`. Pages still emit
   `https://freewrl.org/` canonical URLs.
-- Keep Cloudflare Web Analytics auto-injection off for this zone (see X_ITE below).
+- Cloudflare Web Analytics (cookieless) is added by the snippet in `index.html`, so it is
+  on every prerendered page and the 404, but not on `/legacy/`. Keep the zone's automatic
+  Web Analytics / RUM injection off: it would add a second beacon everywhere, including
+  `/legacy/`, where the CSP blocks it. QA browsers stub the beacon host (`qa/analytics-stub.mjs`).
 
 ## Where things come from
 
@@ -106,9 +109,8 @@ That Worker serves freewrl.org and freewrl.com in production.
 
 The live 3D is drawn by X_ITE in the browser, not by FreeWRL. Every viewer says so.
 X_ITE is loaded as an ES module from `/x_ite/<version>/`, so it finds its
-components from `import.meta.url`. An injected Cloudflare Web Analytics beacon cannot
-redirect it (a QA check proves this). Web Analytics auto-injection should still stay
-off for this zone. To use the CDN instead: `VITE_XITE_BASE=https://cdn.jsdelivr.net/npm/x_ite@16.4.1/dist/`.
+components from `import.meta.url`. The Cloudflare Web Analytics beacon cannot
+redirect it (a QA check proves this). To use the CDN instead: `VITE_XITE_BASE=https://cdn.jsdelivr.net/npm/x_ite@16.4.1/dist/`.
 
 ## Licence
 

@@ -1,6 +1,7 @@
 // Design QA for iteration 2. Checks the rules in DESIGN_V2_DIRECTION.md that a browser can measure.
 // Usage: node qa/design.mjs [baseURL]
 import { chromium } from "playwright-core"
+import { stubAnalytics } from "./analytics-stub.mjs"
 
 const base = process.argv[2] ?? "http://127.0.0.1:8788"
 const PAGES = ["/", "/download/", "/use/", "/build/", "/lab/", "/learn/", "/conformance/", "/tests/", "/history/", "/contribute/", "/nope"]
@@ -14,6 +15,7 @@ const check = (name, ok, detail = "") => { ok ? pass++ : fail++; if (!ok) consol
 
 for (const w of WIDTHS) {
   const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, hasTouch: w < 1024 })
+  await stubAnalytics(ctx)
   const page = await ctx.newPage()
   for (const p of PAGES) {
     await page.goto(base + p, { waitUntil: "networkidle" })

@@ -4,11 +4,55 @@
 import { mkdirSync, writeFileSync } from "node:fs"
 import { chromium } from "playwright-core"
 
+// Exits 1 if any check FAILs. `node qa/hero-final.mjs --self-test` checks that rule without a browser.
+
+// Known, accepted console noise. X_ITE 16.4.1 calls preventDefault() in a touch listener that
+// Chrome treats as passive. Matching lines become one EXPECTED WARNING, never a PASS or a FAIL.
+// Any other console error or warning in the same check is still a FAIL.
+const EXPECTED = [
+  { id: "xite-passive-touch", re: /^error: Unable to preventDefault inside passive event listener due to target being treated as passive\./ },
+]
+const expectedId = (line) => EXPECTED.find((e) => e.re.test(line))?.id
+
+// Status for a "no console errors or warnings" check.
+const consoleStatus = (lines) => {
+  const unexpected = lines.filter((l) => !expectedId(l))
+  if (unexpected.length) return { status: "FAIL", detail: unexpected.join(" | ") }
+  if (lines.length) return { status: "WARN", detail: `expected: ${[...new Set(lines.map(expectedId))].join(", ")} x${lines.length}` }
+  return { status: "PASS", detail: "" }
+}
+const summarize = (results) => {
+  const n = (s) => results.filter((r) => r.status === s).length
+  const pass = n("PASS"), warn = n("WARN"), fail = n("FAIL")
+  return { pass, warn, fail, total: results.length, exitCode: fail > 0 || results.length === 0 ? 1 : 0 }
+}
+
+if (process.argv.includes("--self-test")) {
+  const P = "error: Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/feature/5093566007214080"
+  const cases = [
+    ["all pass", [{ status: "PASS" }], 0],
+    ["expected warning only", [{ status: "PASS" }, { status: consoleStatus([P, P]).status }], 0],
+    ["one real fail", [{ status: "PASS" }, { status: "FAIL" }], 1],
+    ["expected warning + real console error", [{ status: consoleStatus([P, "pageerror: boom"]).status }], 1],
+    ["real console warning", [{ status: consoleStatus(["warning: something"]).status }], 1],
+    ["no checks ran", [], 1],
+  ]
+  let bad = 0
+  for (const [name, rs, want] of cases) {
+    const got = summarize(rs).exitCode
+    console.log(`${got === want ? "ok " : "BAD"}  ${name}: exit ${got} (want ${want})`)
+    if (got !== want) bad++
+  }
+  process.exit(bad ? 1 : 0)
+}
+
 const base = process.argv[2] ?? "http://127.0.0.1:8788"
 const out = process.argv[3] ?? "qa-artifacts/final-integration/hero-final"
 mkdirSync(out, { recursive: true })
 const results = []
-const check = (name, ok, detail = "") => { results.push({ name, ok: !!ok, detail }); console.log(`${ok ? "PASS" : "FAIL"}  ${name}${detail ? `  — ${detail}` : ""}`) }
+const record = (name, status, detail = "") => { results.push({ name, status, ok: status !== "FAIL", detail }); console.log(`${status === "WARN" ? "EXPECTED WARNING" : status}  ${name}${detail ? `  — ${detail}` : ""}`) }
+const check = (name, ok, detail = "") => record(name, ok ? "PASS" : "FAIL", detail)
+const checkConsole = (name, lines) => { const { status, detail } = consoleStatus(lines); record(name, status, detail) }
 
 const browser = await chromium.launch({
   executablePath: "/usr/bin/google-chrome",
@@ -44,7 +88,7 @@ for (const width of [1440, 390]) {
     await stage.screenshot({ path: `${out}/phase-${Math.round(f * 100)}-${width}.png` })
     check(`phase ${Math.round(f * 100)}% at ${width}: Gyro rotation follows the fraction`, Math.abs(((a + 2 * Math.PI) % (2 * Math.PI)) - (f * 2 * Math.PI) % (2 * Math.PI)) < 0.01 || (f === 0 && Math.abs(a) < 0.01), `angle ${a}`)
   }
-  check(`phases at ${width}: no console errors or warnings`, errors.length === 0, errors.join(" | "))
+  checkConsole(`phases at ${width}: no console errors or warnings`, errors)
   await ctx.close()
 }
 
@@ -104,7 +148,7 @@ for (let i = 0; i < 5; i++) {
   await page.goBack(); await page.waitForURL(base + "/")
   const ok = await page.waitForFunction(() => document.querySelector(".viewer--hero")?.getAttribute("data-status") === "ready", null, { timeout: 30000 }).then(() => true, () => false)
   check("returning Home re-creates one viewer", ok && (await page.locator("x3d-canvas").count()) === 1)
-  check("controls/navigation: no console errors or warnings", errors.length === 0, errors.join(" | "))
+  checkConsole("controls/navigation: no console errors or warnings", errors)
   await ctx.close()
 }
 
@@ -129,7 +173,7 @@ for (let i = 0; i < 5; i++) {
   await page.waitForTimeout(800)
   check("touch: one-finger drag turns the view", c0 !== (await camera(page)))
   await stage.screenshot({ path: `${out}/touch-390.png` })
-  check("touch: no console errors or warnings", errors.length === 0, errors.join(" | "))
+  checkConsole("touch: no console errors or warnings", errors)
   await ctx.close()
 }
 
@@ -137,10 +181,12 @@ for (let i = 0; i < 5; i++) {
 for (const width of [1440, 390]) {
   const { ctx, page, errors } = await open({ width, scheme: "dark" })
   await page.screenshot({ path: `${out}/home-dark-${width}.png` })
-  check(`dark mode ${width}: hero ready, no errors`, errors.length === 0, errors.join(" | "))
+  checkConsole(`dark mode ${width}: hero ready, no errors`, errors)
   await ctx.close()
 }
 
-writeFileSync(`${out}/report.json`, JSON.stringify({ results, reducedStartAngles: angles }, null, 2))
-console.log(`\n${results.filter((r) => r.ok).length}/${results.length} passed`)
+const sum = summarize(results)
+writeFileSync(`${out}/report.json`, JSON.stringify({ summary: sum, results, reducedStartAngles: angles }, null, 2))
+console.log(`\n${sum.pass} PASS, ${sum.warn} EXPECTED WARNING, ${sum.fail} FAIL (${sum.total} checks)`)
 await browser.close()
+process.exit(sum.exitCode)

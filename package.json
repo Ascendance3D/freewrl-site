@@ -1,6 +1,7 @@
 {
   "name": "freewrl-site",
   "private": true,
+  "license": "LGPL-3.0-or-later",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

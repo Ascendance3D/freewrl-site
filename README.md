@@ -11,14 +11,61 @@ npm ci
 npm run dev          # Vite dev server (no /legacy/)
 npm run build        # dist/: prerendered pages + /legacy/ + X_ITE copy
 qa/serve.sh          # local-only wrangler dev on http://127.0.0.1:8788 (restart after each build)
-node qa/functional.mjs   # 53 checks, headless Chrome on the GPU
+npm run typecheck
+npm run lint
+```
+
+## QA
+
+Build, then start the local server with `qa/serve.sh`. Each script exits 1 if a check fails.
+Reports and screenshots go to `qa-artifacts/` (gitignored).
+
+```sh
+node qa/functional.mjs       # 53 checks: pages, links, viewer, legacy, 404
+node qa/design.mjs           # 526 layout/type checks across pages and widths
+node qa/hero-final.mjs       # 34 checks on the Home landing world in X_ITE
+node qa/hero-final.mjs --self-test   # proves a real FAIL exits 1 (no browser)
 node qa/shots.mjs http://127.0.0.1:8788 qa-artifacts/shots /,/learn/ 1440,390 light
 ```
 
-`npm run build` needs the archive at `../archive-freewrl-site/browse/freewrl.sourceforge.io`
-(or `FREEWRL_ARCHIVE_BROWSE=...`). `SKIP_LEGACY=1` builds without `/legacy/` — never deploy that.
+The scripts drive the system Chrome (`/usr/bin/google-chrome`) headless with the GPU on.
+`hero-final.mjs` reports one known item as `EXPECTED WARNING`, not PASS or FAIL:
+X_ITE 16.4.1 calls `preventDefault()` in a touch listener that Chrome treats as passive,
+so a one-finger drag logs "Unable to preventDefault inside passive event listener".
+Any other console error in that check is still a FAIL.
 
-There is deliberately no `deploy` script. Production changes need Ryan's approval.
+## Landing world
+
+`public/worlds/freewrl-landing.wrl` is generated. Edit `scripts/gen-landing-world.mjs`,
+then run `npm run world:hero`. Do not hand-edit the `.wrl`. Design notes:
+`LANDING_WORLD_DIRECTION.md`. `node qa/landing-world.mjs <baseURL> - <outDir>` captures
+every Viewpoint of the shipped world in the real viewer.
+
+## Legacy archive and the test corpus
+
+`/legacy/` is a read-only copy of the old freewrl.sourceforge.io site. It is not in this
+repository. `npm run build` copies it from `../archive-freewrl-site/browse/freewrl.sourceforge.io`
+(or `FREEWRL_ARCHIVE_BROWSE=...`) and adds one banner per HTML page. Every other byte is
+unchanged. Missing `/legacy/` paths return the site's real 404.
+`SKIP_LEGACY=1` builds without `/legacy/` — never deploy that.
+
+The upstream `tests/` corpus (1.14 GB) is not copied and not in this repository.
+Links into it go to `TESTS_BASE` (default: the live upstream copy). Moving the corpus
+to R2 or `tests.freewrl.org` is a separate, approved step.
+
+## Cloudflare
+
+The site is static assets on the Cloudflare Worker `freewrl` (`wrangler.jsonc`).
+That Worker serves freewrl.org and freewrl.com in production.
+
+- There is deliberately no `deploy` script. Never run `wrangler deploy` or
+  `wrangler versions deploy` without Ryan's approval. Production changes, DNS,
+  redirects and R2 all need that approval.
+- A preview is a version upload that does not take traffic:
+  `npx wrangler versions upload --preview-alias <name>`. It is served at
+  `https://<name>-freewrl.<account-subdomain>.workers.dev/`. Pages still emit
+  `https://freewrl.org/` canonical URLs.
+- Keep Cloudflare Web Analytics auto-injection off for this zone (see X_ITE below).
 
 ## Where things come from
 
@@ -58,3 +105,15 @@ X_ITE is loaded as an ES module from `/x_ite/<version>/`, so it finds its
 components from `import.meta.url`. An injected Cloudflare Web Analytics beacon cannot
 redirect it (a QA check proves this). Web Analytics auto-injection should still stay
 off for this zone. To use the CDN instead: `VITE_XITE_BASE=https://cdn.jsdelivr.net/npm/x_ite@16.4.1/dist/`.
+
+## Licence
+
+The site code and the content written for this site are licensed under the
+GNU Lesser General Public License, version 3 or later (`LGPL-3.0-or-later`).
+`LICENSE` is the LGPL text. `COPYING` is the GNU GPL v3 text that the LGPL builds on.
+
+This does not claim ownership of historical FreeWRL material. Images in
+`public/media/archive/`, text and data taken from the archived upstream site
+(`src/data/`), and the `/legacy/` copy keep their original authors' rights.
+The logo remakes are covered in "Logo and icons" above; their maker is still an open item.
+X_ITE (MIT) and the fonts (SIL OFL 1.1) come from npm under their own licences.

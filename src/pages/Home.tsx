@@ -131,8 +131,8 @@ export default function Home() {
               Communications Research Centre Canada. Many people added to it after that. The last upstream release, 6.7, is dated April 2024.
             </p>
             <p>
-              Today the 6.7 code line is maintained on GitHub. The first work is a native Apple Silicon build for macOS, and
-              a clean Linux build. The code is written in C and uses OpenGL. JavaScript in Script nodes runs in the bundled Duktape engine.
+              Today the 6.7 code line is maintained on GitHub. The first results are a native Apple Silicon build for macOS
+              and a Linux build from source. The code is written in C and uses OpenGL. JavaScript in Script nodes runs in the bundled Duktape engine.
             </p>
             <p><Link to="/history">Read the full history and credits</Link>.</p>
           </div>

@@ -2,7 +2,7 @@
  "timeline": [
   {
    "date": "1998",
-   "event": "Tuomas J. Lukka writes the original FreeWRL VRML browser; early files carry 'Copyright (C) 1998 Tuomas J. Lukka'.",
+   "event": "Tuomas J. Lukka writes the original FreeWRL VRML browser. Early files carry 'Copyright (C) 1998 Tuomas J. Lukka'.",
    "source": "CREDITS.html",
    "archive": "wayback"
   },
@@ -14,7 +14,7 @@
   },
   {
    "date": "Dec 1998",
-   "event": "Tuomas Lukka's article 'An introduction to VRML' appears in 'LJ #12/98'; its example app.pl ships with release 0.19.",
+   "event": "Tuomas Lukka's article 'An introduction to VRML' appears in 'LJ #12/98'. Its example app.pl ships with release 0.19.",
    "source": "README.html",
    "archive": "wayback"
   },
@@ -68,7 +68,7 @@
   },
   {
    "date": "July 2000",
-   "event": "John Stewart presents FreeWRL at the Ottawa Linux Symposium; release 0.25 adds PixelTexture and better backgrounds.",
+   "event": "John Stewart presents FreeWRL at the Ottawa Linux Symposium. Release 0.25 adds PixelTexture and better backgrounds.",
    "source": "news.html",
    "archive": "wayback"
   },
@@ -80,7 +80,7 @@
   },
   {
    "date": "4 Aug 2000",
-   "event": "Development moves to SourceForge (freewrl.sourceforge.net); web pages stay with CRC.",
+   "event": "Development moves to SourceForge (freewrl.sourceforge.net). Web pages stay with CRC.",
    "source": "news.html",
    "archive": "wayback"
   },
@@ -110,7 +110,7 @@
   },
   {
    "date": "circa 2007",
-   "event": "The 'Townsquare' model shows real-time navigation through an image-heavy virtualized landscape is possible.",
+   "event": "The 'Townsquare' model shows real-time navigation through an large, image-heavy virtual scene is possible.",
    "source": "examples.html",
    "archive": "live"
   },
@@ -122,7 +122,7 @@
   },
   {
    "date": "May 2008",
-   "event": "Wolztyn, Poland panorama (4096x823) displayed on the inside of a Cylinder; it led in 2009 to a 360-degree imaging sub-project around Ottawa.",
+   "event": "Wolztyn, Poland panorama (4096x823) displayed on the inside of a Cylinder. It led in 2009 to a 360-degree imaging sub-project around Ottawa.",
    "source": "examples.html",
    "archive": "live"
   },
@@ -164,7 +164,7 @@
   },
   {
    "date": "Aug 2011",
-   "event": "FreeWRL iPhone app demonstrated at SIGGRAPH 2011 in Vancouver; the port moved from fixed-function OpenGL to OpenGL ES with load-time shaders.",
+   "event": "FreeWRL iPhone app demonstrated at SIGGRAPH 2011 in Vancouver. The port moved from fixed-function OpenGL to OpenGL ES with load-time shaders.",
    "source": "examples.html",
    "archive": "live"
   },
@@ -176,7 +176,7 @@
   },
   {
    "date": "9 Feb 2013",
-   "event": "FreeX3D: first SpotLight/PointLight/DirectionalLight work; choice of fast or best (Phong/Gouraud) rendering.",
+   "event": "FreeX3D: first SpotLight/PointLight/DirectionalLight work. Choice of fast or best (Phong/Gouraud) rendering.",
    "source": "FreeX3D/index.html",
    "archive": "live"
   },
@@ -200,7 +200,7 @@
   },
   {
    "date": "10 Aug 2013",
-   "event": "Work continues on the library, cross-platform support and the FreeX3D Android app; CAD and Programmable Shaders components added; move to current OpenGL standards.",
+   "event": "Work continues on the library, cross-platform support and the FreeX3D Android app. CAD and Programmable Shaders components are added, and rendering moves to current OpenGL.",
    "source": "index.html",
    "archive": "live"
   },
@@ -254,7 +254,7 @@
   },
   {
    "date": "Aug 2016",
-   "event": "No recent binary release; users directed to the git 'develop' branch.",
+   "event": "No recent binary release. Users directed to the git 'develop' branch.",
    "source": "index.html",
    "archive": "live"
   },
@@ -272,7 +272,7 @@
   },
   {
    "date": "Aug 2023",
-   "event": "Version 6.1: MIDI 2.0 UMP (Universal MIDI Packet) support; example scenes in tests/43_MIDI.",
+   "event": "Version 6.1: MIDI 2.0 UMP (Universal MIDI Packet) support. Example scenes in tests/43_MIDI.",
    "source": "index.html",
    "archive": "live"
   },
@@ -304,25 +304,25 @@
  "people": [
   {
    "name": "Tuomas J. Lukka",
-   "role": "Original author of FreeWRL; wrote the license intent",
+   "role": "Original author of FreeWRL, wrote the license intent",
    "period": "1998",
    "source": "CREDITS.html"
   },
   {
    "name": "John A. Stewart",
-   "role": "Managed the FreeWRL project (CRC Canada); released 0.18 onward; later FreeX3D Android developer contact",
+   "role": "Managed the FreeWRL project (CRC Canada), released 0.18 onward, later FreeX3D Android developer contact",
    "period": "circa 1999 - April 2010",
    "source": "contact.html"
   },
   {
    "name": "Remi Cohen-Scali",
-   "role": "Many node additions and fixes; EXTERNPROTO work; PixelTexture implementation",
+   "role": "Many node additions and fixes, EXTERNPROTO work, PixelTexture implementation",
    "period": null,
    "source": "CREDITS.html"
   },
   {
    "name": "Etienne Grossmann",
-   "role": "Perl scripting; serial slide code; image-sequence saving and screen dump; many additions",
+   "role": "Perl scripting, serial slide code, image-sequence saving and screen dump, many additions",
    "period": null,
    "source": "CREDITS.html"
   },
@@ -346,7 +346,7 @@
   },
   {
    "name": "John Breen",
-   "role": "New WALK viewer; NavigationInfo and viewpoint fixes",
+   "role": "New WALK viewer, plus fixes to NavigationInfo and viewpoints",
    "period": null,
    "source": "CREDITS.html"
   },
@@ -400,13 +400,13 @@
   },
   {
    "name": "catty",
-   "role": "Removed reliance on libwww (v0.23; credited by handle)",
+   "role": "Removed reliance on libwww (v0.23, credited by handle)",
    "period": null,
    "source": "README.html"
   },
   {
    "name": "fba",
-   "role": "Helped resolve /tmp texture file ownership (v0.23; credited by handle)",
+   "role": "Helped resolve /tmp texture file ownership (v0.23, credited by handle)",
    "period": null,
    "source": "README.html"
   },
@@ -430,19 +430,19 @@
   },
   {
    "name": "Dave Joubert",
-   "role": "Notes on EAI design; original author of the Ubuntu build notes",
+   "role": "Notes on EAI design, original author of the Ubuntu build notes",
    "period": "2010",
    "source": "FreeWRL_EAI_internal_design_and_functionality.html"
   },
   {
    "name": "Doug Sanden",
-   "role": "Windows port; MSVC library bundle; FreeWRL_Launcher; text code for the navigation UI; Ubuntu 14.04 build notes",
+   "role": "Windows port, MSVC library bundle, FreeWRL_Launcher, text code for the navigation UI, Ubuntu 14.04 build notes",
    "period": "2011",
    "source": "windowsBuild.html"
   },
   {
    "name": "Michel Briand",
-   "role": "Windows port; Debian packaging; URL-resolving code and notes",
+   "role": "Windows port, Debian packaging, URL-resolving code and notes",
    "period": "2011",
    "source": "windowsBuild.html"
   },
@@ -496,7 +496,7 @@
   },
   {
    "name": "Daily",
-   "role": "Cited (with 'Brutzman') as source of the SpotLight test model; spelled as on the page",
+   "role": "Cited (with 'Brutzman') as source of the SpotLight test model, spelled as on the page",
    "period": null,
    "source": "FreeX3D/examples.html"
   },
@@ -516,7 +516,7 @@
  "organizations": [
   {
    "name": "Communications Research Centre Canada (CRC)",
-   "role": "John Stewart's employer; FreeWRL 'partly produced by employees of CRC' and released as open source; hosted the early home page (www.crc.ca/FreeWRL); source headers read 'Copyright 2009 CRC Canada'",
+   "role": "John Stewart's employer, FreeWRL 'partly produced by employees of CRC' and released as open source, hosted the early home page (www.crc.ca/FreeWRL), source headers read 'Copyright 2009 CRC Canada'",
    "source": "links.html"
   },
   {
@@ -526,7 +526,7 @@
   },
   {
    "name": "Web3D Consortium",
-   "role": "Maintains the VRML/X3D specifications; appears on the FreeWRL poster; FreeX3D key-fob model courtesy Web3D",
+   "role": "Maintains the VRML/X3D specifications, appears on the FreeWRL poster, FreeX3D key-fob model courtesy Web3D",
    "source": "links.html"
   },
   {
@@ -546,12 +546,12 @@
   },
   {
    "name": "Polhemus",
-   "role": "Tracker vendor; Dan Ratta of Polhemus credited; Fastrak integration in 0.21",
+   "role": "Tracker vendor, Dan Ratta of Polhemus credited, Fastrak integration in 0.21",
    "source": "CREDITS.html"
   },
   {
    "name": "Mozilla",
-   "role": "Mozilla JS (SpiderMonkey) bundled; some files under the Mozilla Public License",
+   "role": "Mozilla JS (SpiderMonkey) bundled, some files under the Mozilla Public License",
    "source": "CREDITS.html"
   },
   {

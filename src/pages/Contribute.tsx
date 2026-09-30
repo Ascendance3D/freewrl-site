@@ -17,8 +17,8 @@ export default function Contribute() {
     <>
       <PageHead kicker="Contribute" title={<>Dreamers<br />wanted.</>}>
         <p>
-          FreeWRL is a small project with a long history. You do not need to know C or OpenGL to help. People who test,
-          write, teach and build worlds matter as much as people who write code.
+          FreeWRL is a small project with a long history. You do not need to know C or OpenGL to help. Testing, writing docs,
+          teaching and building example worlds help as much as code does.
         </p>
       </PageHead>
 
@@ -40,7 +40,7 @@ export default function Contribute() {
         <SectionHead index="02" id="where" title="Where to talk" />
         <div className="prose">
           <p><a href={SITE.issues}>GitHub Issues</a> — bugs and concrete problems with the current builds.</p>
-          <p><a href={SITE.discussions}>GitHub Discussions</a> — questions, ideas, showing what you made.</p>
+          <p><a href={SITE.discussions}>GitHub Discussions</a> — questions and ideas, or to show what you made.</p>
           <p>
             The old freewrl-develop mailing list is closed. Its history is part of the <a href={SITE.upstream}>SourceForge project</a>.
             Problems in the FreeWRL core can also be reported upstream there.

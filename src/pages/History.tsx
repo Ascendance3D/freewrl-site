@@ -146,7 +146,7 @@ export default function History() {
         <div className="prose">
           <p>
             In September 2026, the FreeWRL 6.7 code line was taken up on GitHub as the Ascendance Open Worlds modernization
-            fork, maintained by Ryan Bundy. Its first work is a native Apple Silicon build for macOS and a clean Linux build.
+            fork, maintained by Ryan Bundy. Its first results are a native Apple Silicon build for macOS and a Linux build from source.
             It is a fork. It is not the upstream project, and it did not create FreeWRL.
           </p>
           <p>

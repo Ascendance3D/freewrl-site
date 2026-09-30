@@ -82,7 +82,7 @@ export default function Conformance() {
               are copied exactly, including “CNOT IMPLEMENTED”. Some statuses have an asterisk that the page does not explain. The Sound heading says it “does not comply with v4 specs as written”.
             </p>
             <p>
-              Want to help measure? Each component links to its folder in the <Link to="/tests">test corpus</Link>.
+              To help measure, start here: each component links to its folder in the <Link to="/tests">test corpus</Link>.
               <a href={SITE.issues}> Report results on GitHub</a>.
             </p>
           </div>

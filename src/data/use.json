@@ -59,14 +59,14 @@
   {
    "name": "DIST",
    "key": null,
-   "description": "Drag up or down to move closer to or farther from the model's center, without rotating. Set from the HUD or NavigationInfo; there is no hotkey.",
+   "description": "Drag up or down to move closer to or farther from the model's center, without rotating. Set from the HUD or NavigationInfo. There is no hotkey.",
    "verified": true,
    "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1008; freex3d/src/lib/x3d_parser/Bindable.c:280-283; freex3d/src/lib/ui/statusbarHud.c:2542-2543"
   },
   {
    "name": "PAN",
    "key": null,
-   "description": "Drag the terrain under the cursor, scroll the wheel to zoom, and drag with the middle button to turn. Set from the HUD or NavigationInfo; there is no hotkey.",
+   "description": "Drag the terrain under the cursor, scroll the wheel to zoom, and drag with the middle button to turn. Set from the HUD or NavigationInfo. There is no hotkey.",
    "verified": true,
    "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1375; freex3d/src/lib/x3d_parser/Bindable.c:284-287; freex3d/src/lib/ui/statusbarHud.c:2540-2541"
   },
@@ -109,7 +109,7 @@
   },
   {
    "key": "y",
-   "action": "SPHERICAL mode; press again to toggle field-of-view zoom",
+   "action": "SPHERICAL mode. Press again to toggle field-of-view zoom",
    "verified": true,
    "evidence": "freex3d/src/lib/main/MainLoop.c:6477; freex3d/src/lib/scenegraph/Viewer.c:429-443",
    "oldDocSays": null
@@ -123,7 +123,7 @@
   },
   {
    "key": "g",
-   "action": "EXPLORE mode; press again to toggle pick-a-center",
+   "action": "EXPLORE mode. Press again to toggle pick-a-center",
    "verified": true,
    "evidence": "freex3d/src/lib/main/MainLoop.c:6480; freex3d/src/lib/scenegraph/Viewer.c:444-459",
    "oldDocSays": null
@@ -228,7 +228,7 @@
   },
   {
    "key": "x",
-   "action": "Save a screenshot (Linux/Windows builds; the macOS and Android frontends handle snapshots themselves)",
+   "action": "Save a screenshot (Linux and Windows builds. The macOS and Android frontends take their own snapshots.)",
    "verified": true,
    "evidence": "freex3d/src/lib/main/MainLoop.c:6505-6506; OSX_gui/FreeWRL-Desktop/FreeWRL/config.h:8",
    "oldDocSays": null
@@ -242,7 +242,7 @@
   },
   {
    "key": "Space",
-   "action": "Open a ':' command prompt in the console; type key,value and press Enter (e.g. keychord,yawz)",
+   "action": "Open a ':' command prompt in the console. Type key,value and press Enter (e.g. keychord,yawz)",
    "verified": true,
    "evidence": "freex3d/src/lib/main/MainLoop.c:6502; freex3d/src/lib/main/MainLoop.c:6433-6463",
    "oldDocSays": null
@@ -329,14 +329,14 @@
   {
    "input": "right drag",
    "mode": "EXAMINE",
-   "action": "Nothing now; zoom moved to DIST mode",
+   "action": "Nothing now. Zoom moved to DIST mode",
    "verified": true,
    "evidence": "freex3d/src/lib/scenegraph/Viewer.c:951,979 (commented out, moved to handle_dist); freex3d/src/lib/scenegraph/Viewer.c:1008"
   },
   {
    "input": "left drag up/down",
    "mode": "WALK",
-   "action": "Walk forward / back; small drags are slow, big drags are fast",
+   "action": "Walk forward / back. Small drags are slow, big drags are fast",
    "verified": true,
    "evidence": "freex3d/src/lib/scenegraph/Viewer.c:883"
   },
@@ -492,7 +492,7 @@
   },
   {
    "flag": "--anaglyph LR",
-   "action": "Red/cyan-style stereo; L and R are each one of R,G,B,C,A,M (e.g. RC, RB)",
+   "action": "Red/cyan-style stereo. L and R are each one of R,G,B,C,A,M (e.g. RC, RB)",
    "evidence": "freex3d/src/bin/options.c:423; freex3d/src/bin/options.c:87"
   },
   {

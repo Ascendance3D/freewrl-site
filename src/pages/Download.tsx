@@ -79,7 +79,7 @@ sudo make install`}</Commands>
             <a href={`${SITE.upstream}files/`}> SourceForge project</a>. They are old, and this site does not test them.
           </p>
           <p>
-            The Windows project files are still in the source tree. If you want to bring a platform back, <Link to="/contribute">we want to hear from you</Link>.
+            The Windows project files are still in the source tree. If you want to bring a platform back, <Link to="/contribute">see how to help</Link>.
           </p>
         </div>
       </section>

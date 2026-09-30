@@ -37,7 +37,7 @@ export default function Learn() {
     <>
       <PageHead kicker="Learn · no account · nothing to install" title={<>Change one number.<br />Change a world.</>}>
         <p>
-          A VRML world is a text file. The controls below change numbers in that text. The text changes the world.
+          A VRML world is a text file. The controls below change numbers in that text, and the world changes with them.
           The <mark className="param">marked</mark> numbers are the ones each control changes.
         </p>
       </PageHead>

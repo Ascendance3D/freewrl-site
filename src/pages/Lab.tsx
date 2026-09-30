@@ -43,7 +43,7 @@ const EXHIBITS: Exhibit[] = [
     origin: <>From the upstream site. <a href="/legacy/test.wrl">/legacy/test.wrl</a></>,
     credit: "Tuomas J. Lukka, 1998. GNU Library GPL.",
     alt: "A plain white cone on black, lit from the front.",
-    about: <>The FreeWRL test file shown in the old Firefox plugin screenshot. A Material with no fields gets the defaults, so the cone is white. The defaults are part of the standard. Every browser draws this cone the same way.</>,
+    about: <>The FreeWRL test file shown in the old Firefox plugin screenshot. A Material with no fields gets the defaults, so the cone is white. The defaults are part of the standard, so any VRML97 browser should draw the same white cone.</>,
   },
   {
     id: "teapot",
@@ -53,7 +53,7 @@ const EXHIBITS: Exhibit[] = [
     encoding: "VRML97",
     size: "44 KB",
     origin: <>From the FreeX3D examples on the upstream site. <a href="/legacy/FreeX3D/models/teapot-noShaders.wrl">/legacy/FreeX3D/models/</a></>,
-    credit: "The upstream FreeWRL and FreeX3D project",
+    credit: "Upstream FreeWRL and FreeX3D developers",
     alt: "A gold teapot over a green ground under a blue-to-red graded sky.",
     about: <>The plain teapot that the upstream shader examples start from. The Toon and Sobel versions need desktop GLSL, so the web preview cannot run them. Their screenshots are below.</>,
     start: "click",
@@ -68,7 +68,7 @@ const EXHIBITS: Exhibit[] = [
     origin: <>From the upstream examples page. <a href="/legacy/images/PolandPano-Turntable.wrl">/legacy/images/</a></>,
     credit: "Photograph taken in Wolztyn, Poland, May 2008 (upstream examples page)",
     alt: "A 360-degree photograph of a street in Wolztyn, Poland, wrapped inside a cylinder around the viewer.",
-    about: <>A 4096 × 823 photograph on the inside of a Cylinder, with the viewer standing in the middle. WALK with speed 0 means you can turn, but you cannot move. Twelve lines of VRML make a panorama viewer.</>,
+    about: <>A 4096 × 823 photograph on the inside of a Cylinder, with the viewer standing in the middle. WALK with speed 0 lets you turn but keeps you in place. The whole file is 17 lines.</>,
     start: "click",
   },
 ]
@@ -159,8 +159,8 @@ export default function Lab() {
             FreeWRL has. <Link to="/tests">Browse the test corpus</Link>.
           </p>
           <p>
-            Made something good? A small, well-commented world that teaches one idea is the best kind of example.
-            <Link to="/contribute"> Send it in</Link>.
+            A small world that teaches one idea, with comments in the source, is what this page needs most.
+            <Link to="/contribute"> Send one in</Link>.
           </p>
         </div>
       </section>

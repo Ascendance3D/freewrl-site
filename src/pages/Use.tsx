@@ -98,7 +98,7 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
       <section className="frame section" aria-labelledby="changed">
         <SectionHead index="06" id="changed" title="Changed since the old manual" />
         <ul className="prose changes">
-          <li>Slide left and right is <kbd>j</kbd> / <kbd>l</kbd>. The old page said 7 / 9; those keys roll the view.</li>
+          <li>Slide left and right is <kbd>j</kbd> / <kbd>l</kbd>. The old page said 7 / 9, but those keys roll the view.</li>
           <li>NumLock no longer toggles the headlight on Linux. Use <kbd>h</kbd>.</li>
           <li>New modes: SPHERICAL, TURNTABLE, EXPLORE, LOOKAT and PAN.</li>
           <li>EXAMINE now turns the model freely, like a trackball. Right-drag zoom moved to DIST mode.</li>
@@ -106,7 +106,7 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
           <li><code>--server</code> and <code>--sig</code> are gone. <code>--eai</code> takes no host:port.</li>
         </ul>
         <p className="caption">
-          Checked against the FreeWRL 6.7 source on 2026-09-30, not yet in a running window on every platform.
+          Checked against the FreeWRL 6.7 source on 2026-09-30. Not yet checked in a running window on every platform.
           If something here is wrong, please <a href="https://github.com/Ascendance3D/freewrl/issues">open an issue</a>.
         </p>
       </section>

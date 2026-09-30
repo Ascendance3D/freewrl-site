@@ -3,7 +3,8 @@
 // Source (read-only): the offline "browse" copy made by the archive job, see
 //   ../archive-freewrl-site/HANDOFF.md and ARCHIVE_REPORT.md
 // Nothing in the archive is modified. Each HTML page gets one small banner
-// inserted right after <body>; every other byte is copied as-is.
+// inserted right after <body> plus the safety transforms below (see
+// LEGACY_TRANSFORMS.md); every other byte is copied as-is.
 // tests/ (1.14 GB) is NOT copied: links into it are pointed at TESTS_BASE.
 //
 // Env:
@@ -41,6 +42,53 @@ const BANNER =
 
 const testsLink = /((?:href|src)\s*=\s*["'])(?:\.\.\/)*tests\/([^"'#?]*)/gi
 
+// Safety transforms: stop automatic third-party requests from the served copy.
+// Exact source strings only; each is documented in LEGACY_TRANSFORMS.md, and the
+// build fails if a count drifts from what was verified against the archive.
+// Dead tracker images keep their URL as data-archived-src, so the markup still
+// records it but nothing is fetched.
+const archived = (url) => `data-archived-src="${url}"`
+const TRANSFORMS = [
+  { id: "clustrmaps-onerror-loop", expect: 2,
+    // this.onError (capital E) never clears the real onerror handler, so the dead
+    // fallback image re-fires onerror forever: ~2,800 requests/s.
+    find: ` onerror="this.onError=null; this.src='http://clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com'"`,
+    replace: "" },
+  { id: "clustrmaps-counter", expect: 2,
+    find: 'src="http://www2.clustrmaps.com/counter/index2.php?url=http://freewrl.sourceforge.net"',
+    replace: archived("http://www2.clustrmaps.com/counter/index2.php?url=http://freewrl.sourceforge.net") },
+  { id: "sourceforge-sflogo", expect: 32,
+    find: /src="(http:\/\/sourceforge\.net\/sflogo\.php\?[^"]*)"/g,
+    replace: (_m, url) => archived(url) },
+  { id: "android-play-badge", expect: 7,
+    find: 'src="http://www.android.com/images/brand/android_app_on_play_logo_small.png"',
+    replace: archived("http://www.android.com/images/brand/android_app_on_play_logo_small.png") },
+  { id: "slashdotmedia-noscript-pixel", expect: 1,
+    find: 'src="https://analytics.slashdotmedia.com/index.php?idsite=39"',
+    replace: archived("https://analytics.slashdotmedia.com/index.php?idsite=39") },
+  { id: "sourceforge-page-scripts", expect: 12,
+    // index.htm is a 2026 capture of sourceforge.net/projects/freewrl/; these are
+    // SourceForge's ad, consent and analytics bundles, not FreeWRL content.
+    find: /<script src="(\/a\.fsdn\.com\/con\/js\/[^"]*)"(?: defer)?><\/script>/g,
+    replace: (_m, url) => `<!-- freewrl-archive: SourceForge script ${url} not loaded -->` },
+  { id: "faq-offsite-refresh", expect: 1,
+    // faq.html was a redirect stub to the old site's home page; keep it inside the archive.
+    find: 'content="0; url=http://freewrl.sourceforge.net/index.html"',
+    replace: 'content="0; url=index.html"' },
+]
+const transformCounts = Object.fromEntries(TRANSFORMS.map((t) => [t.id, { files: 0, replacements: 0 }]))
+
+function applyTransforms(s) {
+  for (const t of TRANSFORMS) {
+    let n = 0
+    s = typeof t.find === "string"
+      ? s.split(t.find).reduce((acc, part, i) => (i ? (n++, acc + t.replace + part) : part), "")
+      : s.replace(t.find, (...m) => (n++, t.replace(...m)))
+    if (n) { transformCounts[t.id].files++; transformCounts[t.id].replacements += n }
+  }
+  return s
+}
+
 function transformHtml(buf) {
   // latin1 keeps a 1:1 byte mapping, so non-UTF-8 pages survive untouched.
   let s = buf.toString("latin1")
@@ -49,6 +97,7 @@ function transformHtml(buf) {
     links++
     return pre + TESTS_BASE + rest.replace(/(^|\/)index\.html$/i, "$1")
   })
+  s = applyTransforms(s)
   const body = /<body\b[^>]*>/i.exec(s)
   if (body) s = s.slice(0, body.index + body[0].length) + BANNER + s.slice(body.index + body[0].length)
   else s = BANNER + s
@@ -86,6 +135,14 @@ writeFileSync(join(out, "_legacy-build.json"), JSON.stringify({
   testsBase: TESTS_BASE,
   files, htmlPages: pages, testsLinksRewritten: rewritten, bytes,
   skippedOverAssetLimit: skipped,
+  safetyTransforms: transformCounts,
 }, null, 2) + "\n")
 console.log(`legacy: ${files} files (${pages} pages, ${rewritten} tests/ links -> ${TESTS_BASE}), ${(bytes / 1e6).toFixed(1)} MB`)
+console.log("legacy safety transforms:", Object.entries(transformCounts).map(([id, c]) => `${id}=${c.replacements}/${c.files}f`).join(" "))
 if (skipped.length) console.warn("skipped (>25 MiB):", skipped)
+const drift = TRANSFORMS.filter((t) => transformCounts[t.id].replacements !== t.expect)
+if (drift.length) {
+  console.error("legacy safety transform counts changed; re-verify the archive and LEGACY_TRANSFORMS.md:",
+    drift.map((t) => `${t.id} expected ${t.expect}, got ${transformCounts[t.id].replacements}`).join("; "))
+  process.exit(1)
+}

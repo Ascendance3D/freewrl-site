@@ -24,6 +24,7 @@ Reports and screenshots go to `qa-artifacts/` (gitignored).
 node qa/functional.mjs       # 53 checks: pages, links, viewer, legacy, 404
 node qa/design.mjs           # 526 layout/type checks across pages and widths
 node qa/hero-final.mjs       # 34 checks on the Home landing world in X_ITE
+node qa/legacy-network.mjs   # 63 checks: /legacy/ makes no tracker, external or runaway requests
 node qa/hero-final.mjs --self-test   # proves a real FAIL exits 1 (no browser)
 node qa/shots.mjs http://127.0.0.1:8788 qa-artifacts/shots /,/learn/ 1440,390 light
 ```
@@ -45,8 +46,11 @@ every Viewpoint of the shipped world in the real viewer.
 
 `/legacy/` is a read-only copy of the old freewrl.sourceforge.io site. It is not in this
 repository. `npm run build` copies it from `../archive-freewrl-site/browse/freewrl.sourceforge.io`
-(or `FREEWRL_ARCHIVE_BROWSE=...`) and adds one banner per HTML page. Every other byte is
-unchanged. Missing `/legacy/` paths return the site's real 404.
+(or `FREEWRL_ARCHIVE_BROWSE=...`) and adds one banner per HTML page. It also applies a
+few exact-string safety transforms that stop automatic tracker, ad and dead-widget requests
+(including a clustrmaps `onerror` loop). Those are listed in `LEGACY_TRANSFORMS.md`, and
+`/legacy/*` gets a same-origin Content-Security-Policy. Every other byte is unchanged.
+`node qa/legacy-network.mjs <baseURL>` checks it. Missing `/legacy/` paths return the site's real 404.
 `SKIP_LEGACY=1` builds without `/legacy/` — never deploy that.
 
 The upstream `tests/` corpus (1.14 GB) is not copied and not in this repository.

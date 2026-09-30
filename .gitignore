@@ -32,3 +32,11 @@ dist-ssr
 
 # Third-party editorial reference images (mood only, unknown licence; never ship)
 logo-work/EIA_*
+
+# generated at build time (scripts/sync-xite.mjs)
+public/x_ite/
+src/generated-xite.ts
+dist-ssr/
+
+# local QA screenshots and reports (qa/ holds the scripts)
+qa-artifacts/

@@ -1,0 +1,312 @@
+{
+ "FreeWRL_poster.jpg": {
+  "original": "FreeWRL_poster.jpg",
+  "width": 800,
+  "height": 520,
+  "files": [
+   {
+    "w": 800,
+    "h": 520,
+    "webp": "/media/archive/FreeWRL_poster-800.webp"
+   }
+  ],
+  "fallback": "/media/archive/FreeWRL_poster-800.jpg"
+ },
+ "2001.jpg": {
+  "original": "2001.jpg",
+  "width": 814,
+  "height": 638,
+  "files": [
+   {
+    "w": 800,
+    "h": 627,
+    "webp": "/media/archive/2001-800.webp"
+   },
+   {
+    "w": 814,
+    "h": 638,
+    "webp": "/media/archive/2001-814.webp"
+   }
+  ],
+  "fallback": "/media/archive/2001-800.jpg"
+ },
+ "OSX-screen.gif": {
+  "original": "OSX-screen.gif",
+  "width": 1280,
+  "height": 854,
+  "files": [
+   {
+    "w": 800,
+    "h": 534,
+    "webp": "/media/archive/OSX-screen-800.webp"
+   },
+   {
+    "w": 1280,
+    "h": 854,
+    "webp": "/media/archive/OSX-screen-1280.webp"
+   }
+  ],
+  "fallback": "/media/archive/OSX-screen-800.jpg"
+ },
+ "NCK.jpg": {
+  "original": "NCK.jpg",
+  "width": 1279,
+  "height": 1023,
+  "files": [
+   {
+    "w": 800,
+    "h": 640,
+    "webp": "/media/archive/NCK-800.webp"
+   },
+   {
+    "w": 1279,
+    "h": 1023,
+    "webp": "/media/archive/NCK-1279.webp"
+   }
+  ],
+  "fallback": "/media/archive/NCK-800.jpg"
+ },
+ "tictactoe.gif": {
+  "original": "tictactoe.gif",
+  "width": 800,
+  "height": 600,
+  "files": [
+   {
+    "w": 800,
+    "h": 600,
+    "webp": "/media/archive/tictactoe-800.webp"
+   }
+  ],
+  "fallback": "/media/archive/tictactoe-800.jpg"
+ },
+ "synth.gif": {
+  "original": "synth.gif",
+  "width": 800,
+  "height": 600,
+  "files": [
+   {
+    "w": 800,
+    "h": 600,
+    "webp": "/media/archive/synth-800.webp"
+   }
+  ],
+  "fallback": "/media/archive/synth-800.jpg"
+ },
+ "aboutPlugins.png": {
+  "original": "aboutPlugins.png",
+  "width": 562,
+  "height": 609,
+  "files": [
+   {
+    "w": 562,
+    "h": 609,
+    "webp": "/media/archive/aboutPlugins-562.webp"
+   }
+  ],
+  "fallback": "/media/archive/aboutPlugins-562.jpg"
+ },
+ "Test.png": {
+  "original": "Test.png",
+  "width": 657,
+  "height": 490,
+  "files": [
+   {
+    "w": 657,
+    "h": 490,
+    "webp": "/media/archive/Test-657.webp"
+   }
+  ],
+  "fallback": "/media/archive/Test-657.jpg"
+ },
+ "freewrl_screenshot3.jpg": {
+  "original": "freewrl_screenshot3.jpg",
+  "width": 400,
+  "height": 300,
+  "files": [
+   {
+    "w": 400,
+    "h": 300,
+    "webp": "/media/archive/freewrl_screenshot3-400.webp"
+   }
+  ],
+  "fallback": "/media/archive/freewrl_screenshot3-400.jpg"
+ },
+ "welcome.jpg": {
+  "original": "welcome.jpg",
+  "width": 450,
+  "height": 183,
+  "files": [
+   {
+    "w": 450,
+    "h": 183,
+    "webp": "/media/archive/welcome-450.webp"
+   }
+  ],
+  "fallback": "/media/archive/welcome-450.jpg"
+ },
+ "images/ring_tangle.jpg": {
+  "original": "images/ring_tangle.jpg",
+  "width": 1024,
+  "height": 780,
+  "files": [
+   {
+    "w": 800,
+    "h": 609,
+    "webp": "/media/archive/images__ring_tangle-800.webp"
+   },
+   {
+    "w": 1024,
+    "h": 780,
+    "webp": "/media/archive/images__ring_tangle-1024.webp"
+   }
+  ],
+  "fallback": "/media/archive/images__ring_tangle-800.jpg"
+ },
+ "images/PolandPano-Turntablef.jpg": {
+  "original": "images/PolandPano-Turntablef.jpg",
+  "width": 4096,
+  "height": 823,
+  "files": [
+   {
+    "w": 800,
+    "h": 161,
+    "webp": "/media/archive/images__PolandPano-Turntablef-800.webp"
+   },
+   {
+    "w": 1600,
+    "h": 321,
+    "webp": "/media/archive/images__PolandPano-Turntablef-1600.webp"
+   }
+  ],
+  "fallback": "/media/archive/images__PolandPano-Turntablef-800.jpg"
+ },
+ "images/iPhone-running2.png": {
+  "original": "images/iPhone-running2.png",
+  "width": 640,
+  "height": 960,
+  "files": [
+   {
+    "w": 640,
+    "h": 960,
+    "webp": "/media/archive/images__iPhone-running2-640.webp"
+   }
+  ],
+  "fallback": "/media/archive/images__iPhone-running2-640.jpg"
+ },
+ "FreeX3D/images/Toon-Screenshot_2013-08-11-09-39-56.png": {
+  "original": "FreeX3D/images/Toon-Screenshot_2013-08-11-09-39-56.png",
+  "width": 1280,
+  "height": 800,
+  "files": [
+   {
+    "w": 800,
+    "h": 500,
+    "webp": "/media/archive/FreeX3D__images__Toon-Screenshot_2013-08-11-09-39-56-800.webp"
+   },
+   {
+    "w": 1280,
+    "h": 800,
+    "webp": "/media/archive/FreeX3D__images__Toon-Screenshot_2013-08-11-09-39-56-1280.webp"
+   }
+  ],
+  "fallback": "/media/archive/FreeX3D__images__Toon-Screenshot_2013-08-11-09-39-56-800.jpg"
+ },
+ "FreeX3D/images/Sobel_Screenshot_2013-08-10-09-41-49.png": {
+  "original": "FreeX3D/images/Sobel_Screenshot_2013-08-10-09-41-49.png",
+  "width": 1280,
+  "height": 800,
+  "files": [
+   {
+    "w": 800,
+    "h": 500,
+    "webp": "/media/archive/FreeX3D__images__Sobel_Screenshot_2013-08-10-09-41-49-800.webp"
+   },
+   {
+    "w": 1280,
+    "h": 800,
+    "webp": "/media/archive/FreeX3D__images__Sobel_Screenshot_2013-08-10-09-41-49-1280.webp"
+   }
+  ],
+  "fallback": "/media/archive/FreeX3D__images__Sobel_Screenshot_2013-08-10-09-41-49-800.jpg"
+ },
+ "FreeX3D/images/VertexDeformer-Screenshot_2013-08-10-09-40-43.png": {
+  "original": "FreeX3D/images/VertexDeformer-Screenshot_2013-08-10-09-40-43.png",
+  "width": 1280,
+  "height": 800,
+  "files": [
+   {
+    "w": 800,
+    "h": 500,
+    "webp": "/media/archive/FreeX3D__images__VertexDeformer-Screenshot_2013-08-10-09-40-43-800.webp"
+   },
+   {
+    "w": 1280,
+    "h": 800,
+    "webp": "/media/archive/FreeX3D__images__VertexDeformer-Screenshot_2013-08-10-09-40-43-1280.webp"
+   }
+  ],
+  "fallback": "/media/archive/FreeX3D__images__VertexDeformer-Screenshot_2013-08-10-09-40-43-800.jpg"
+ },
+ "FreeX3D/images/FP_6_2013-04-06-15-46-21.png": {
+  "original": "FreeX3D/images/FP_6_2013-04-06-15-46-21.png",
+  "width": 1280,
+  "height": 800,
+  "files": [
+   {
+    "w": 800,
+    "h": 500,
+    "webp": "/media/archive/FreeX3D__images__FP_6_2013-04-06-15-46-21-800.webp"
+   },
+   {
+    "w": 1280,
+    "h": 800,
+    "webp": "/media/archive/FreeX3D__images__FP_6_2013-04-06-15-46-21-1280.webp"
+   }
+  ],
+  "fallback": "/media/archive/FreeX3D__images__FP_6_2013-04-06-15-46-21-800.jpg"
+ },
+ "images/FragmentVertexSpotLight.png": {
+  "original": "images/FragmentVertexSpotLight.png",
+  "width": 600,
+  "height": 428,
+  "files": [
+   {
+    "w": 600,
+    "h": 428,
+    "webp": "/media/archive/images__FragmentVertexSpotLight-600.webp"
+   }
+  ],
+  "fallback": "/media/archive/images__FragmentVertexSpotLight-600.jpg"
+ },
+ "images/screenshot_Jan2023_2.jpg": {
+  "original": "images/screenshot_Jan2023_2.jpg",
+  "width": 1070,
+  "height": 648,
+  "files": [
+   {
+    "w": 800,
+    "h": 484,
+    "webp": "/media/archive/images__screenshot_Jan2023_2-800.webp"
+   },
+   {
+    "w": 1070,
+    "h": 648,
+    "webp": "/media/archive/images__screenshot_Jan2023_2-1070.webp"
+   }
+  ],
+  "fallback": "/media/archive/images__screenshot_Jan2023_2-800.jpg"
+ },
+ "nav_area.jpg": {
+  "original": "nav_area.jpg",
+  "width": 640,
+  "height": 480,
+  "files": [
+   {
+    "w": 640,
+    "h": 480,
+    "webp": "/media/archive/nav_area-640.webp"
+   }
+  ],
+  "fallback": "/media/archive/nav_area-640.jpg"
+ }
+}

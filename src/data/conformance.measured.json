@@ -1,0 +1,15 @@
+{
+  "about": "Results measured on current FreeWRL builds. Empty until a test run is recorded. One entry per node per build.",
+  "schema": {
+    "component": "component name exactly as in conformance.upstream.json",
+    "node": "X3D node name",
+    "result": "pass | partial | fail | not-run",
+    "build": "FreeWRL version and platform, e.g. 6.7.0 macos-arm64 beta.2",
+    "commit": "engine source commit",
+    "date": "YYYY-MM-DD",
+    "tests": "test files used, paths relative to tests/",
+    "evidence": "URL of the report, screenshots or log",
+    "notes": "free text"
+  },
+  "results": []
+}

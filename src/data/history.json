@@ -1,0 +1,1125 @@
+{
+ "timeline": [
+  {
+   "date": "1998",
+   "event": "Tuomas J. Lukka writes the original FreeWRL VRML browser; early files carry 'Copyright (C) 1998 Tuomas J. Lukka'.",
+   "source": "CREDITS.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "7 Jul 1998",
+   "event": "Tuomas Lukka sets out FreeWRL's license intent on the www-vrml mailing list: GPL applies to changes to FreeWRL modules, not across published APIs.",
+   "source": "intent.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "Dec 1998",
+   "event": "Tuomas Lukka's article 'An introduction to VRML' appears in 'LJ #12/98'; its example app.pl ships with release 0.19.",
+   "source": "README.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "15 Jan 1999",
+   "event": "FreeWRL 0.18 is released, the first version released by John Stewart (CRC Canada).",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "circa 1999 - Apr 2010",
+   "event": "John A. Stewart manages the FreeWRL project.",
+   "source": "contact.html",
+   "archive": "live"
+  },
+  {
+   "date": "23 Mar 1999",
+   "event": "Release 0.19: large gains in EAI (External Authoring Interface) support.",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "13 Aug 1999",
+   "event": "Release 0.20: EXTERNPROTO support, better JavaScript, EAI working with Netscape for local files, and shared virtual worlds.",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "17 Dec 1999",
+   "event": "Release 0.21 with Red Hat 6.1 install notes; Polhemus Fastrak tracker integration works.",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "5 Jan 2000",
+   "event": "Release 0.22, which builds on a stock Red Hat 6.1 distribution.",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "26 Jan 2000",
+   "event": "The Shared Multicast virtual-worlds paper is posted to the site.",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "7 Apr 2000",
+   "event": "Shared Multicast Virtual World code v1.0 is released.",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "July 2000",
+   "event": "John Stewart presents FreeWRL at the Ottawa Linux Symposium; release 0.25 adds PixelTexture and better backgrounds.",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "1 Aug 2000",
+   "event": "FreeWRL project registered on SourceForge (per the saved SourceForge project page, archived as index.htm).",
+   "source": "index.htm",
+   "archive": "live"
+  },
+  {
+   "date": "4 Aug 2000",
+   "event": "Development moves to SourceForge (freewrl.sourceforge.net); web pages stay with CRC.",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "4 Aug 2000",
+   "event": "First commit in the upstream repository history ('Initial revision', SourceForge user rcoscali).",
+   "source": "freewrl-git (git log, read-only)",
+   "archive": "repo"
+  },
+  {
+   "date": "Sep - Nov 2000",
+   "event": "Releases 0.26 and 0.27: texture fixes, EAI and Java bindings work, first SAI work.",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "27 Mar 2001",
+   "event": "Release 0.28: bug fixes, speed, better rendering and EAI, more test worlds.",
+   "source": "news.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "4 Jan 2007",
+   "event": "Version 1.18.10; Daniel Kraft's new VRML parser is in place, with X3D (FDIS 19775-1:2004) component tracking.",
+   "source": "currentstatus.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "circa 2007",
+   "event": "The 'Townsquare' model shows real-time navigation through an image-heavy virtualized landscape is possible.",
+   "source": "examples.html",
+   "archive": "live"
+  },
+  {
+   "date": "27 May 2008",
+   "event": "CRC Canada contracted by the U.S. Department of Defense (Contract N00244-08-P-1769) to add high-resolution geospatial 3D rendering to FreeWRL.",
+   "source": "examples.html",
+   "archive": "live"
+  },
+  {
+   "date": "May 2008",
+   "event": "Wolztyn, Poland panorama (4096x823) displayed on the inside of a Cylinder; it led in 2009 to a 360-degree imaging sub-project around Ottawa.",
+   "source": "examples.html",
+   "archive": "live"
+  },
+  {
+   "date": "July 2009",
+   "event": "FreeWRL-MIDI/Reason interface released for OS X; FreeWRL 1.19.2 or later is MIDI/Reason enabled.",
+   "source": "midi.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "28 Jul 2009",
+   "event": "'Using the EAI C interface' document, version 1.01.",
+   "source": "Using_the_EAI_C_interface.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "23 Sep 2009",
+   "event": "Canada's Parliament buildings photographed for the 360-degree image sub-project.",
+   "source": "examples.html",
+   "archive": "live"
+  },
+  {
+   "date": "31 Mar 2010",
+   "event": "John Stewart (CRC Canada) writes 'FreeWRL EAI Interface Design and Function', with notes from Dave Joubert.",
+   "source": "FreeWRL_EAI_internal_design_and_functionality.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "22 May 2011",
+   "event": "Windows build notes: Doug Sanden and Michel Briand port FreeWRL to Windows.",
+   "source": "windowsBuild.html",
+   "archive": "live"
+  },
+  {
+   "date": "21 Jul 2011",
+   "event": "iPhone/iPod/iPad build of FreeWRL/FreeX3D in progress.",
+   "source": "build_iPhone.html",
+   "archive": "wayback"
+  },
+  {
+   "date": "Aug 2011",
+   "event": "FreeWRL iPhone app demonstrated at SIGGRAPH 2011 in Vancouver; the port moved from fixed-function OpenGL to OpenGL ES with load-time shaders.",
+   "source": "examples.html",
+   "archive": "live"
+  },
+  {
+   "date": "8 Dec 2012",
+   "event": "FreeX3D Android app: tablet layouts, ISO 8859-1 text, user-set texture sizes.",
+   "source": "FreeX3D/index.html",
+   "archive": "live"
+  },
+  {
+   "date": "9 Feb 2013",
+   "event": "FreeX3D: first SpotLight/PointLight/DirectionalLight work; choice of fast or best (Phong/Gouraud) rendering.",
+   "source": "FreeX3D/index.html",
+   "archive": "live"
+  },
+  {
+   "date": "6 Apr 2013",
+   "event": "FreeX3D release 14 on Google Play: FillProperties shape manipulations.",
+   "source": "FreeX3D/index.html",
+   "archive": "live"
+  },
+  {
+   "date": "21 Apr 2013",
+   "event": "FreeX3D release 15 on Google Play: STL manifold and watertight tests.",
+   "source": "FreeX3D/index.html",
+   "archive": "live"
+  },
+  {
+   "date": "21 Jul 2013",
+   "event": "FreeX3D adds the X3D CAD component (CADAssembly, CADFace, CADLayer, CADPart, IndexedQuadSet, QuadSet).",
+   "source": "FreeX3D/index.html",
+   "archive": "live"
+  },
+  {
+   "date": "10 Aug 2013",
+   "event": "Work continues on the library, cross-platform support and the FreeX3D Android app; CAD and Programmable Shaders components added; move to current OpenGL standards.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "31 Oct 2013",
+   "event": "Ubuntu build and install revisited toward a V2.0 release; OSX build used for testing shader-based rendering.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "Apr 2014",
+   "event": "TURNTABLE navigation and a non-standard LineSensor node added.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "May 2014",
+   "event": "Stereo up-down viewports added for interlaced shutter glasses, alongside side-by-side, quad-buffer and anaglyph.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "Aug 2014",
+   "event": "Duktape JavaScript engine option added for platforms without SpiderMonkey.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "Oct 2014",
+   "event": "Navigation, PROTOs, sound, Inline IMPORT/EXPORT and the JavaScript interface improved.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "Aug 2015",
+   "event": "Version 3.0: server-side rendering toy, frame-rate target, pinnable menubar, statusbar options.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "Sep 2015",
+   "event": "Version 3.1: --want option for statusbar/menubar, touch toggling, improved help.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "2016",
+   "event": "iOS and OSX builds no longer supported; Apple once distributed FreeWRL, but support lapsed when CRC stopped VR and 3D visualization research.",
+   "source": "examples.html",
+   "archive": "live"
+  },
+  {
+   "date": "Aug 2016",
+   "event": "No recent binary release; users directed to the git 'develop' branch.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "Jan 2017",
+   "event": "Version 4.0 ('Kelp Forest'): 101 more node types, plus non-spec Teapot and Effect nodes.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "July 2023",
+   "event": "Version 6.0 ('web3dv4'): most of the Web3D X3D 4.0 specification working.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "Aug 2023",
+   "event": "Version 6.1: MIDI 2.0 UMP (Universal MIDI Packet) support; example scenes in tests/43_MIDI.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "Jan 2024",
+   "event": "Version 6.5: GPU-accelerated humanoid skinning, with --skin F to fall back to CPU.",
+   "source": "index.html",
+   "archive": "live"
+  },
+  {
+   "date": "20 Apr 2024",
+   "event": "Upstream 'Version 6.7' commit on SourceForge develop (b3254b11e); SourceForge project page 'Last Update: 2024-04-20'.",
+   "source": "README.md (freewrl-git)",
+   "archive": "repo"
+  },
+  {
+   "date": "Sep 2026",
+   "event": "Ascendance Open Worlds fork (maintained by Ryan Bundy) promotes its FreeWRL 6.7 line, with native Apple Silicon macOS support, to master.",
+   "source": "README.md (freewrl-git)",
+   "archive": "repo"
+  },
+  {
+   "date": "29-30 Sep 2026",
+   "event": "Full local archive of freewrl.sourceforge.io captured (4,059 live files plus 64 recovered from the Wayback Machine).",
+   "source": "ARCHIVE_REPORT.md",
+   "archive": "repo"
+  }
+ ],
+ "people": [
+  {
+   "name": "Tuomas J. Lukka",
+   "role": "Original author of FreeWRL; wrote the license intent",
+   "period": "1998",
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "John A. Stewart",
+   "role": "Managed the FreeWRL project (CRC Canada); released 0.18 onward; later FreeX3D Android developer contact",
+   "period": "circa 1999 - April 2010",
+   "source": "contact.html"
+  },
+  {
+   "name": "Remi Cohen-Scali",
+   "role": "Many node additions and fixes; EXTERNPROTO work; PixelTexture implementation",
+   "period": null,
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "Etienne Grossmann",
+   "role": "Perl scripting; serial slide code; image-sequence saving and screen dump; many additions",
+   "period": null,
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "Bob Kozdemba",
+   "role": "Non-convex polygon tessellation code",
+   "period": null,
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "Dan Ratta",
+   "role": "Polhemus help (of Polhemus)",
+   "period": null,
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "Nadav Cohen",
+   "role": "Author of the terminal-emulator program from which the serial interface code was taken",
+   "period": null,
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "John Breen",
+   "role": "New WALK viewer; NavigationInfo and viewpoint fixes",
+   "period": null,
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "Robin Williams",
+   "role": "Numerical improvements to rendering (2nd-degree equations and trig)",
+   "period": null,
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "Bernhard Reiter",
+   "role": "Extrusion genpolyrep code, general tessellation code, code cleanup",
+   "period": null,
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "Ed",
+   "role": "Documentation and install changes (credited by first name only)",
+   "period": null,
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "Marijn Ros",
+   "role": "Work on EXTERNPROTOs and comment handling",
+   "period": null,
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "James A. Soerlie",
+   "role": "genJS.pm portability fix (v0.17)",
+   "period": null,
+   "source": "README.html"
+  },
+  {
+   "name": "Eric Bohm",
+   "role": "Fix to get JavaScript working on Alpha (v0.17)",
+   "period": null,
+   "source": "README.html"
+  },
+  {
+   "name": "Herbert Rosmanith",
+   "role": "Java classpath documentation (v0.15)",
+   "period": null,
+   "source": "README.html"
+  },
+  {
+   "name": "William R. Ward",
+   "role": "Window colormap creation fix",
+   "period": null,
+   "source": "README.html"
+  },
+  {
+   "name": "catty",
+   "role": "Removed reliance on libwww (v0.23; credited by handle)",
+   "period": null,
+   "source": "README.html"
+  },
+  {
+   "name": "fba",
+   "role": "Helped resolve /tmp texture file ownership (v0.23; credited by handle)",
+   "period": null,
+   "source": "README.html"
+  },
+  {
+   "name": "Mike Fletcher",
+   "role": "Correspondent in the 1998 www-vrml thread quoted in the license intent",
+   "period": "1998",
+   "source": "intent.html"
+  },
+  {
+   "name": "Daniel Kraft",
+   "role": "Wrote the VRML parser integrated by version 1.18.10",
+   "period": "2007",
+   "source": "currentstatus.html"
+  },
+  {
+   "name": "Sarah Dumoulin",
+   "role": "Listed as document author in the metadata of 'Using the EAI C interface'",
+   "period": "2009",
+   "source": "Using_the_EAI_C_interface.html"
+  },
+  {
+   "name": "Dave Joubert",
+   "role": "Notes on EAI design; original author of the Ubuntu build notes",
+   "period": "2010",
+   "source": "FreeWRL_EAI_internal_design_and_functionality.html"
+  },
+  {
+   "name": "Doug Sanden",
+   "role": "Windows port; MSVC library bundle; FreeWRL_Launcher; text code for the navigation UI; Ubuntu 14.04 build notes",
+   "period": "2011",
+   "source": "windowsBuild.html"
+  },
+  {
+   "name": "Michel Briand",
+   "role": "Windows port; Debian packaging; URL-resolving code and notes",
+   "period": "2011",
+   "source": "windowsBuild.html"
+  },
+  {
+   "name": "Ian Stakenvicius",
+   "role": "Packages FreeWRL for Gentoo",
+   "period": null,
+   "source": "install_LinuxRelease.html"
+  },
+  {
+   "name": "Chris Willing",
+   "role": "Contributor to Ubuntu 14.04/14.10, Mint 17.1 and Debian 7.8 build notes",
+   "period": null,
+   "source": "ubuntu_src.html"
+  },
+  {
+   "name": "Roy Kyrillos",
+   "role": "Feedback on the Ubuntu build notes",
+   "period": null,
+   "source": "ubuntu_src.html"
+  },
+  {
+   "name": "Jiangxin Hu",
+   "role": "Feedback on the Ubuntu build notes",
+   "period": null,
+   "source": "ubuntu_src.html"
+  },
+  {
+   "name": "Adrian Rossiter",
+   "role": "Author of the ring-tangle IndexedFaceSet model shown in screenshots (antiprism.com)",
+   "period": null,
+   "source": "examples.html"
+  },
+  {
+   "name": "Tom Smith",
+   "role": "Wrote 'Mechanical Drawing in 3D Using Perl and VRML', with a Fedora Core 13 FreeWRL install log, copied to the site",
+   "period": null,
+   "source": "TomSmithCore13.html"
+  },
+  {
+   "name": "Larry Ewing",
+   "role": "Creator of the Linux Penguin logo on which the FreeWRL logo was based",
+   "period": null,
+   "source": "links.html"
+  },
+  {
+   "name": "Brutzman",
+   "role": "Cited (with 'Daily') as source of the SpotLight test model from X3dGraphics.com X3D for Web Authors examples",
+   "period": null,
+   "source": "FreeX3D/examples.html"
+  },
+  {
+   "name": "Daily",
+   "role": "Cited (with 'Brutzman') as source of the SpotLight test model; spelled as on the page",
+   "period": null,
+   "source": "FreeX3D/examples.html"
+  },
+  {
+   "name": "Drayde",
+   "role": "Author of the LOVE STL model (Thingiverse) used in FreeX3D FillProperties examples",
+   "period": null,
+   "source": "FreeX3D/examples.html"
+  },
+  {
+   "name": "Ryan Bundy",
+   "role": "Maintains the Ascendance Open Worlds modernization fork of FreeWRL",
+   "period": "2026",
+   "source": "README.md (freewrl-git)"
+  }
+ ],
+ "organizations": [
+  {
+   "name": "Communications Research Centre Canada (CRC)",
+   "role": "John Stewart's employer; FreeWRL 'partly produced by employees of CRC' and released as open source; hosted the early home page (www.crc.ca/FreeWRL); source headers read 'Copyright 2009 CRC Canada'",
+   "source": "links.html"
+  },
+  {
+   "name": "SourceForge",
+   "role": "Project host from Aug 2000 (registered 2000-08-01): CVS, later Git, file releases and project web",
+   "source": "news.html"
+  },
+  {
+   "name": "Web3D Consortium",
+   "role": "Maintains the VRML/X3D specifications; appears on the FreeWRL poster; FreeX3D key-fob model courtesy Web3D",
+   "source": "links.html"
+  },
+  {
+   "name": "U.S. Department of Defense (FISC San Diego)",
+   "role": "Contracted CRC Canada (N00244-08-P-1769, 27 May 2008) for high-resolution geospatial rendering additions",
+   "source": "examples.html"
+  },
+  {
+   "name": "X3D Earth",
+   "role": "Source of the '7 Layers Plus' geospatial model",
+   "source": "examples.html"
+  },
+  {
+   "name": "Apple",
+   "role": "At one time distributed FreeWRL for its desktop systems",
+   "source": "examples.html"
+  },
+  {
+   "name": "Polhemus",
+   "role": "Tracker vendor; Dan Ratta of Polhemus credited; Fastrak integration in 0.21",
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "Mozilla",
+   "role": "Mozilla JS (SpiderMonkey) bundled; some files under the Mozilla Public License",
+   "source": "CREDITS.html"
+  },
+  {
+   "name": "Propellerhead Software (Reason)",
+   "role": "Reason software used in the FreeWRL MIDI interactivity work",
+   "source": "midi.html"
+  },
+  {
+   "name": "Ottawa Linux Symposium",
+   "role": "John Stewart presented FreeWRL there in July 2000",
+   "source": "news.html"
+  },
+  {
+   "name": "SIGGRAPH 2011 (Vancouver)",
+   "role": "Venue where the FreeWRL iPhone app was demonstrated",
+   "source": "examples.html"
+  },
+  {
+   "name": "Google Play",
+   "role": "Distribution channel for the FreeX3D Android app",
+   "source": "FreeX3D/index.html"
+  },
+  {
+   "name": "Ascendance Open Worlds",
+   "role": "Runs the modernization fork of FreeWRL 6.7 (Apple Silicon macOS)",
+   "source": "README.md (freewrl-git)"
+  }
+ ],
+ "licenseHistory": [
+  {
+   "what": "1998: Tuomas Lukka's intent - GPL applies to modifications of FreeWRL modules and does not cross published APIs; proprietary extensions possible through agreed APIs.",
+   "source": "intent.html"
+  },
+  {
+   "what": "1998-2001 docs: distributed under the GNU Library General Public License, except files under the Mozilla Public License.",
+   "source": "CREDITS.html"
+  },
+  {
+   "what": "Footer on current live pages: GNU Library General Public License version 2 or any later version; 'Copyright (C) 1998, 1999...2009 Tuomas J. Lukka, John Stewart and others'.",
+   "source": "index.html"
+  },
+  {
+   "what": "FreeWRL described as 'released under the LGPL License', linking to the GNU LGPL version 3 text (page captured 2009).",
+   "source": "newnodes.html"
+  },
+  {
+   "what": "SourceForge project page lists the license as LGPLv2.",
+   "source": "index.htm"
+  },
+  {
+   "what": "Current source headers: GNU LGPL version 3 or later; most files 'Copyright 2009 CRC Canada'; bundled third-party code keeps its own licenses. The Ascendance fork uses the same license.",
+   "source": "README.md (freewrl-git)"
+  },
+  {
+   "what": "The FreeWRL logo was based on the Linux Penguin logo by Larry Ewing.",
+   "source": "links.html"
+  }
+ ],
+ "images": [
+  {
+   "path": "FreeWRL_poster.jpg",
+   "caption": "CRC poster 'FreeWRL - VRML 3D and Beyond': CNN's Space Station, music synthesizer, digital data glove, CNN's F-18 Hornet and a flying chair (text read from the image; no surviving caption).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 800,
+   "height": 520
+  },
+  {
+   "path": "2001.jpg",
+   "caption": "FreeWRL window showing a space station model (no surviving caption; described from image).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 814,
+   "height": 638
+  },
+  {
+   "path": "OSX-screen.gif",
+   "caption": "FreeWRL rendering the same space-station model on Mac OS X (no surviving caption; described from image).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 1280,
+   "height": 854
+  },
+  {
+   "path": "NCK.jpg",
+   "caption": "FreeWRL VRML/X3D browser window beside 'MARS2 CNC Testmonitor' control panels (no surviving caption; described from image).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 1279,
+   "height": 1023
+  },
+  {
+   "path": "tictactoe.gif",
+   "caption": "Tic-tac-toe board of spheres and cones rendered in FreeWRL (no surviving caption; described from image).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "path": "nav_area.jpg",
+   "caption": "Photo-textured model of a navigation equipment console (no surviving caption; described from image).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 640,
+   "height": 480
+  },
+  {
+   "path": "synth.gif",
+   "caption": "3D music-synthesizer scene of cylinders and spheres, also shown on the FreeWRL poster as 'Music Synthesizer' (described from image).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "path": "aboutPlugins.png",
+   "caption": "Firefox 'Installed plug-ins' page listing the FreeWRL X3D/VRML plugin (npfreewrl.so, 'V3.1 VRML/X3D with FreeWRL. from http://www.crc.ca/FreeWRL').",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 562,
+   "height": 609
+  },
+  {
+   "path": "Test.png",
+   "caption": "test.wrl cone loaded from freewrl.sourceforge.net inside Firefox via the FreeWRL plugin, HUD reading 'EXAMINE' (described from image).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 657,
+   "height": 490
+  },
+  {
+   "path": "freewrl_screenshot3.jpg",
+   "caption": "Early FreeWRL scene with a sphere, box, avatar figure and 3D 'Java' text (no surviving caption; described from image).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 400,
+   "height": 300
+  },
+  {
+   "path": "1ej6-vrml.png",
+   "caption": "Molecular surface model rendered in FreeWRL; filename refers to structure 1ej6 (described from image).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 216,
+   "height": 203
+  },
+  {
+   "path": "animated_blimp.gif",
+   "caption": "Animated FreeWRL scene: shapes against a gradient sky (no surviving caption; described from image).",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 300,
+   "height": 300
+  },
+  {
+   "path": "welcome.jpg",
+   "caption": "FreeWRL X3D/VRML welcome banner with the FreeWRL eye logo.",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "midi.html",
+   "archive": "wayback",
+   "width": 450,
+   "height": 183
+  },
+  {
+   "path": "images/ring_tangle.jpg",
+   "caption": "Large series of IndexedFaceSets expanded via PROTOs; model by Adrian Rossiter.",
+   "date": null,
+   "sourcePage": "examples.html",
+   "archive": "live",
+   "width": 1024,
+   "height": 780
+  },
+  {
+   "path": "images/PolandPano-Turntablef.jpg",
+   "caption": "Panoramic photo taken in Wolztyn, Poland in May 2008 (4096x823), mapped inside a Cylinder in FreeWRL.",
+   "date": "May 2008",
+   "sourcePage": "examples.html",
+   "archive": "live",
+   "width": 4096,
+   "height": 823
+  },
+  {
+   "path": "images/iPhone-running2.png",
+   "caption": "FreeWRL running on the old iPhone app (test 16); buttons Quit, Vp, Wk, Ex; demonstrated at SIGGRAPH 2011.",
+   "date": "2011",
+   "sourcePage": "examples.html",
+   "archive": "live",
+   "width": 640,
+   "height": 960
+  },
+  {
+   "path": "images/venus.jpg",
+   "caption": "Un-attributed VRML model showing sphere mapping with X3D TextureCoordinateGenerator.",
+   "date": null,
+   "sourcePage": "examples.html",
+   "archive": "live",
+   "width": 1406,
+   "height": 1002
+  },
+  {
+   "path": "FreeX3D/images/Toon-Screenshot_2013-08-11-09-39-56.png",
+   "caption": "Toon shader on the SGI teapot: colours assigned by ranges of light intensity.",
+   "date": "11 Aug 2013",
+   "sourcePage": "examples.html",
+   "archive": "live",
+   "width": 1280,
+   "height": 800
+  },
+  {
+   "path": "FreeX3D/images/Sobel_Screenshot_2013-08-10-09-41-49.png",
+   "caption": "Sobel edge-detector shader applied to the 'Lenna' test image.",
+   "date": "10 Aug 2013",
+   "sourcePage": "examples.html",
+   "archive": "live",
+   "width": 1280,
+   "height": 800
+  },
+  {
+   "path": "FreeX3D/images/VertexDeformer-Screenshot_2013-08-10-09-40-43.png",
+   "caption": "Vertex deformer: flat 20x20 IndexedFaceSet deformed on the GPU, driven by a TimeSensor.",
+   "date": "10 Aug 2013",
+   "sourcePage": "examples.html",
+   "archive": "live",
+   "width": 1280,
+   "height": 800
+  },
+  {
+   "path": "FreeX3D/images/CADExample2s.png",
+   "caption": "FreeX3D Android: Web3D Consortium key fob, ready for 3D printing at Shapeways.",
+   "date": "2013",
+   "sourcePage": "FreeX3D/index.html",
+   "archive": "live",
+   "width": 640,
+   "height": 447
+  },
+  {
+   "path": "FreeX3D/images/FP_6_2013-04-06-15-46-21.png",
+   "caption": "FreeX3D on a Nexus 7: STL model hatched with a green brick FillProperties pattern.",
+   "date": "6 Apr 2013",
+   "sourcePage": "FreeX3D/examples.html",
+   "archive": "live",
+   "width": 1280,
+   "height": 800
+  },
+  {
+   "path": "images/FragmentVertexSpotLight.png",
+   "caption": "SpotLight sweeping two black squares: per-vertex lighting (left) vs per-fragment lighting (right).",
+   "date": null,
+   "sourcePage": "examples.html",
+   "archive": "live",
+   "width": 600,
+   "height": 428
+  },
+  {
+   "path": "images/a10-a.jpg",
+   "caption": "Aircraft model rendered in FreeWRL (a10-a.wrl, VRML 1.0 translated from a 3DS model); not linked from any surviving page.",
+   "date": null,
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "live",
+   "width": 1275,
+   "height": 901
+  },
+  {
+   "path": "images/screenshot_Jan2023_2.jpg",
+   "caption": "In-app options panel, available on all platforms, for changing options mid-run.",
+   "date": "2023",
+   "sourcePage": "use.html",
+   "archive": "live",
+   "width": 1070,
+   "height": 648
+  },
+  {
+   "path": "rewire/blimpScene.jpg",
+   "caption": "blimpScene.wrl sending AudioControl values to Propellerhead Reason (MIDI/ReWire tutorial).",
+   "date": null,
+   "sourcePage": "rewire/tutorials.html",
+   "archive": "live",
+   "width": 1154,
+   "height": 746
+  },
+  {
+   "path": "crc_wordmark_en.gif",
+   "caption": "Communications Research Centre Canada wordmark.",
+   "date": "by 2007-06-27 (Wayback capture)",
+   "sourcePage": "(orphan image; no surviving referring page)",
+   "archive": "wayback",
+   "width": 230,
+   "height": 50
+  }
+ ],
+ "examples": [
+  {
+   "title": "Toon Shader teapot",
+   "model": "FreeX3D/models/teapot-Toon.wrl",
+   "screenshot": "FreeX3D/images/Toon-Screenshot_2013-08-11-09-39-56.png",
+   "description": "The old SGI teapot with a shader that assigns colours based on ranges of light intensity.",
+   "sizeBytes": 44852,
+   "encoding": "VRML97",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "Shader parts list external shaders/toon.vs|fs first with an inline data: fallback. Shader uses legacy desktop GLSL built-ins (gl_NormalMatrix, gl_Vertex, ftransform, gl_LightSource); will not compile as WebGL GLSL ES without rewriting. Geometry still loads."
+  },
+  {
+   "title": "Teapot without shaders",
+   "model": "FreeX3D/models/teapot-noShaders.wrl",
+   "screenshot": "FreeX3D/images/Toon-Screenshot_2013-08-11-09-39-56.png",
+   "description": "The same teapot model without the shader, for comparison.",
+   "sizeBytes": 43892,
+   "encoding": "VRML97",
+   "usesShaders": false,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "No textures, inlines or shaders; best candidate for a web viewer."
+  },
+  {
+   "title": "Fragment vs. vertex lighting - two cylinders",
+   "model": "FreeX3D/models/TwoCylinders.wrl",
+   "screenshot": "FreeX3D/images/PGScreenshot_2013-08-10-09-36-54.png",
+   "description": "Two cylinders rotating around each other, one with per-fragment lighting, the other lit per vertex.",
+   "sizeBytes": 5420,
+   "encoding": "VRML97",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "External phong/*.vs|fs with data: fallback. Shader uses legacy desktop GLSL built-ins (gl_NormalMatrix, gl_Vertex, ftransform, gl_LightSource); will not compile as WebGL GLSL ES without rewriting. Geometry still loads."
+  },
+  {
+   "title": "Vertex Deformer (ProgramShader)",
+   "model": "FreeX3D/models/flutter2-ProgramShader.x3d",
+   "screenshot": "FreeX3D/images/VertexDeformer-Screenshot_2013-08-10-09-40-43.png",
+   "description": "A flat 20x20 IndexedFaceSet deformed in the vertex shader; a TimeSensor feeds the shader.",
+   "sizeBytes": 145885,
+   "encoding": "X3D XML",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "Inline data: shaders. ProgramShader is rarely supported by web viewers. Shader uses legacy desktop GLSL built-ins (gl_NormalMatrix, gl_Vertex, ftransform, gl_LightSource); will not compile as WebGL GLSL ES without rewriting. Geometry still loads."
+  },
+  {
+   "title": "Vertex Deformer (ComposedShader)",
+   "model": "FreeX3D/models/flutter2-ComposedShader.x3d",
+   "screenshot": "FreeX3D/images/VertexDeformer-Screenshot_2013-08-10-09-40-43.png",
+   "description": "The same vertex deformer written as a ComposedShader.",
+   "sizeBytes": 145968,
+   "encoding": "X3D XML",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "Inline data: shaders. Shader uses legacy desktop GLSL built-ins (gl_NormalMatrix, gl_Vertex, ftransform, gl_LightSource); will not compile as WebGL GLSL ES without rewriting. Geometry still loads."
+  },
+  {
+   "title": "Sobel Edge Detector",
+   "model": "FreeX3D/models/sobel-ComposedShader.wrl",
+   "screenshot": "FreeX3D/images/Sobel_Screenshot_2013-08-10-09-41-49.png",
+   "description": "'Lenna' used as input to a Sobel operator for edge finding; the 512x512 image size is hard-coded in the shader.",
+   "sizeBytes": 3003,
+   "encoding": "VRML97",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": false,
+   "webViewerNotes": "Needs ../images/Lenna.png (archived at FreeX3D/images/Lenna.png). Shader uses FreeWRL-specific fw_* uniforms/attributes; will not compile in X_ITE/X3DOM without rewriting."
+  },
+  {
+   "title": "Fragment vs. vertex SpotLight - Better (high vertex count)",
+   "model": "images/SpotLight2.wrl",
+   "screenshot": "images/FragmentVertexSpotLight.png",
+   "description": "A SpotLight sweeps two identical black squares: vertex lighting on the left, fragment lighting on the right.",
+   "sizeBytes": 25853,
+   "encoding": "VRML97",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "External gouraud/*.vs|fs with data: fallback. Shader uses FreeWRL-specific fw_* uniforms/attributes; will not compile in X_ITE/X3DOM without rewriting."
+  },
+  {
+   "title": "Fragment vs. vertex SpotLight - Poor (16 vertices)",
+   "model": "images/SpotLight3.wrl",
+   "screenshot": "images/FragmentVertexSpotLight.png",
+   "description": "16-vertex version; vertex lighting looks poor.",
+   "sizeBytes": 15421,
+   "encoding": "VRML97",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "Shader uses FreeWRL-specific fw_* uniforms/attributes; will not compile in X_ITE/X3DOM without rewriting."
+  },
+  {
+   "title": "Fragment vs. vertex SpotLight - Abysmal (4 vertices)",
+   "model": "images/SpotLight4.wrl",
+   "screenshot": "images/FragmentVertexSpotLight.png",
+   "description": "4-vertex version; the SpotLight never hits a vertex, so vertex lighting never shows it.",
+   "sizeBytes": 15260,
+   "encoding": "VRML97",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "Shader uses FreeWRL-specific fw_* uniforms/attributes; will not compile in X_ITE/X3DOM without rewriting."
+  },
+  {
+   "title": "Terrain - original view",
+   "model": "images/normalTerrain.wrl",
+   "screenshot": "images/FishEyeTerrain.png",
+   "description": "A normal generated 3D terrain.",
+   "sizeBytes": 6313661,
+   "encoding": "VRML97",
+   "usesShaders": false,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "No shaders or textures, but 6.3 MB of geometry."
+  },
+  {
+   "title": "Terrain - GLSL fish-eye view",
+   "model": "images/fisheyeTerrain.wrl",
+   "screenshot": "images/FishEyeTerrain.png",
+   "description": "The terrain with a GLSL vertex shader giving a fish-eye view; a PositionInterpolator animates the Viewpoint.",
+   "sizeBytes": 6314690,
+   "encoding": "VRML97",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "6.3 MB. Shader uses FreeWRL-specific fw_* uniforms/attributes; will not compile in X_ITE/X3DOM without rewriting."
+  },
+  {
+   "title": "GLSL Vertex Shader (200x200 grid)",
+   "model": "images/flutter.x3d",
+   "screenshot": "images/vertexShader.jpg",
+   "description": "A 200x200 IndexedFaceSet with z=0 on all vertices, moved by a vertex shader.",
+   "sizeBytes": 2509182,
+   "encoding": "X3D XML",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "2.5 MB, inline data: shaders. Shader uses legacy desktop GLSL built-ins (gl_NormalMatrix, gl_Vertex, ftransform, gl_LightSource); will not compile as WebGL GLSL ES without rewriting. Geometry still loads."
+  },
+  {
+   "title": "Poland panorama turntable",
+   "model": "images/PolandPano-Turntable.wrl",
+   "screenshot": "images/PolandPanos.jpg",
+   "description": "Wolztyn, Poland panorama (May 2008) mapped inside a Cylinder; WALK mode with speed 0 so the viewer only turns.",
+   "sizeBytes": 288,
+   "encoding": "VRML97",
+   "usesShaders": false,
+   "archive": "live",
+   "selfContained": false,
+   "webViewerNotes": "Needs PolandPano-Turntablef.jpg (4096x823, archived beside it in images/). Tiny and web-friendly otherwise."
+  },
+  {
+   "title": "Sphere-mapped Venus",
+   "model": "images/venus.wrl",
+   "screenshot": "images/venus.jpg",
+   "description": "Un-attributed VRML model; an example of sphere mapping in the X3D TextureCoordinateGenerator node.",
+   "sizeBytes": 72217,
+   "encoding": "VRML97",
+   "usesShaders": false,
+   "archive": "live",
+   "selfContained": false,
+   "webViewerNotes": "References spheremap.jpg, which is NOT in the archive."
+  },
+  {
+   "title": "Toon sphere (Tomas Mikula example)",
+   "model": "tomasMikulaExample.x3dv",
+   "screenshot": null,
+   "description": "Unlinked X3D classic-encoding toon shader example found on the site (no page text).",
+   "sizeBytes": 2443,
+   "encoding": "X3D classic",
+   "usesShaders": true,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "Inline data: shaders. Shader uses legacy desktop GLSL built-ins (gl_NormalMatrix, gl_Vertex, ftransform, gl_LightSource); will not compile as WebGL GLSL ES without rewriting. Geometry still loads."
+  },
+  {
+   "title": "Simple cone (test.wrl)",
+   "model": "test.wrl",
+   "screenshot": "Test.png",
+   "description": "A default-material Cone, 'Copyright (C) 1998 Tuomas J. Lukka'; shown loaded in Firefox in Test.png.",
+   "sizeBytes": 329,
+   "encoding": "VRML97",
+   "usesShaders": false,
+   "archive": "wayback",
+   "selfContained": true,
+   "webViewerNotes": "Fully self-contained; loads in any viewer."
+  },
+  {
+   "title": "A-10 style aircraft (VRML 1.0)",
+   "model": "images/a10-a.wrl",
+   "screenshot": "images/a10-a.jpg",
+   "description": "Unlinked VRML 1.0 file 'Translated from TriMesh 3DS model'.",
+   "sizeBytes": 98892,
+   "encoding": "VRML 1.0",
+   "usesShaders": false,
+   "archive": "live",
+   "selfContained": true,
+   "webViewerNotes": "VRML 1.0 - X_ITE/X3DOM do not read it without conversion."
+  }
+ ],
+ "quotes": [
+  {
+   "text": "I'm not anti-commercial, just anti-freezing-my-source.",
+   "source": "intent.html"
+  },
+  {
+   "text": "From circa 1999 to April 2010, the FreeWRL project was managed by John A. Stewart.",
+   "source": "contact.html"
+  },
+  {
+   "text": "With royalty free open standards, your models will continue to render, year after year.",
+   "source": "index.html"
+  },
+  {
+   "text": "FreeWRL has had a long track record, is here to stay.",
+   "source": "index.html"
+  },
+  {
+   "text": "Development is now handled on SourceForge.net; http://freewrl.sourceforge.net. Web pages will stay with CRC.",
+   "source": "news.html"
+  },
+  {
+   "text": "Just got married. But working again on FreeWRL...",
+   "source": "news.html"
+  },
+  {
+   "text": "V0.11 - Onset of promiscuity -- we can plugin to netscape!!!",
+   "source": "README.html"
+  },
+  {
+   "text": "V0.01 \"some things work\"",
+   "source": "README.html"
+  },
+  {
+   "text": "get mentioned in the CREDITS file, the coolest place on the web ;)",
+   "source": "README.html"
+  },
+  {
+   "text": "It is based on the FreeWRL rendering engine, of which one estimate pegs at over a million downloads.",
+   "source": "FreeX3D/index.html"
+  },
+  {
+   "text": "We noticed that musicians were able to use computers with ease.",
+   "source": "midi.html"
+  },
+  {
+   "text": "This model was significant as it showed (circa 2007) that real-time navigation through a virtualized landscape was possible.",
+   "source": "examples.html"
+  },
+  {
+   "text": "FreeWRL is partly produced by employees of CRC, and is released as Open Source to the world community.",
+   "source": "links.html"
+  }
+ ],
+ "_notes": {
+  "archiveRoot": "archive-freewrl-site/browse/freewrl.sourceforge.io/",
+  "archiveField": "live = raw/ capture 2026-09-29/30; wayback = recovered from Wayback Machine; repo = outside the site archive (freewrl-git README / git log / ARCHIVE_REPORT.md)",
+  "gitHistory": "Upstream commit authors by SourceForge username (freewrl-git git log): crc_canada dominant 2000-2012; rcoscali 2000; ayla 2001-2003; sdumoulin 2003-2010; couannette 2008-2011; dug9 2009-2024 and dominant from 2013; istakenv 2009-2012; davejoubert 2010. Usernames are not mapped to people by the archive sources.",
+  "sourceforgeMaintainers": "SourceForge project page lists couannette, crc_canada, cwilling, dug9 and 5 others (index.htm).",
+  "wwwFlags": "Wayback-sourced pages CREDITS/news/README/GOALS/intent are 2001 captures of freewrl.sourceforge.net."
+ }
+}

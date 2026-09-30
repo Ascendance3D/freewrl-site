@@ -1,0 +1,95 @@
+/* freewrl.org — design system.
+   Interactive technical editorial + digital museum + Web3D workshop.
+   Tailwind is used for its reset (preflight) only; the look is here. */
+@import "tailwindcss/preflight.css" layer(base);
+@import "@fontsource-variable/archivo/wdth.css";
+@import "@fontsource-variable/source-serif-4/opsz.css";
+@import "@fontsource-variable/source-serif-4/opsz-italic.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "./components.css";
+
+:root {
+  /* colour: paper + ink, with poster cobalt and gold. Cyan marks live 3D. */
+  --paper: #f3f1ec;
+  --paper-2: #e8e5dd;
+  --ink: #111216;
+  --ink-2: #3b3d45;
+  --ink-3: #5d6069;
+  --rule: #111216;
+  --rule-soft: rgb(17 18 22 / 0.16);
+  --cobalt: #1a2e8c;
+  --cobalt-deep: #0e1a5c;
+  --night: #070b24;
+  --gold: #f2c230;
+  --cyan: #2ec4ff;
+  --link: #1a2e8c;
+  --mark: #f2c230;
+  --on-dark: #eef0f7;
+  --on-dark-2: #aab3d6;
+
+  --display: "Archivo Variable", "Archivo", system-ui, sans-serif;
+  --serif: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --frame: min(1480px, 100% - 2 * var(--gutter));
+  --gutter: clamp(16px, 3.2vw, 44px);
+  --space: clamp(56px, 8vw, 120px);
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0b0c10;
+    --paper-2: #16181f;
+    --ink: #ecebe6;
+    --ink-2: #c4c3be;
+    --ink-3: #9a9ba3;
+    --rule: #ecebe6;
+    --rule-soft: rgb(236 235 230 / 0.18);
+    --link: #9fb0ff;
+    --mark: #6b5a17;
+  }
+}
+
+html { background: var(--paper); color: var(--ink); -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--serif);
+  font-size: clamp(1.02rem, 0.96rem + 0.25vw, 1.15rem);
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+}
+main:focus { outline: none; }
+a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
+code, kbd, pre, .mono { font-family: var(--mono); }
+code { font-size: 0.88em; }
+kbd {
+  display: inline-block; min-width: 1.8em; padding: 0.05em 0.4em; text-align: center;
+  border: 1px solid var(--rule); border-bottom-width: 2px; font-size: 0.82em; line-height: 1.5;
+}
+.mono { font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.5; }
+.muted { color: var(--ink-3); }
+.frame { width: var(--frame); margin-inline: auto; }
+.display {
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: -0.012em;
+}
+.caption { font-style: italic; color: var(--ink-2); font-size: 0.95rem; line-height: 1.5; }
+.prose { max-width: 66ch; }
+.prose p + p { margin-top: 1em; }
+.lede { font-size: 1.3em; line-height: 1.4; }
+
+.skip { position: absolute; left: -9999px; top: 0; }
+.skip:focus { left: var(--gutter); top: 8px; z-index: 50; background: var(--gold); color: #111; padding: 8px 14px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

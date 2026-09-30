@@ -1,0 +1,2572 @@
+{
+  "source": {
+    "page": "conformance.html",
+    "origin": "https://freewrl.sourceforge.io/conformance.html",
+    "captured": "2026-09-30",
+    "spec": "ISO/IEC 19775-1:2022 V4.0 Compatibility",
+    "notes": "Page states no legend; header columns are Node and Status only. Section heading may carry caveats (e.g. component 16 heading) - kept in component names."
+  },
+  "legend": [
+    {
+      "value": "Complete",
+      "meaning": null
+    },
+    {
+      "value": "v3.3 Complete, v4 Deprecated",
+      "meaning": null
+    },
+    {
+      "value": "NOT IMPLEMENTED",
+      "meaning": null
+    },
+    {
+      "value": "Extra",
+      "meaning": null
+    },
+    {
+      "value": "Complete*",
+      "meaning": null
+    },
+    {
+      "value": "Extra*",
+      "meaning": null
+    },
+    {
+      "value": "Not Implemented",
+      "meaning": null
+    },
+    {
+      "value": "CNOT IMPLEMENTED",
+      "meaning": null
+    }
+  ],
+  "components": [
+    {
+      "name": "7. Core Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "MetadataDouble",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MetadataFloat",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MetadataInteger",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MetadataSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MetadataString",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "head",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PROFILE",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "COMPONENT",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "META",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ROUTE",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PROTO",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EXTERNPROTO",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "UNIT",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "8. Time Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "TimeSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "9. Networking Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Anchor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Inline",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "LoadSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "URLs",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Relative URLs",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Scripting Language Protocols",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser options",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "IMPORT",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EXPORT",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "10. Grouping Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Group",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "StaticGroup",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Switch",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Transform",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "11. Rendering Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Color",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ColorRGBA",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Coordinate",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "IndexedLineSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "IndexedTriangleFanSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "IndexedTriangleSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "IndexedTriangleStripSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "LineSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Normal",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PointSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TriangleFanSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TriangleSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TriangleStripSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ClipPlane",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "12. Shape Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Appearance",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "FillProperties",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "LineProperties",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PointProperties",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Material",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "UnlitMaterial",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PhysicalMaterial",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Shape",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TwoSidedMaterial",
+          "status": "v3.3 Complete, v4 Deprecated",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PhysicalMaterial",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "UnlitMaterial",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "AccousticProperties",
+          "status": "NOT IMPLEMENTED",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "13. Geometry3D Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Box",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Cone",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Cylinder",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ElevationGrid",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Extrusion",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "IndexedFaceSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Sphere",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Teapot",
+          "status": "Extra",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Pyramid",
+          "status": "Extra",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "14. Geometry2D Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Arc2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ArcClose2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Circle2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Disk2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Polyline2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Polypoint2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Rectangle2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TriangleSet2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "15. Text Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "FontStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Text",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "16. Sound Component *does not comply with v4 specs as written",
+      "level": null,
+      "nodes": [
+        {
+          "node": "AudioClip",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Sound",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SpatialSound",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "Analyser",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "AudioDestination",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "BiquadFilter",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "BufferAudioSource",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "ChannelMerger",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "ChannelSelector",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "ChannelSplitter",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "Convolver",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "Delay",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "DynamicsCompressor",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "Gain",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MicrophoneSource",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true,
+          "source_html_defect": "upstream markup has '/td>' instead of '</td>' after the node name; repaired for parsing"
+        },
+        {
+          "node": "OscillatorSource",
+          "status": "Complete*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        },
+        {
+          "node": "PeriodicWave",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "StreamAudioDestination",
+          "status": "NOT IMPLEMENTED",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "StreamAudioSource",
+          "status": "NOT IMPLEMENTED",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ListenerPointSource",
+          "status": "NOT IMPLEMENTED",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ListenerPoint",
+          "status": "Extra*",
+          "notes": null,
+          "status_bold": true,
+          "footnote_marker": "*"
+        }
+      ]
+    },
+    {
+      "name": "17. Lighting Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "DirectionalLight",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EnvironmentLight",
+          "status": "NOT IMPLEMENTED",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PointLight",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SpotLight",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "18. Texturing Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "ImageTexture",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MovieTexture",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MultiTexture",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MultiTextureCoordinate",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MultiTextureTransform",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PixelTexture",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TextureCoordinate",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TextureCoordinateGenerator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TextureTransform",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TextureProperties",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "19. Interpolation Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "ColorInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CoordinateInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CoordinateInterpolator2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NormalInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "OrientationInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PositionInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PositionInterpolator2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ScalarInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EaseInEaseOut",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SplinePositionInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SplinePositionInterpolator2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SplineScalarInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SquadOrientationInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "20. Pointing Device Sensor Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "CylinderSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": false
+        },
+        {
+          "node": "PlaneSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SphereSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TouchSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "LineSensor (extra)",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MultitouchSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PointSensor (extra)",
+          "status": "Extra",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "21. Key Device Sensor Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "KeySensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "StringSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "22. Environmental Sensor Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "ProximitySensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "VisibilitySensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TransformSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "23. Navigation Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Billboard",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Collision",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "LOD",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NavigationInfo",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Viewpoint",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "OrthoViewpoint",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ViewpointGroup",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "24. Environmental Effects Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Background",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Fog",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TextureBackground",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "LocalFog",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "FogCoordinate",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "25. Geospatial Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "GeoCoordinate",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeoElevationGrid",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeoLocation",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeoLOD",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeoMetadata",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeoOrigin",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeoPositionInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeoTouchSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeoViewpoint",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeoProximitySensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeoTransform",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "26. Humanoid Animation (HAnim) Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "HAnimDisplacer",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "HAnimHumanoid",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "HAnimJoint",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "HAnimSegment",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "HAnimSite",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "HAnimMotion",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "HAnimMotionPlay",
+          "status": "Extra",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "HAnimMotionClip",
+          "status": "Extra",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "27. NURBS Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Contour2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ContourPolyline2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsCurve",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsCurve2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsOrientationInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsPatchSurface",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsPositionInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsSurfaceInterpolator",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsSweptSurface",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsSwungSurface",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsTextureCoordinate",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "NurbsTrimmedSurface",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "28. Distributed Interactive Simulation (DIS) Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "EspduTransform",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ReceiverPdu",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SignalPdu",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TransmitterPdu",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "DISEntityManager",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "DISEntityTypeMapping",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "29. Scripting Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Script",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "30. Event Utilities Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "BooleanFilter",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "BooleanSequencer",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "BooleanToggle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "BooleanTrigger",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "IntegerSequencer",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "IntegerTrigger",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TimeTrigger",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "31. Programmable Shaders Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "ComposedShader",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "FloatVertexAttributes",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Matrix3VertexAttributes",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Matrix4VertexAttributes",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PackagedShader",
+          "status": "Not Implemented",
+          "notes": null,
+          "status_bold": false
+        },
+        {
+          "node": "ProgramShader",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ShaderPart",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ShaderProgram",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "32. CAD Geometry Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "CADAssembly",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CADFace",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CADLayer",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CADPart",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "IndexedQuadSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Quadset",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "33. Texturing3D Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "ComposedTexture3D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ImageTexture3D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PixelTexture3D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TextureCoordinate3D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TextureCoordinate4D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TextureTransformMatrix3D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TextureTransform3D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "34. Cube Map Environmental Texturing Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "ComposedCubeMapTexture",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "GeneratedCubeMapTexture",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ImageCubeMapTexture",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "35. Layering Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Layer",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "LayerSet",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Viewport",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "36. Layout Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "Layout",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "LayoutGroup",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "LayoutLayer",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ScreenFontStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ScreenGroup",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "37. Rigid Body Physics Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "BallJoint",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CollidableOffset",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Collidable Shape",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CollisionCollection",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CollisionSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CollisionSpace",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Contact",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "DoubleAxisHingeJoint",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MotorJoint",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "RigidBody",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "RigidBodyCollection",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SingleAxisHingeJoint",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SliderJoint",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "UniversalJoint",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "38. Picking Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "LinePickSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PickableGroup",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PickPointSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PrimitivePockSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "VolumePickSensor",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "39. Followers Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "ColorChaser",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ColorDamper",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CoordinateChaser",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CoordinateDamper",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "OrientationChaser",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "OrientationDamper",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PositionChaser",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PositionChaser2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PositionDamper",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PositionDamper2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ScalarChaser",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ScalarDamper",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TexCoordChaser2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TexCoordDamper2D",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "40. Particle Systems Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "BoundedPhysicsModel",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ConeEmitter",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ExplosionEmitter",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ForcePhysicsModel",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ParticleSystem",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PointEmitter",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "PolylineEmitter",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SurfaceEmitter",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "VolumeEmitter",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "WindPhysicsModel",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "41. Volume Rendering Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "OpacityMapVolumeStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "VolumeData",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "BoundaryEnhancementVolumeStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ComposedVolumeStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EdgeEnhancementVolumeStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "IsoSurfaceVolumeData",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ProjectionVolumeStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SegmentedVolumeData",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "SilhouetteEnhancementVolumeStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ToneMappedVolumeStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "BlendedVolumeStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "CartoonVolumeStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "ShadedVolumeStyle",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "42. Texture Projection Component",
+      "level": null,
+      "nodes": [
+        {
+          "node": "TextureProjector",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "TextureProjectorParallel",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "43. MIDI Component - Extra",
+      "level": null,
+      "nodes": [
+        {
+          "node": "MIDIPortSource",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIFileSource",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIPortDestination",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIPrintDestination",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIFileDestination",
+          "status": "NOT IMPLEMENTED",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIOut",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIn",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIToneSplitter",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIToneMerger",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIConverterIn",
+          "status": "NOT IMPLEMENTED",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIConverterOut",
+          "status": "NOT IMPLEMENTED",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "MIDIAudioSynth",
+          "status": "CNOT IMPLEMENTED",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    },
+    {
+      "name": "Augmented Reality Component (Proposed)",
+      "level": null,
+      "nodes": [
+        {
+          "node": "CalibratedCameraSensor",
+          "status": "Not Implemented",
+          "notes": null,
+          "status_bold": false
+        },
+        {
+          "node": "TrackingSensor",
+          "status": "Not Implemented",
+          "notes": null,
+          "status_bold": false
+        },
+        {
+          "node": "BackdropBackground",
+          "status": "Not Implemented",
+          "notes": null,
+          "status_bold": false
+        },
+        {
+          "node": "ImageBackdropBackground",
+          "status": "Not Implemented",
+          "notes": null,
+          "status_bold": false
+        },
+        {
+          "node": "Viewpoint Extensions",
+          "status": "Not Implemented",
+          "notes": null,
+          "status_bold": false
+        }
+      ]
+    },
+    {
+      "name": "EAI (External Authoring Interface) Spec",
+      "level": null,
+      "nodes": [
+        {
+          "node": "IBrowser.java",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.getName()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.getVersion()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.getCurrentSpeed()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.getCurrentFrameRate()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.getWorldURL()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.replaceWorld()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.loadURL()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.setDescription()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.createVrmlFromString()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.createVrmlFromURL()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.getNode()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.addRoute()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.deleteRoute()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.beginUpdate()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.endUpdate()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.initialize()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Browser.shutdown()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Node.getType()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Node.getEventIn()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "Node.getEventOut()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFColor.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFColor.set1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFFloat.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFFloat.set1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFInt32.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFInt32.set1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFNode.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFNode.set1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFRotation.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFRotation.set1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFString.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFString.set1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFVec2f.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFVec2f.set1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFVec3f.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInMFVec3f.set1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFBool.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFColor.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFFloat.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFImage.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFInt32.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFNode.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFRotation.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFString.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFTime.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFVec2f.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventInSFVec3f.setValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOut.getType()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOut.advise()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOut.unadvise()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutObserver.callback()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMField.getSize()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFColor.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFColor.get1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFFloat.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFFloat.get1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFInt32.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFInt32.get1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFNode.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFNode.get1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFRotation.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFRotation.get1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFString.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFString.get1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFVec2f.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFVec2f.get1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFVec3f.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutMFVec3f.get1Value()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFBool.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFColor.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFFloat.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFSFImage.getWidth()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFSFImage.getHeight()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFSFImage.getNumComponents()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFSFImage.getPixels()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFInt32.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFNode.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFRotation.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFString.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFTime.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFVec2f.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        },
+        {
+          "node": "EventOutSFVec3f.getValue()",
+          "status": "Complete",
+          "notes": null,
+          "status_bold": true
+        }
+      ]
+    }
+  ]
+}

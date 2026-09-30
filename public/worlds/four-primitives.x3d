@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Interchange' version='4.0'>
+  <head>
+    <meta name='title' content='four-primitives.x3d'/>
+    <meta name='description' content='The four geometry primitives every VRML97 and X3D browser knows: Box, Sphere, Cone, Cylinder.'/>
+    <meta name='creator' content='freewrl.org'/>
+  </head>
+  <Scene>
+    <NavigationInfo type='"EXAMINE" "ANY"'/>
+    <Background skyColor='0.95 0.94 0.92'/>
+    <Viewpoint description='Front' position='0 1.2 9' orientation='1 0 0 -0.12'/>
+    <DirectionalLight direction='-0.5 -0.8 -0.6' intensity='0.7'/>
+
+    <!-- Box -->
+    <Transform translation='-3.3 0 0'>
+      <Shape>
+        <Appearance><Material diffuseColor='0.1 0.18 0.55'/></Appearance>
+        <Box size='1.6 1.6 1.6'/>
+      </Shape>
+    </Transform>
+
+    <!-- Sphere -->
+    <Transform translation='-1.1 0 0'>
+      <Shape>
+        <Appearance><Material diffuseColor='0.95 0.76 0.19' specularColor='1 1 1' shininess='0.6'/></Appearance>
+        <Sphere radius='0.9'/>
+      </Shape>
+    </Transform>
+
+    <!-- Cone -->
+    <Transform translation='1.1 0 0'>
+      <Shape>
+        <Appearance><Material diffuseColor='0.12 0.62 1'/></Appearance>
+        <Cone bottomRadius='0.9' height='1.8'/>
+      </Shape>
+    </Transform>
+
+    <!-- Cylinder -->
+    <Transform translation='3.3 0 0'>
+      <Shape>
+        <Appearance><Material diffuseColor='0.1 0.1 0.12'/></Appearance>
+        <Cylinder radius='0.75' height='1.8'/>
+      </Shape>
+    </Transform>
+
+    <!-- floor -->
+    <Transform translation='0 -0.92 0'>
+      <Shape>
+        <Appearance><Material diffuseColor='0.8 0.79 0.76'/></Appearance>
+        <Box size='10 0.04 3.2'/>
+      </Shape>
+    </Transform>
+  </Scene>
+</X3D>

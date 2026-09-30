@@ -1,0 +1,544 @@
+{
+ "navModes": [
+  {
+   "name": "EXAMINE",
+   "key": "e",
+   "description": "Turn the whole model around its center, like a trackball. This is the default when the scene has no NavigationInfo.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6473; default freex3d/src/lib/scenegraph/Viewer.c:195; drag freex3d/src/lib/scenegraph/Viewer.c:917"
+  },
+  {
+   "name": "WALK",
+   "key": "w",
+   "description": "Move over the ground. Drag up or down to walk forward or back, left or right to turn.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6474; freex3d/src/lib/scenegraph/Viewer.c:851"
+  },
+  {
+   "name": "FLY",
+   "key": "d",
+   "description": "Move freely in 3D with the mouse or keyboard. The drag style (YAWZ, XY, YAWPITCH, ROLL) is picked from the HUD fly button.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6475; freex3d/src/lib/scenegraph/Viewer.c:1842,2666"
+  },
+  {
+   "name": "EXFLY",
+   "key": "f",
+   "description": "Fly driven by an external device: FreeWRL reads position and orientation from the file /tmp/inpdev (C:/tmp/inpdev.txt on Windows). If the file is missing it falls back to EXAMINE.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6476; freex3d/src/lib/scenegraph/Viewer.c:2431; freex3d/src/lib/scenegraph/Viewer.h:63-65"
+  },
+  {
+   "name": "SPHERICAL",
+   "key": "y",
+   "description": "Stand still and look around, as in a panorama. Press y again to switch the drag to zooming the field of view.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6477; freex3d/src/lib/scenegraph/Viewer.c:429,1182"
+  },
+  {
+   "name": "TURNTABLE",
+   "key": "t",
+   "description": "Orbit the model like a record on a turntable: no roll, so the up direction stays up.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6478; freex3d/src/lib/scenegraph/Viewer.c:1065"
+  },
+  {
+   "name": "EXPLORE",
+   "key": "g",
+   "description": "Orbit around a point you choose. Hold Ctrl and click (or press g again) to pick a new center point.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6480; freex3d/src/lib/scenegraph/Viewer.c:444,1651"
+  },
+  {
+   "name": "LOOKAT",
+   "key": "m",
+   "description": "Click an object and the viewer moves to look at it, then returns to the previous mode. Press m again to cancel.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6479; freex3d/src/lib/scenegraph/Viewer.c:460,1610"
+  },
+  {
+   "name": "DIST",
+   "key": null,
+   "description": "Drag up or down to move closer to or farther from the model's center, without rotating. Set from the HUD or NavigationInfo; there is no hotkey.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1008; freex3d/src/lib/x3d_parser/Bindable.c:280-283; freex3d/src/lib/ui/statusbarHud.c:2542-2543"
+  },
+  {
+   "name": "PAN",
+   "key": null,
+   "description": "Drag the terrain under the cursor, scroll the wheel to zoom, and drag with the middle button to turn. Set from the HUD or NavigationInfo; there is no hotkey.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1375; freex3d/src/lib/x3d_parser/Bindable.c:284-287; freex3d/src/lib/ui/statusbarHud.c:2540-2541"
+  },
+  {
+   "name": "NONE",
+   "key": null,
+   "description": "No user navigation. Only the scene itself can move the viewer. Set only by NavigationInfo.",
+   "verified": true,
+   "evidence": "freex3d/src/lib/x3d_parser/Bindable.c:256-259; freex3d/src/lib/scenegraph/Viewer.c:1832"
+  }
+ ],
+ "keys": [
+  {
+   "key": "e",
+   "action": "EXAMINE mode",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6473",
+   "oldDocSays": "Switch to the Examine navigation mode"
+  },
+  {
+   "key": "w",
+   "action": "WALK mode",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6474",
+   "oldDocSays": "Switch to the Walk navigation mode"
+  },
+  {
+   "key": "d",
+   "action": "FLY mode (mouse and keyboard)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6475",
+   "oldDocSays": "Switch to the Fly (Keyboard input) navigation mode"
+  },
+  {
+   "key": "f",
+   "action": "EXFLY mode (external device input)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6476",
+   "oldDocSays": "Switch to the Fly (External Sensor input) navigation mode"
+  },
+  {
+   "key": "y",
+   "action": "SPHERICAL mode; press again to toggle field-of-view zoom",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6477; freex3d/src/lib/scenegraph/Viewer.c:429-443",
+   "oldDocSays": null
+  },
+  {
+   "key": "t",
+   "action": "TURNTABLE mode",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6478",
+   "oldDocSays": null
+  },
+  {
+   "key": "g",
+   "action": "EXPLORE mode; press again to toggle pick-a-center",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6480; freex3d/src/lib/scenegraph/Viewer.c:444-459",
+   "oldDocSays": null
+  },
+  {
+   "key": "m",
+   "action": "LOOKAT mode (toggle)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6479; freex3d/src/lib/scenegraph/Viewer.c:460-472",
+   "oldDocSays": null
+  },
+  {
+   "key": "v",
+   "action": "Next viewpoint",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6499",
+   "oldDocSays": "Go to the next viewpoint (v or PGDN)"
+  },
+  {
+   "key": "b",
+   "action": "Previous viewpoint",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6500",
+   "oldDocSays": "Go to the previous viewpoint (b or PGUP)"
+  },
+  {
+   "key": "Page Down",
+   "action": "Next viewpoint",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6533",
+   "oldDocSays": "Go to the next viewpoint (v or PGDN)"
+  },
+  {
+   "key": "Page Up",
+   "action": "Previous viewpoint",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6532",
+   "oldDocSays": "Go to the previous viewpoint (b or PGUP)"
+  },
+  {
+   "key": "Home",
+   "action": "First viewpoint",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6530",
+   "oldDocSays": "Go to the first viewpoint"
+  },
+  {
+   "key": "End",
+   "action": "Last viewpoint",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6531",
+   "oldDocSays": "Go to the last viewpoint"
+  },
+  {
+   "key": "/",
+   "action": "Print the current viewpoint position and orientation to the console",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6483",
+   "oldDocSays": "Print position and orientation of the current viewpoint"
+  },
+  {
+   "key": "h",
+   "action": "Toggle the headlight",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6481",
+   "oldDocSays": "Toggle the headlight (h, or NumLock on the Linux keypad)"
+  },
+  {
+   "key": "NumLock",
+   "action": "Toggle the headlight (old Linux keypad shortcut)",
+   "verified": false,
+   "evidence": "freex3d/src/lib/ui/fwCommonX11.c:661 (mapping is commented out)",
+   "oldDocSays": "'h' (or, NumLock on linux keypad) toggles the headlight"
+  },
+  {
+   "key": "c",
+   "action": "Toggle collision detection",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6498",
+   "oldDocSays": "Toggle collision detection on or off"
+  },
+  {
+   "key": "`",
+   "action": "Toggle logging console output to a file (freewrl_tmp/logfile.log)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6490; freex3d/src/lib/main/MainLoop.c:6327-6361",
+   "oldDocSays": "Toggle logging on or off"
+  },
+  {
+   "key": "Esc",
+   "action": "Toggle whether keys go to the scene's KeySensor/StringSensor or to FreeWRL",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6423-6430",
+   "oldDocSays": "Toggle KeySensor / StringSensor sensitivity"
+  },
+  {
+   "key": "q",
+   "action": "Quit (ignored when running as a browser plugin)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6493",
+   "oldDocSays": "Quit the browser"
+  },
+  {
+   "key": "x",
+   "action": "Save a screenshot (Linux/Windows builds; the macOS and Android frontends handle snapshots themselves)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6505-6506; OSX_gui/FreeWRL-Desktop/FreeWRL/config.h:8",
+   "oldDocSays": null
+  },
+  {
+   "key": "n",
+   "action": "Clear the world (unload the current scene)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6472",
+   "oldDocSays": null
+  },
+  {
+   "key": "Space",
+   "action": "Open a ':' command prompt in the console; type key,value and press Enter (e.g. keychord,yawz)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6502; freex3d/src/lib/main/MainLoop.c:6433-6463",
+   "oldDocSays": null
+  },
+  {
+   "key": "H",
+   "action": "Toggle the frame-rate histogram",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6482",
+   "oldDocSays": null
+  },
+  {
+   "key": ".",
+   "action": "Print profiling timers to the console",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6501",
+   "oldDocSays": null
+  },
+  {
+   "key": "Arrow keys",
+   "action": "Fly with the current arrow-key style. Default at startup is XY: left/right slides, up/down rises and sinks",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:136; freex3d/src/lib/scenegraph/Viewer.c:1960-1965; freex3d/src/lib/scenegraph/Viewer.c:2025-2037",
+   "oldDocSays": "4 arrow-key fly modes YAWZ, XY, YAWPITCH, ROLL"
+  },
+  {
+   "key": "Shift+Left/Right arrow",
+   "action": "Cycle the arrow-key style: YAWZ, YAWPITCH, ROLL, XY",
+   "verified": true,
+   "evidence": "freex3d/src/lib/main/MainLoop.c:6541-6549; freex3d/src/lib/scenegraph/Viewer.c:1971-1978",
+   "oldDocSays": "change arrow fly mode with SHIFT-Arrow-Left/Right"
+  },
+  {
+   "key": "a / z",
+   "action": "Move forward / back (also keypad 0 / keypad .)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1943-1944; freex3d/src/lib/scenegraph/Viewer.c:1896",
+   "oldDocSays": "z translate forward/backward 'a'/'z'"
+  },
+  {
+   "key": "j / l",
+   "action": "Slide left / right",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1939-1940",
+   "oldDocSays": "x translate left/right '7'/'9'"
+  },
+  {
+   "key": "p / ;",
+   "action": "Move up / down",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1941-1942",
+   "oldDocSays": "y translate up/down 'p'/';'"
+  },
+  {
+   "key": "u / o",
+   "action": "Turn (yaw) left / right (also keypad 4 / 6)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1947-1948; freex3d/src/lib/scenegraph/Viewer.c:1896",
+   "oldDocSays": "yaw rotation left/right 'u'/'o'"
+  },
+  {
+   "key": "k / 8",
+   "action": "Tilt (pitch) up / down (also keypad 2 / 8)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1945-1946; freex3d/src/lib/scenegraph/Viewer.c:1896",
+   "oldDocSays": "pitch rotation down/up '8'/'k'"
+  },
+  {
+   "key": "7 / 9",
+   "action": "Roll counterclockwise / clockwise (also keypad 7 / 9)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1949-1950; freex3d/src/lib/scenegraph/Viewer.c:1896",
+   "oldDocSays": "roll rotation about the Z axis '7'/'9'"
+  }
+ ],
+ "mouse": [
+  {
+   "input": "left drag",
+   "mode": "EXAMINE",
+   "action": "Rotate the model freely, like a trackball",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:917-990 (xy2qua trackball at 940,964)"
+  },
+  {
+   "input": "right drag",
+   "mode": "EXAMINE",
+   "action": "Nothing now; zoom moved to DIST mode",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:951,979 (commented out, moved to handle_dist); freex3d/src/lib/scenegraph/Viewer.c:1008"
+  },
+  {
+   "input": "left drag up/down",
+   "mode": "WALK",
+   "action": "Walk forward / back; small drags are slow, big drags are fast",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:883"
+  },
+  {
+   "input": "left drag left/right",
+   "mode": "WALK",
+   "action": "Turn left / right",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:884"
+  },
+  {
+   "input": "right drag",
+   "mode": "WALK",
+   "action": "Slide sideways and up/down",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:887-890"
+  },
+  {
+   "input": "left drag",
+   "mode": "FLY",
+   "action": "Depends on the HUD drag style. Default YAWZ: up/down moves forward/back, left/right turns. XY slides, YAWPITCH turns and tilts, ROLL rolls",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1253-1273; freex3d/src/lib/scenegraph/Viewer.c:2666-2681; freex3d/src/lib/scenegraph/Viewer.c:137"
+  },
+  {
+   "input": "left drag up/down",
+   "mode": "DIST",
+   "action": "Move toward / away from the center point",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1037"
+  },
+  {
+   "input": "left drag",
+   "mode": "TURNTABLE",
+   "action": "Orbit around the center: left/right spins, up/down tilts",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1140-1144"
+  },
+  {
+   "input": "right drag up/down",
+   "mode": "TURNTABLE",
+   "action": "Move in / out",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1148-1149"
+  },
+  {
+   "input": "left drag",
+   "mode": "SPHERICAL",
+   "action": "Look around from a fixed spot",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1201-1228"
+  },
+  {
+   "input": "right drag up/down, or Ctrl+left drag",
+   "mode": "SPHERICAL",
+   "action": "Zoom the field of view in / out",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1193; freex3d/src/lib/scenegraph/Viewer.c:1229-1234"
+  },
+  {
+   "input": "Ctrl+click",
+   "mode": "EXPLORE",
+   "action": "Pick a new center point to orbit",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1663-1666"
+  },
+  {
+   "input": "left drag",
+   "mode": "EXPLORE",
+   "action": "Orbit around the picked point (looks around like SPHERICAL until a point is picked)",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1668-1673"
+  },
+  {
+   "input": "click",
+   "mode": "LOOKAT",
+   "action": "Move to look at the clicked object, then return to the previous mode",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1610-1632"
+  },
+  {
+   "input": "left drag",
+   "mode": "PAN",
+   "action": "Drag the ground under the cursor",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1441-1463"
+  },
+  {
+   "input": "scroll wheel",
+   "mode": "PAN",
+   "action": "Zoom in / out toward the cursor. The wheel does nothing in other modes",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1465-1477"
+  },
+  {
+   "input": "middle drag",
+   "mode": "PAN",
+   "action": "Turn around the point under the cursor",
+   "verified": true,
+   "evidence": "freex3d/src/lib/scenegraph/Viewer.c:1379; freex3d/src/lib/scenegraph/Viewer.c:1480"
+  }
+ ],
+ "cli": [
+  {
+   "flag": "-h, --help",
+   "action": "Print all options",
+   "evidence": "freex3d/src/bin/options.c:295-298"
+  },
+  {
+   "flag": "-v, --version",
+   "action": "Print program and library version",
+   "evidence": "freex3d/src/bin/options.c:300-303"
+  },
+  {
+   "flag": "-c, --fullscreen",
+   "action": "Start full screen (on X11 only if built with the xf86vmode extension)",
+   "evidence": "freex3d/src/bin/options.c:307-328"
+  },
+  {
+   "flag": "-g, --geometry WxH[+X+Y]",
+   "action": "Set window size and position, e.g. 1024x768+100+50",
+   "evidence": "freex3d/src/bin/options.c:330-343"
+  },
+  {
+   "flag": "-b, --big",
+   "action": "Start with an 800x600 window",
+   "evidence": "freex3d/src/bin/options.c:345"
+  },
+  {
+   "flag": "--FPS N",
+   "action": "Cap the frame rate at N frames per second",
+   "evidence": "freex3d/src/bin/options.c:515"
+  },
+  {
+   "flag": "--want TF",
+   "action": "Show the status bar (T/F) and menu bar (T/F)",
+   "evidence": "freex3d/src/bin/options.c:506"
+  },
+  {
+   "flag": "--pin TF",
+   "action": "Pin the status bar (T/F) and menu bar (T/F) so they stay visible",
+   "evidence": "freex3d/src/bin/options.c:503"
+  },
+  {
+   "flag": "-K, --keypress STRING",
+   "action": "Send these keypresses once the scene is ready (e.g. 'w' to start in WALK)",
+   "evidence": "freex3d/src/bin/options.c:491"
+  },
+  {
+   "flag": "-L, --logfile FILE",
+   "action": "Send all console messages to FILE ('-' keeps stdout)",
+   "evidence": "freex3d/src/bin/options.c:539; freex3d/src/lib/main/MainLoop.c:6363-6372"
+  },
+  {
+   "flag": "--anaglyph LR",
+   "action": "Red/cyan-style stereo; L and R are each one of R,G,B,C,A,M (e.g. RC, RB)",
+   "evidence": "freex3d/src/bin/options.c:423; freex3d/src/bin/options.c:87"
+  },
+  {
+   "flag": "--sidebyside",
+   "action": "Side-by-side stereo in one window",
+   "evidence": "freex3d/src/bin/options.c:427"
+  },
+  {
+   "flag": "-u, --shutter",
+   "action": "Shutter-glasses stereo (needs quad-buffer OpenGL)",
+   "evidence": "freex3d/src/bin/options.c:408"
+  },
+  {
+   "flag": "-y, --eyedist N / -r, --screendist N",
+   "action": "Stereo eye separation and screen distance",
+   "evidence": "freex3d/src/bin/options.c:400-406"
+  },
+  {
+   "flag": "-e, --eai",
+   "action": "Enable the External Authoring Interface (no host:port argument any more)",
+   "evidence": "freex3d/src/bin/options.c:360"
+  },
+  {
+   "flag": "-J, --javascript SM|DUK|NONE",
+   "action": "Choose the script engine: SpiderMonkey, Duktape, or none",
+   "evidence": "freex3d/src/bin/options.c:548"
+  },
+  {
+   "flag": "--shadingStyle N",
+   "action": "0 flat, 1 Gouraud, 2 Phong, 3 wireframe",
+   "evidence": "freex3d/src/bin/options.c:509"
+  }
+ ],
+ "discrepancies": [
+  "Old doc: keyboard x translate is '7'/'9'. Current source: j/l slide left/right; 7/9 are roll (freex3d/src/lib/scenegraph/Viewer.c:1939-1950).",
+  "Old doc: NumLock on the Linux keypad toggles the headlight. Current source: that X11 mapping is commented out, only 'h' works (freex3d/src/lib/ui/fwCommonX11.c:661).",
+  "Old doc lists only EXAMINE, DIST, WALK, FLY. Current source adds SPHERICAL (y), TURNTABLE (t), EXPLORE (g), LOOKAT (m), PAN (HUD only), plus NONE and EXFLY.",
+  "Old doc: EXAMINE up/down drag rotates about the X axis. Current source: trackball rotation about any axis; right-drag zoom was removed from EXAMINE and lives in DIST mode (freex3d/src/lib/scenegraph/Viewer.c:951,979, 1008).",
+  "Old doc: 'd' is 'Fly (Keyboard input)'. Current source: 'd' is FLY with both mouse drag and keys, and fly keys (a/z, j/l, arrows...) work in every mode except NONE because the key tick runs for all modes (freex3d/src/lib/scenegraph/Viewer.c:2719-2724, handle_tick_fly at 2722).",
+  "Old doc does not say which arrow-key style is active. Current source starts in XY (arrows slide), not YAWZ (freex3d/src/lib/scenegraph/Viewer.c:136).",
+  "Old doc: --eai host:port. Current source: --eai takes no argument (freex3d/src/bin/options.c:149, 360).",
+  "Old doc: --server and --sig (SIGUSR1 reload). Current source: neither option exists (freex3d/src/bin/options.c:139-197).",
+  "Old doc: --geometry uses X window geometry format. Current --help says WxH; the parser also accepts +X+Y offsets (freex3d/src/bin/options.c:69, 330).",
+  "Old doc: --anaglyph does not render textures. Not checked against current source; drop the claim.",
+  "Old doc omits many current keys: n (clear world), x (snapshot), Space (command prompt), H (FPS histogram), '.' (profiling), and debug dumps (\\ | + - $ * , =).",
+  "Current --help lists short forms -A, -B, -U, -I, -w, -E, -t that are missing or argument-less in the getopt optstring; use the long forms (--anaglyph, --sidebyside, --updown, --pin, --want, --FPS, --stereo) (freex3d/src/bin/options.c:232)."
+ ],
+ "notes": "Hotkeys are single keypresses handled in the core, so they are the same on Linux X11, Windows and macOS once the frontend delivers them. macOS: before commit 32caaa36a the Cocoa view sent no KEYPRESS events, so no one-shot hotkey worked; fixed and QA-passed on Apple Silicon (MACOS-STATUS.md:118,190). Command+Q quits; Command chords do not trigger hotkeys. The macOS menu bar is the stock app template (Quit, Open, etc.); navigation modes, viewpoints, headlight and collision are chosen from FreeWRL's in-window HUD button bar on all desktop platforms (statusbarHud.c:2515-2560), not from OS menus. 'x' snapshot is compiled out on macOS and Android (FRONTEND_DOES_SNAPSHOTS). Mouse buttons: 1=left, 2=middle, 3=right; on touch devices Ctrl+left stands in for right in SPHERICAL. A scene's NavigationInfo can restrict which modes are allowed; a hotkey for a mode the scene does not allow is ignored (freex3d/src/lib/scenegraph/Viewer.c:485). Windows: the old doc mentions a FreeWRL_Launcher program; not checked here. Evidence paths are relative to freewrl/freewrl-git, read from the working tree on branch fix/linux-autotools-distcheck."
+}

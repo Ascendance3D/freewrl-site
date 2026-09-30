@@ -1,0 +1,42 @@
+{
+  "repo": "Ascendance3D/freewrl",
+  "fetched": "2026-09-30",
+  "releases": [
+    {
+      "tag": "v6.7.0-macos-beta.2",
+      "name": "FreeWRL Revival for Mac Silicon 6.7.0 — macOS Beta 2",
+      "url": "https://github.com/Ascendance3D/freewrl/releases/tag/v6.7.0-macos-beta.2",
+      "prerelease": true,
+      "published": "2026-09-27T13:10:01Z",
+      "sourceCommit": "99415854db63be09791aaea724c9f5c4584c2414",
+      "body": "**This is a prerelease.**\n\nBeta 2 fixes opening VRML97 and X3D worlds through macOS Finder and LaunchServices.\n\nBeta 1 could launch and render worlds when the executable received the path directly, but Finder double-click and `open -a FreeWRL <world>` could reject the document. Beta 2 fixes both required parts:\n\n- Correct bare `CFBundleTypeExtensions` for macOS document routing\n- `application:openURLs:` handling that passes routed files to FreeWRL's loader\n\n**Supported routed extensions:** `.wrl`, `.wrz`, `.wrlz`, `.x3d`, `.x3dz`, `.x3dv`, `.x3dvz`\n\nThe final release artifact independently passed LaunchServices 7/7 through the actual macOS document-open path.\n\n### Platform\n- Apple Silicon (arm64)\n- macOS 14 Sonoma or newer\n- OpenGL 4.1 Core\n\n### Bundled / runtime dependencies\n- FreeType 2.14.3\n- ODE 0.16.6 (double precision, internal libccd)\n- freealut 1.1.0\n- Apple OpenAL\n- stb_image 2.27\n\nThe packaged app does **not** require Homebrew runtime libraries, Imlib2, OpenAL Soft, or FFmpeg.\n\nThe app is Developer ID signed, hardened-runtime enabled, Apple notarized, stapled, and Gatekeeper accepted.\n\nThis prerelease does not claim complete X3D feature coverage. Intel and macOS 13 are not supported.\n\n### Provenance\n- Source commit: `99415854db63be09791aaea724c9f5c4584c2414`\n- ZIP SHA-256: `f91f108c6d9ba75d0a4cdae7cfa171c83ca1c0888acc673b74766961dce002ca`\n",
+      "assets": [
+        {
+          "name": "FreeWRL-6.7.0-macos-arm64-beta.2.zip",
+          "size": 2268548,
+          "url": "https://github.com/Ascendance3D/freewrl/releases/download/v6.7.0-macos-beta.2/FreeWRL-6.7.0-macos-arm64-beta.2.zip",
+          "sha256": "f91f108c6d9ba75d0a4cdae7cfa171c83ca1c0888acc673b74766961dce002ca",
+          "sha256Url": "https://github.com/Ascendance3D/freewrl/releases/download/v6.7.0-macos-beta.2/FreeWRL-6.7.0-macos-arm64-beta.2.zip.sha256"
+        }
+      ]
+    },
+    {
+      "tag": "v6.7.0-macos-beta.1",
+      "name": "FreeWRL for Mac Silicon Revival 6.7.0 — macOS Beta 1",
+      "url": "https://github.com/Ascendance3D/freewrl/releases/tag/v6.7.0-macos-beta.1",
+      "prerelease": true,
+      "published": "2026-09-27T09:05:13Z",
+      "sourceCommit": null,
+      "body": "## FreeWRL for Mac Silicon Revival — macOS Beta 1\n\nThis is the first public Apple Silicon beta from the Ascendance Open Worlds\nFreeWRL modernization fork.\n\n### Platform\n\n- Apple Silicon arm64\n- macOS 14 Sonoma or newer\n- OpenGL 4.1 Core\n- FreeWRL 6.7 engine line\n\n### Distribution\n\n- Self-contained FreeWRL.app\n- Developer ID signed\n- Hardened runtime enabled\n- Apple notarized\n- Notarization ticket stapled\n- Gatekeeper verified\n- No Homebrew runtime required\n\n### macOS runtime dependencies\n\nThe application package contains the required non-system libraries built from\npinned source:\n\n- FreeType 2.14.3\n- ODE 0.16.6, double precision, internal libccd\n- freealut 1.1.0\n\nAudio uses Apple's OpenAL framework.\n\nThe macOS build does not require:\n\n- Imlib2\n- OpenAL Soft\n- FFmpeg\n- Homebrew\n\n### Textures\n\nThe macOS build uses stb_image 2.27.\n\nSupported target formats include:\n\n- JPEG\n- PNG\n- GIF, first frame\n- BMP\n- TGA\n- PSD\n- HDR\n- PNM\n\nTIFF and WebP are not supported by the current macOS decoder.\n\n### Beta status\n\nThis is a prerelease for testing.\n\nPlease report Mac Silicon Revival issues in this GitHub repository.\n\n### Integrity\n\nSource commit:\n\n29ac1fe30a4b02cf477196170e749cb9eaec9adf\n\nZIP SHA-256:\n\ne0438504588ee8922fc81aa2f9effbd0b590b39dc110b2581a57781031a72a4e\n\nThis repository is an independent modernization fork of FreeWRL and is not the\nofficial upstream FreeWRL project.\n",
+      "assets": [
+        {
+          "name": "FreeWRL-6.7.0-macos-arm64-beta.1.zip",
+          "size": 2267437,
+          "url": "https://github.com/Ascendance3D/freewrl/releases/download/v6.7.0-macos-beta.1/FreeWRL-6.7.0-macos-arm64-beta.1.zip",
+          "sha256": "e0438504588ee8922fc81aa2f9effbd0b590b39dc110b2581a57781031a72a4e",
+          "sha256Url": "https://github.com/Ascendance3D/freewrl/releases/download/v6.7.0-macos-beta.1/FreeWRL-6.7.0-macos-arm64-beta.1.zip.sha256"
+        }
+      ]
+    }
+  ]
+}

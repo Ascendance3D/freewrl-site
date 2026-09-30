@@ -7,6 +7,8 @@
   },
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "single-page-application"
+    // Every route is prerendered to static HTML, so unknown paths (including
+    // broken links inside /legacy/) get a real 404 instead of the app shell.
+    "not_found_handling": "404-page"
   }
 }

@@ -57,6 +57,8 @@
 
 /* ---------- the margin rail: § and title in cols 1–3, material in cols 4–12 ---------- */
 .section { padding-block: var(--space) 0; }
+/* short reference sections that continue the one above them */
+.section--tight { padding-top: var(--space-s); }
 main > .section:last-child, main > section:last-child { padding-bottom: var(--space); }
 .railed > * + * { margin-top: var(--space-s); }
 .rail > * + * { margin-top: 20px; }
@@ -131,6 +133,18 @@ main > .section:last-child, main > section:last-child { padding-bottom: var(--sp
 .stage__body strong { color: #fff; }
 .stage__body > * + * { margin-top: 18px; }
 .stage__links { display: flex; flex-wrap: wrap; gap: 10px; }
+/* Tablet: the label reads across the width (title | italic line), and the
+   description sits beside the file facts, so neither leaves a dead half. */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .stage__head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: var(--gap); align-items: end; }
+  .stage__annot { grid-column: 1 / -1; }
+  .stage__sub { margin-top: 0; padding-bottom: 4px; }
+  .stage__body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 var(--gap); align-items: start; }
+  .stage__body > * + * { margin-top: 0; }
+  .stage__body > p:first-child { grid-column: 1; }
+  .stage__body .stage__links { grid-column: 1; margin-top: 18px; }
+  .stage__body .facts { grid-column: 2; grid-row: 1 / span 2; }
+}
 @media (min-width: 1024px) {
   .stage__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); row-gap: 0; }
   .stage .viewer { grid-column: 1 / span 8; grid-row: 1 / span 2; }
@@ -160,6 +174,7 @@ main > .section:last-child, main > section:last-child { padding-bottom: var(--sp
 .viewer--light .viewer__fig { color: var(--accent-text); }
 .viewer__file { font-weight: 500; }
 .viewer__tools { display: flex; flex-wrap: wrap; }
+.viewer__tools .tool { min-height: 44px; } /* every input mode, not only touch */
 .viewer__credit { display: flex; flex-wrap: wrap; gap: 4px 18px; padding-top: 6px; opacity: 0.85; }
 .viewer__credit span:first-child::before { content: ""; display: inline-block; width: 8px; height: 8px; background: var(--cyan); margin-right: 8px; vertical-align: 1px; }
 .viewer__hint { margin-left: auto; }
@@ -209,6 +224,13 @@ main > .section:last-child, main > section:last-child { padding-bottom: var(--sp
 .listing + .caption { padding: 8px 10px; }
 .listing__edit { display: block; width: 100%; min-height: 26rem; padding: 14px 16px; border: 0; resize: vertical; background: var(--paper); color: var(--ink); font: 0.8125rem/1.6 var(--mono); }
 .lab-bench__source .listing__body { padding: 14px 16px; }
+.src-line { display: block; }
+/* Wide screens: long lines wrap with a hanging indent instead of scrolling.
+   Phones keep one source line per screen line and scroll inside the box. */
+@media (min-width: 640px) {
+  .lab-bench__source .listing__body { white-space: pre-wrap; }
+  .src-line { padding-left: 4ch; text-indent: -4ch; }
+}
 mark.param { background: var(--mark); color: inherit; padding: 0 2px; outline: 1px solid color-mix(in srgb, var(--gold) 70%, black); }
 @media (prefers-color-scheme: dark) { mark.param { background: #6b5a17; color: #fff4c8; } }
 
@@ -440,7 +462,14 @@ mark.param { background: var(--mark); color: inherit; padding: 0 2px; outline: 1
 @media (min-width: 1280px) { .essay { grid-template-columns: minmax(0, 6fr) minmax(0, 3fr); } }
 .essay__margin { display: grid; gap: var(--space-s); }
 @media (min-width: 640px) and (max-width: 1279px) { .essay__margin { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); } }
-.timeline { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.timeline { border-top: 1px solid var(--rule); }
+.timeline ol { list-style: none; margin: 0; padding: 0; }
+.timeline__group + .timeline__group { margin-top: var(--space-s); }
+.timeline__decade { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 12px 0 8px; border-bottom: 1px solid var(--rule); font-size: var(--t-small); font-weight: 500; letter-spacing: 0.06em; color: var(--accent-text); scroll-margin-top: 24px; }
+.timeline__decade span { font-size: var(--t-meta); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+.decade-index { display: flex; flex-wrap: wrap; gap: 0 4px; margin-top: 4px; font-style: normal; }
+.decade-index a { display: inline-flex; align-items: center; min-height: 44px; padding-right: 12px; font-size: var(--t-meta); }
+.decade-index__n { margin-left: 4px; color: var(--ink-3); }
 .timeline__row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px var(--gap); padding: 10px 0; border-bottom: 1px solid var(--rule-soft); font-size: var(--t-small); line-height: 1.5; }
 @media (min-width: 640px) { .timeline__row { grid-template-columns: 8.5rem minmax(0, 1fr); } .timeline__src { grid-column: 2; } }
 .timeline__date { color: var(--accent-text); padding-top: 0.15em; }

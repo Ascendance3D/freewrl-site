@@ -43,9 +43,9 @@ Two families, both already self-hosted and OFL, so nothing new is licensed:
 | headings, body, captions | **Source Serif 4** (variable, 400–700 + italic) | Adobe's serif for long technical reading. Its sturdy, open forms read like a standards document or a museum catalogue, not a startup. |
 | metadata, labels, navigation, filenames, code, data | **IBM Plex Mono** 400/500 | Carries the lab / Web3D voice: coordinates, versions, file names. Used small. |
 
-**Archivo is removed from the site CSS.** It is still a dev dependency only
-because `scripts/make-og.mjs` uses it for the existing OG image. That image
-is unchanged in this iteration.
+**Archivo is removed from the site CSS.** In the V2 clean-up the OG image
+(`scripts/make-og.mjs`) was redrawn with Source Serif 4 and Plex Mono, and
+the Archivo package was removed.
 
 Headings are sentence case, weight 600, tight but not crushed
 (`letter-spacing: -0.01em`). Uppercase is kept only for small mono labels,

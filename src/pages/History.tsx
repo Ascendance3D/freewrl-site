@@ -13,6 +13,19 @@ function sourceLink(src: string) {
   return <a href={`/legacy/${file}`}>{file}</a>
 }
 
+// Group the timeline by decade (first four-digit year in the date) for scanning.
+// The entries and their order are unchanged.
+function byDecade(events: Event[]) {
+  const groups: { decade: string; events: Event[] }[] = []
+  for (const e of events) {
+    const year = Number(e.date.match(/\d{4}/)?.[0])
+    const decade = `${Math.floor(year / 10) * 10}s`
+    if (groups.at(-1)?.decade !== decade) groups.push({ decade, events: [] })
+    groups.at(-1)!.events.push(e)
+  }
+  return groups
+}
+
 const LEADS = ["Tuomas J. Lukka", "John A. Stewart"]
 const ALSO = ["Mike Fletcher", "Larry Ewing", "Brutzman", "Daily", "Drayde", "Adrian Rossiter", "Tom Smith", "Sarah Dumoulin"]
 const PRESENT = ["Ryan Bundy"]
@@ -22,6 +35,7 @@ export default function History() {
   const leads = people.filter((p) => LEADS.includes(p.name))
   const contributors = people.filter((p) => !LEADS.includes(p.name) && !ALSO.includes(p.name) && !PRESENT.includes(p.name))
   const also = people.filter((p) => ALSO.includes(p.name))
+  const decades = byDecade(history.timeline as Event[])
   return (
     <>
       <PageHead
@@ -106,17 +120,35 @@ export default function History() {
       </section>
 
       <section className="frame section railed" aria-labelledby="timeline">
-        <SectionHead index="03" id="timeline" title="Timeline" />
+        <SectionHead
+          index="03"
+          id="timeline"
+          title="Timeline"
+          kicker={
+            <span className="decade-index mono">
+              {decades.map((g) => (
+                <a key={g.decade} href={`#timeline-${g.decade}`}>{g.decade}<span className="decade-index__n"> {g.events.length}</span></a>
+              ))}
+            </span>
+          }
+        />
         <div className="essay">
-        <ol className="timeline">
-          {(history.timeline as Event[]).map((e, i) => (
-            <li key={i} className="timeline__row">
-              <span className="timeline__date mono">{e.date}</span>
-              <span className="timeline__event">{e.event}</span>
-              <span className="timeline__src mono">{sourceLink(e.source)}{e.archive === "wayback" ? " · Wayback" : ""}</span>
-            </li>
+        <div className="timeline">
+          {decades.map((g) => (
+            <section key={g.decade} className="timeline__group" aria-labelledby={`timeline-${g.decade}`}>
+              <h3 id={`timeline-${g.decade}`} className="timeline__decade mono">{g.decade} <span>{g.events.length} entries</span></h3>
+              <ol>
+                {g.events.map((e, i) => (
+                  <li key={i} className="timeline__row">
+                    <span className="timeline__date mono">{e.date}</span>
+                    <span className="timeline__event">{e.event}</span>
+                    <span className="timeline__src mono">{sourceLink(e.source)}{e.archive === "wayback" ? " · Wayback" : ""}</span>
+                  </li>
+                ))}
+              </ol>
+            </section>
           ))}
-        </ol>
+        </div>
         <aside className="essay__margin" aria-label="Pictures from the timeline">
           <ArchivalFigure path="freewrl_screenshot3.jpg" fig="T1" title="An early scene" archive="wayback"
             alt="An early FreeWRL scene with a sphere, a box, an avatar figure and 3D text reading Java."

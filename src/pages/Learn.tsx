@@ -2,7 +2,21 @@ import { useMemo, useState } from "react"
 import { XiteViewer } from "../components/XiteViewer"
 import { Facts, PageHead, SectionHead } from "../components/primitives"
 import { Link } from "../router"
-import { checkSource, COLORS, LESSONS, type Values } from "./lessons"
+import { checkSource, COLORS, LESSONS, type Part, type Values } from "./lessons"
+
+/** Split the marked source into lines so wide screens can wrap each line with a
+ *  hanging indent. Each line keeps its own "\n", so the text is unchanged. */
+function sourceLines(parts: Part[]) {
+  const lines: { part: Part; i: number }[][] = [[]]
+  parts.forEach((part, i) => {
+    if (typeof part !== "string") { lines[lines.length - 1].push({ part, i }); return }
+    part.split(/(?<=\n)/).forEach((seg) => {
+      if (seg) lines[lines.length - 1].push({ part: seg, i })
+      if (seg.endsWith("\n")) lines.push([])
+    })
+  })
+  return lines.filter((l) => l.length)
+}
 
 export default function Learn() {
   const [step, setStep] = useState(0)
@@ -150,9 +164,13 @@ export default function Learn() {
             {manual === null ? (
               <pre className="listing__body" tabIndex={0} aria-label="World source">
                 <code>
-                  {built.parts.map((part, i) =>
-                    typeof part === "string" ? part : <mark key={i} className="param" data-key={part.key}>{part.text}</mark>,
-                  )}
+                  {sourceLines(built.parts).map((line, n) => (
+                    <span key={n} className="src-line">
+                      {line.map(({ part, i }) =>
+                        typeof part === "string" ? part : <mark key={i} className="param" data-key={part.key}>{part.text}</mark>,
+                      )}
+                    </span>
+                  ))}
                 </code>
               </pre>
             ) : (

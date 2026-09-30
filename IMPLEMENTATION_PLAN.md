@@ -51,8 +51,8 @@ Interactive technical editorial + digital museum + Web3D workshop.
   Dark mode follows the OS.
 - Type (iteration 2, see `DESIGN_V2_DIRECTION.md`): Source Serif 4 for
   headings and reading, IBM Plex Mono for metadata, filenames, code. All
-  self-hosted. Archivo was dropped from the site in V2. It stays a dependency
-  only for `scripts/make-og.mjs`.
+  self-hosted. Archivo was dropped from the site in V2 and removed as a
+  dependency in the V2 clean-up (the OG image now uses the V2 fonts).
 - Square geometry, 1px rules, labelled figures ("FIG. 3"), big media,
   asymmetric 12-column grid. No cards, no pills, no gradients-as-decor.
 
@@ -91,8 +91,10 @@ change. `npm run preview` runs `wrangler dev` locally only.
   not verifiable from here; it must be off before launch (X_ITE is loaded as
   a module, which removes the known failure, but the beacon is still a
   tracker we do not want).
-- Linux apt package list is inferred from `configure.ac`, not verified in a
-  clean container; the Build page says so.
+- Linux apt package list: checked 2026-09-30 in a clean `ubuntu:24.04`
+  container (engine `340a9a6`). The first list lacked `unzip` and `wget`
+  (configure stops without them); both added. Build, install and
+  `freewrl --version` pass. Not run on a real desktop or GPU.
 - Key bindings verified against engine source, not in a live window.
 - Conformance data is upstream's claim; nothing has been re-measured yet.
 - `Ascendance Open Worlds` legal status is not stated anywhere in the

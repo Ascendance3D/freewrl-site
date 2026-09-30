@@ -84,12 +84,13 @@ cd freewrl/freex3d
 ./autogen.sh
 ./configure --with-target=x11 --with-javascript=duk
 make -j$(nproc)
-sudo make install`}</Commands>
+sudo make install
+sudo ldconfig`}</Commands>
           <p className="prose">Details, dependencies and what has been tested: <Link to="/build">Build</Link>.</p>
         </div>
       </section>
 
-      <section className="frame section railed" aria-labelledby="others">
+      <section className="frame section section--tight railed" aria-labelledby="others">
         <SectionHead index="03" id="others" title="Windows, Android, iOS" />
         <div className="prose">
           <p>
@@ -103,7 +104,7 @@ sudo make install`}</Commands>
       </section>
 
       {older.length > 0 && (
-        <section className="frame section railed" aria-labelledby="older">
+        <section className="frame section section--tight railed" aria-labelledby="older">
           <SectionHead index="04" id="older" title="Earlier releases" />
           <div>
           <table className="table table--stack">

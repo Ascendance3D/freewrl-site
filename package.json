@@ -15,7 +15,6 @@
     "world:hero": "node scripts/gen-hero-world.mjs"
   },
   "dependencies": {
-    "@fontsource-variable/archivo": "5.3.0",
     "@fontsource-variable/source-serif-4": "5.3.0",
     "@fontsource/ibm-plex-mono": "5.3.0",
     "react": "^19.2.8",

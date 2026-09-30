@@ -21,15 +21,17 @@ mkdir build && cd build
 ../configure --with-target=x11 --with-javascript=duk
 make -j$(nproc)
 sudo make install
+sudo ldconfig            # so freewrl finds libFreeWRL in /usr/local/lib
 
 freewrl --version        # Program version: 6.7.0`}</Commands>
           <div className="prose">
             <h3 className="mono">Packages</h3>
             <p>
-              The list below is read from <code>configure.ac</code>. It has <strong>not</strong> been checked on a clean
-              system yet. If <code>configure</code> stops, it names the library it could not find.
+              Checked on 2026-09-30 in a clean <code>ubuntu:24.04</code> container: with this list, every step above
+              passed and <code>freewrl --version</code> printed 6.7.0. It was not run on a desktop with a real GPU.
+              If <code>configure</code> stops, it names the library or command it could not find.
             </p>
-            <Commands>{`sudo apt install build-essential autoconf automake libtool pkg-config \\
+            <Commands>{`sudo apt install git build-essential autoconf automake libtool pkg-config unzip wget \\
   zlib1g-dev libjpeg-dev libpng-dev libfreetype-dev libxml2-dev \\
   libx11-dev libxt-dev libxmu-dev libxaw7-dev libgl-dev libglu1-mesa-dev \\
   libfontconfig-dev libopenal-dev libalut-dev libode-dev`}</Commands>

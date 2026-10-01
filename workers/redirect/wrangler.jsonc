@@ -1,0 +1,12 @@
+{
+  // Redirect Worker only (www.freewrl.org, freewrl.com, www.freewrl.com -> 308 https://freewrl.org).
+  // Deploy with: npx wrangler deploy -c workers/redirect/wrangler.jsonc
+  // The website Worker is the repo-root wrangler.jsonc; neither config deploys the other.
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "freewrl-www-redirect",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-26",
+  "observability": {
+    "enabled": true
+  }
+}

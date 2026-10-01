@@ -66,13 +66,12 @@ to R2 or `tests.freewrl.org` is a separate, approved step.
   `b7bcb7f1-e285-4c95-b8fc-1c538a3b825a` (pre-launch site).
 - X_ITE is pinned to 16.4.1.
 - The test corpus is not on R2 yet (see above).
-- freewrl.com is still served by the same Worker. Turning it into 308 redirects to
-  freewrl.org is separate work.
+- freewrl.com, www.freewrl.com and www.freewrl.org redirect to freewrl.org (see below).
 
 ## Cloudflare
 
 The site is static assets on the Cloudflare Worker `freewrl` (`wrangler.jsonc`).
-That Worker serves freewrl.org and freewrl.com in production.
+That Worker serves freewrl.org only.
 
 - There is deliberately no `deploy` script. Never run `wrangler deploy` or
   `wrangler versions deploy` without Ryan's approval. Production changes, DNS,
@@ -87,6 +86,18 @@ That Worker serves freewrl.org and freewrl.com in production.
   `/legacy/`, whose CSP would block it anyway. Keep the zone's automatic
   Web Analytics / RUM injection off: it would add a second beacon everywhere, including
   `/legacy/`, where the CSP blocks it. QA browsers stub the beacon host (`qa/analytics-stub.mjs`).
+
+## Domain redirects
+
+- Canonical domain: `freewrl.org`.
+- `www.freewrl.org`, `freewrl.com` and `www.freewrl.com` return `308` to
+  `https://freewrl.org` in one hop, for http and https. Path and query are preserved.
+- Source: `workers/redirect/` (Worker `freewrl-www-redirect`, attached to those three
+  hosts as Custom Domains). It returns `421` if it is ever attached to `freewrl.org`.
+- Redirect deployment is separate from the website deployment:
+  `npx wrangler deploy -c workers/redirect/wrangler.jsonc` deploys only the redirect Worker,
+  and a plain `wrangler` command at the repo root only touches the website Worker `freewrl`.
+  The same approval rule applies to both.
 
 ## Where things come from
 

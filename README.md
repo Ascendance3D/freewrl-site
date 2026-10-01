@@ -57,6 +57,18 @@ The upstream `tests/` corpus (1.14 GB) is not copied and not in this repository.
 Links into it go to `TESTS_BASE` (default: the live upstream copy). Moving the corpus
 to R2 or `tests.freewrl.org` is a separate, approved step.
 
+## Production
+
+- URL: https://freewrl.org
+- Release `v2026.09.30`: source `c7682b56e8761f6fc78b40ba3c45604631f5c3a5`,
+  Worker version `95aa3ecf-b0a9-4f3d-a916-79cc153bd576`.
+- Rollback versions: `deb28a09-8ed7-4177-8523-f1dc9db05628` (same release without analytics),
+  `b7bcb7f1-e285-4c95-b8fc-1c538a3b825a` (pre-launch site).
+- X_ITE is pinned to 16.4.1.
+- The test corpus is not on R2 yet (see above).
+- freewrl.com is still served by the same Worker. Turning it into 308 redirects to
+  freewrl.org is separate work.
+
 ## Cloudflare
 
 The site is static assets on the Cloudflare Worker `freewrl` (`wrangler.jsonc`).
@@ -69,8 +81,10 @@ That Worker serves freewrl.org and freewrl.com in production.
   `npx wrangler versions upload --preview-alias <name>`. It is served at
   `https://<name>-freewrl.<account-subdomain>.workers.dev/`. Pages still emit
   `https://freewrl.org/` canonical URLs.
-- Cloudflare Web Analytics (cookieless) is added by the snippet in `index.html`, so it is
-  on every prerendered page and the 404, but not on `/legacy/`. Keep the zone's automatic
+- Cloudflare Web Analytics is intentionally enabled, for aggregate traffic measurement.
+  The site has no user accounts and sets no analytics cookies.
+  The snippet in `index.html` puts it on every prerendered page and the 404, but not on
+  `/legacy/`, whose CSP would block it anyway. Keep the zone's automatic
   Web Analytics / RUM injection off: it would add a second beacon everywhere, including
   `/legacy/`, where the CSP blocks it. QA browsers stub the beacon host (`qa/analytics-stub.mjs`).
 

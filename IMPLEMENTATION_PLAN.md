@@ -87,10 +87,11 @@ change. `npm run preview` runs `wrangler dev` locally only.
 
 ## Known risks
 
-- Automatic Cloudflare Web Analytics (RUM) injection on the freewrl zones is
-  not verifiable from here; it must be off before launch (X_ITE is loaded as
-  a module, which removes the known failure, but the beacon is still a
-  tracker we do not want).
+- Cloudflare Web Analytics is enabled on purpose, for aggregate traffic
+  counts: the manual snippet in `index.html`, not the zone's automatic RUM
+  injection (keep that off, or `/legacy/` and every page get a second
+  beacon). No user accounts, no analytics cookies. X_ITE is loaded as a
+  module, so the beacon cannot break it.
 - Linux apt package list: checked 2026-09-30 in a clean `ubuntu:24.04`
   container (engine `340a9a6`). The first list lacked `unzip` and `wget`
   (configure stops without them); both added. Build, install and

@@ -7,11 +7,14 @@ export const SITE = {
   releases: "https://github.com/Ascendance3D/freewrl/releases",
   upstream: "https://sourceforge.net/projects/freewrl/",
   upstreamSite: "https://freewrl.sourceforge.io/",
-  // Where the historical tests/ corpus is served. Switch to
-  // https://tests.freewrl.org/ once the R2 lane is approved and published.
-  testsBase: "https://freewrl.sourceforge.io/tests/",
-  testsBasePlanned: "https://tests.freewrl.org/",
+  // Where the historical tests/ corpus is served: R2 bucket freewrl-tests, keys
+  // relative to tests/ (see TEST_CORPUS.md). No directory indexes there, so link
+  // folders as <dir>/index.html.
+  testsBase: "https://tests.freewrl.org/",
 }
+
+// URL of a path relative to tests/, each segment percent-encoded (spaces, $, +, [], ...).
+export const testsUrl = (path: string) => SITE.testsBase + path.split("/").map(encodeURIComponent).join("/")
 
 export type RouteMeta = { path: string; nav?: string; title: string; description: string }
 

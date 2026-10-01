@@ -9,8 +9,8 @@
 //
 // Env:
 //   FREEWRL_ARCHIVE_BROWSE  path to browse/freewrl.sourceforge.io
-//   TESTS_BASE              where /tests/ lives (default: the live upstream copy
-//                           until tests.freewrl.org is published)
+//   TESTS_BASE              where /tests/ lives (default: the R2 copy at
+//                           tests.freewrl.org, see TEST_CORPUS.md)
 //   SKIP_LEGACY=1           build without /legacy/ (never for a deploy)
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs"
 import { dirname, extname, join, relative } from "node:path"
@@ -20,7 +20,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const src = process.env.FREEWRL_ARCHIVE_BROWSE ??
   join(root, "../archive-freewrl-site/browse/freewrl.sourceforge.io")
 const out = join(root, "dist/legacy")
-const TESTS_BASE = process.env.TESTS_BASE ?? "https://freewrl.sourceforge.io/tests/"
+const TESTS_BASE = process.env.TESTS_BASE ?? "https://tests.freewrl.org/"
 const MAX_ASSET = 25 * 1024 * 1024 // Cloudflare Workers static asset limit
 
 if (process.env.SKIP_LEGACY === "1") {
@@ -93,9 +93,11 @@ function transformHtml(buf) {
   // latin1 keeps a 1:1 byte mapping, so non-UTF-8 pages survive untouched.
   let s = buf.toString("latin1")
   let links = 0
+  // Keep explicit index.html: R2 has no directory indexes, so /<dir>/ is a 404
+  // and only /<dir>/index.html opens the saved Apache listing.
   s = s.replace(testsLink, (_m, pre, rest) => {
     links++
-    return pre + TESTS_BASE + rest.replace(/(^|\/)index\.html$/i, "$1")
+    return pre + TESTS_BASE + rest
   })
   s = applyTransforms(s)
   const body = /<body\b[^>]*>/i.exec(s)

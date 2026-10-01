@@ -54,9 +54,9 @@ few exact-string safety transforms that stop automatic tracker, ad and dead-widg
 `SKIP_LEGACY=1` builds without `/legacy/` — never deploy that.
 
 The upstream `tests/` corpus (1.14 GB) is not copied and not in this repository.
-Links into it go to `TESTS_BASE` (default: the live upstream copy). A byte-exact copy is
-published on R2 at `https://tests.freewrl.org/` (see `TEST_CORPUS.md`); the site's links
-move there only after that corpus passes independent QA.
+A byte-exact copy is published on R2 at `https://tests.freewrl.org/` (see `TEST_CORPUS.md`).
+`/tests/`, `/conformance/` and `/legacy/` link there (`SITE.testsBase`; `TESTS_BASE` for
+`/legacy/`). R2 has no directory indexes, so folder links keep an explicit `index.html`.
 
 ## Production
 
@@ -66,7 +66,7 @@ move there only after that corpus passes independent QA.
 - Rollback versions: `deb28a09-8ed7-4177-8523-f1dc9db05628` (same release without analytics),
   `b7bcb7f1-e285-4c95-b8fc-1c538a3b825a` (pre-launch site).
 - X_ITE is pinned to 16.4.1.
-- The test corpus is on R2 at https://tests.freewrl.org/ (`TEST_CORPUS.md`); site links do not use it yet.
+- The test corpus is on R2 at https://tests.freewrl.org/ (`TEST_CORPUS.md`). Release `v2026.09.30` still links to the upstream copy; source links to R2 from `feat: link tests browser to R2 corpus` on.
 - freewrl.com, www.freewrl.com and www.freewrl.org redirect to freewrl.org (see below).
 
 ## Cloudflare

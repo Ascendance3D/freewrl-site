@@ -2,8 +2,8 @@
 
 The upstream `freewrl.sourceforge.io/tests/` corpus, published unchanged at
 **https://tests.freewrl.org/** from the Cloudflare R2 bucket **`freewrl-tests`**.
-Published 2026-10-01. The website does not link here yet; its `/tests/` links still
-point to the upstream copy until this corpus passes independent QA.
+Published 2026-10-01. The website's `/tests/`, `/conformance/` and `/legacy/` links point
+here (`SITE.testsBase`, `TESTS_BASE`), with folders linked as `<dir>/index.html`.
 
 ## Source
 

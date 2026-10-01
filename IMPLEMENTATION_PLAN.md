@@ -75,10 +75,10 @@ Interactive technical editorial + digital museum + Web3D workshop.
 - `/legacy/`: `scripts/build-legacy.mjs` copies the offline browse copy
   (minus `tests/`, 44 MB, no file over 25 MiB) into `dist/legacy/` at build
   time, inserts one banner after `<body>`, and points `tests/` links at
-  `TESTS_BASE` (the live SourceForge copy until `tests.freewrl.org` exists).
+  `TESTS_BASE` (default `https://tests.freewrl.org/`, keeping explicit `index.html`).
 - `/tests`: explains the corpus and browses a manifest generated from
-  `URL_MANIFEST.csv`. Target: R2 bucket behind `tests.freewrl.org` with the
-  original folder paths. R2 upload is a separate, approved lane.
+  `URL_MANIFEST.csv`. Links go to the R2 bucket behind `tests.freewrl.org` with the
+  original folder paths (`TEST_CORPUS.md`).
 
 ## Deployment boundary
 

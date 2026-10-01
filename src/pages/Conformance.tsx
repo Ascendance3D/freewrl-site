@@ -3,7 +3,7 @@ import upstream from "../data/conformance.upstream.json"
 import measured from "../data/conformance.measured.json"
 import { Facts, PageHead, SectionHead } from "../components/primitives"
 import { Link } from "../router"
-import { SITE } from "../routes"
+import { SITE, testsUrl } from "../routes"
 
 type Node = { node: string; status: string }
 type Measured = { component: string; node: string; result: string; build: string; date: string; evidence?: string }
@@ -164,7 +164,7 @@ export default function Conformance() {
                 </summary>
                 {folder && (
                   <p className="component__tests mono">
-                    Tests: <a href={`${SITE.testsBase}${folder}/`}>tests/{folder}/</a>
+                    Tests: <a href={testsUrl(`${folder}/index.html`)}>tests/{folder}/</a>
                   </p>
                 )}
                 <table className="table table--tight">

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react"
 import { Facts, formatBytes, PageHead, SectionHead } from "../components/primitives"
-import { SITE } from "../routes"
+import { SITE, testsUrl } from "../routes"
 
 type Manifest = { files: [string, number, string][]; missing: string[]; captured: string }
 type Entry = { name: string; dir: boolean; bytes: number; count: number; sha?: string }
@@ -56,16 +56,15 @@ export default function Tests() {
         <Facts
           className="facts--wide"
           rows={[
-            ["Now", <>Links on this page go to the original copy: <a href={SITE.testsBase}>{SITE.testsBase}</a></>],
-            ["Planned", <><code>{SITE.testsBasePlanned}</code> — the same paths, served from Cloudflare R2. Not published yet.</>],
+            ["Served from", <><code>{SITE.testsBase}</code> — the original folder paths, from Cloudflare R2. Folders open as their saved <code>index.html</code> listing.</>],
             ["Preserved", "A full copy was made on 2026-09-29/30. Every file has a SHA-256 in the manifest below."],
-            ["Missing", <><code>41_Volume_rendering/supine.nrrd</code> (213 MB). SourceForge would not serve it. The smaller <code>supine128.nrrd</code> is kept.</>],
+            ["Missing", <><code>41_Volume_rendering/supine.nrrd</code> (213 MB) was not preserved: SourceForge would not serve it. The smaller <code>supine128.nrrd</code> is kept.</>],
           ]}
         />
       </section>
 
       <section className="frame section railed" aria-labelledby="browse">
-        <SectionHead index="02" id="browse" title="Browse" kicker="Folder listing from the archive manifest. File links open the original copy." />
+        <SectionHead index="02" id="browse" title="Browse" kicker="Folder listing from the archive manifest. File links open the preserved copy." />
         {failed && <p className="edit-status">The manifest could not be loaded.</p>}
         {!manifest && !failed && <p className="mono">Loading the manifest…</p>}
         {manifest && (
@@ -75,6 +74,7 @@ export default function Tests() {
               {crumbs.map((c, i) => (
                 <button key={i} type="button" onClick={() => go(`${crumbs.slice(0, i + 1).join("/")}/`)}>{c}/</button>
               ))}
+              {" · "}<a href={testsUrl(`${dir}index.html`)}>saved listing</a>
             </nav>
             <table className="table table--tight">
               <thead><tr><th>Name</th><th className="num">Files</th><th className="num">Size</th></tr></thead>
@@ -87,7 +87,7 @@ export default function Tests() {
                     <td className="mono">
                       {e.dir
                         ? <button type="button" className="linkish" onClick={() => go(`${dir}${e.name}/`)}>{e.name}/</button>
-                        : <a href={`${SITE.testsBase}${dir}${e.name}`.replace(/ /g, "%20")}>{e.name}</a>}
+                        : <a href={testsUrl(`${dir}${e.name}`)}>{e.name}</a>}
                     </td>
                     <td className="num mono">{e.dir ? e.count : ""}</td>
                     <td className="num mono">{formatBytes(e.bytes)}</td>

@@ -141,7 +141,7 @@ That Worker serves freewrl.org only.
 | `src/data/history.json` | archived upstream pages + engine README | `scripts/data/build_history.py` |
 | `public/data/tests-manifest.json` | archive `URL_MANIFEST.csv` | `scripts/make_tests_manifest.py` |
 | `public/media/archive/` | archived images, resized to WebP/JPEG | `scripts/make_archive_media.py`; originals stay under `/legacy/` |
-| `public/media/captures/` | real FreeWRL 6.7 window captures; sources and provenance in `media-src/captures/` (`captures.json`) | `npm run assets:captures` (`scripts/make_captures.py`); the MP4 clip is copied in as encoded |
+| `public/media/captures/` | real FreeWRL 6.7 window captures (Linux 2026-10-01, macOS 2026-10-02); sources and provenance in `media-src/captures/` (`captures.json`) | `npm run assets:captures` (`scripts/make_captures.py`); the Linux MP4 is copied in as encoded; macOS MP4s and posters: `scripts/make_macos_clips.sh <package>` |
 | `src/components/wordmark-paths.ts` | "FreeWRL" outlined from Nunito Black (SIL OFL 1.1) | `python3 scripts/make_wordmark.py <nunito-latin-900-normal.woff2>` |
 | `public/worlds/freewrl-landing.wrl` | written for this site; design notes in `LANDING_WORLD_DIRECTION.md` | `npm run world:hero` (`scripts/gen-landing-world.mjs`) |
 | `public/worlds/four-primitives.x3d` | written for this site | by hand |
@@ -190,14 +190,32 @@ the site shows the platform and date. Do not add mock-ups or retouched UI.
 
 To add one: put the PNG in `media-src/captures/`, add an entry to `captures.json`, run
 `npm run assets:captures`, then use `CaptureFigure`, `CaptureGallery` or `DemoVideo`
-(`src/components/media.tsx`). Clips: silent H.264 MP4, about 960×600 and under 1.5 MB, with a
+(`src/components/media.tsx`). An entry may carry `crop` [left, top, right, bottom] to trim for
+presentation only. Clips: silent H.264 MP4, about 960–1200 px wide and under 1.5 MB, with a
 first-frame poster; they load only when played.
+
+### macOS captures (2026-10-02)
+
+From the capture package `freewrl-macos-media-2026-10-02` (its `MACOS-MEDIA-MANIFEST.md` is the
+record of how they were made): FreeWRL 6.7.0 macOS Beta 2, the published notarized arm64 release,
+source commit `99415854db63`, on macOS 27.0.1, Apple M1. The selected PNGs are in `media-src/captures/`
+byte for byte (SHA-256 in `captures.json`). The package's other stills and the three item clips,
+and the `.mov` sources (69 MB), stay in the package and are not in this repository.
+
+- `macos-window-hero` is cropped to the window (the drop shadow is removed); the three item stills
+  are cropped to 960×800 around the item. Nothing inside the frame is changed.
+- Clips: `scripts/make_macos_clips.sh <package dir>` re-encodes each `.mov` (2400×1600 or
+  1400×1064, variable frame rate) to 1200 px wide, 30 fps, H.264 High, CRF 25, faststart, no audio,
+  and writes a frame-0 poster PNG to `media-src/captures/`. Then run `npm run assets:captures`.
+- Finder clip: on the capture Mac, Castle Model Viewer is the default app for `.wrl`. The demo file
+  alone was set to open with FreeWRL (Get Info, Open With, without Change All). Site copy must not
+  say FreeWRL is the default `.wrl` app or that every `.wrl` opens in it.
+- The Cybertown items (Signal Storm Globe, Pulse Prism Console, Plasma Disc Player) are by
+  Ryan (BassMekanik), cleared by him for public use on 2026-10-02. Credit him wherever they appear.
+  They are content FreeWRL opens, not FreeWRL features.
 
 Still wanted:
 
-- macOS (Apple Silicon) screenshots of the 6.7.0 beta 2 app: a `.wrl` opened from Finder with the
-  menu bar visible, plus one world close-up. The Download page shows a labelled slot for this.
-- macOS clip (10–15 s): double-click a `.wrl` in Finder, the window opens, one EXAMINE drag.
 - Linux clip of WALK or FLY in a larger world, and a short clip of the button bar (hover, click a mode).
 - One visually strong historical VRML world from the test corpus, rendered in 6.7.
 

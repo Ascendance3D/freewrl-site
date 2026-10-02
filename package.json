@@ -11,6 +11,7 @@
     "lint": "oxlint",
     "preview": "npm run build && wrangler dev",
     "assets:brand": "python3 scripts/make_brand.py",
+    "assets:captures": "python3 scripts/make_captures.py",
     "assets:archive": "python3 scripts/make_archive_media.py && python3 scripts/make_tests_manifest.py",
     "data:releases": "node scripts/fetch-releases.mjs",
     "world:hero": "node scripts/gen-landing-world.mjs"

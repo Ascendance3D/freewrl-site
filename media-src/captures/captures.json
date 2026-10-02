@@ -1,0 +1,68 @@
+{
+ "_about": "Real FreeWRL window captures. Source PNGs sit beside this file; scripts/make_captures.py writes the web copies. Never edit a capture by hand beyond resizing.",
+ "_platforms": {
+  "linux-2026-10-01": {
+   "label": "FreeWRL 6.7.0 · Ubuntu 24.04",
+   "date": "2026-10-01",
+   "detail": "FreeWRL 6.7.0 (libfreewrl 6.7.0), local autotools build of Ascendance3D/freewrl, built 2026-09-29. Ubuntu 24.04.5 LTS, X11, NVIDIA RTX 3060 Ti, driver 595.91.07, OpenGL 4.6. Window captured with ImageMagick import on 2026-10-01; clip recorded with ffmpeg x11grab. Input from xdotool (mouse drag, Page Down)."
+  }
+ },
+ "captures": [
+  {
+   "id": "linux-landing-plaza",
+   "platform": "linux-2026-10-01",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Plaza",
+   "alt": "FreeWRL window showing a blue 3D plaza: a hand-and-eye sculpture inside a yellow ring, towers behind it, and FreeWRL's yellow navigation button bar along the bottom edge.",
+   "title": "A world open in FreeWRL"
+  },
+  {
+   "id": "linux-window-ubuntu",
+   "platform": "linux-2026-10-01",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Plaza",
+   "alt": "The FreeWRL application window on the Ubuntu desktop, with its title bar and window controls, showing the same plaza world.",
+   "title": "The FreeWRL window on Ubuntu 24.04"
+  },
+  {
+   "id": "linux-landing-examine",
+   "platform": "linux-2026-10-01",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Plaza, after a left-drag in EXAMINE",
+   "alt": "The plaza world turned to one side after dragging with the mouse: the sculpture is seen from a new angle, with a beam in the foreground.",
+   "title": "EXAMINE: drag to turn the world"
+  },
+  {
+   "id": "linux-landing-portal",
+   "platform": "linux-2026-10-01",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Through the portal",
+   "alt": "The plaza seen through a dark stone portal, with the viewpoint name 'Through the portal' in the status bar.",
+   "title": "Viewpoint: Through the portal"
+  },
+  {
+   "id": "linux-landing-above",
+   "platform": "linux-2026-10-01",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "From above",
+   "alt": "The plaza from above: the sculpture on its platform, grid lines on the ground, and the viewpoint name 'From above' in the status bar.",
+   "title": "Viewpoint: From above"
+  },
+  {
+   "id": "linux-four-primitives",
+   "platform": "linux-2026-10-01",
+   "world": "four-primitives.x3d",
+   "viewpoint": "Front",
+   "alt": "Four lit shapes on a grey floor in FreeWRL: a blue box, a pale yellow sphere, a cyan cone and a dark grey cylinder.",
+   "title": "An X3D file: Box, Sphere, Cone, Cylinder"
+  },
+  {
+   "id": "linux-landing-navigate-poster",
+   "platform": "linux-2026-10-01",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Plaza",
+   "alt": "First frame of the navigation clip: the plaza world in FreeWRL.",
+   "title": "Clip poster"
+  }
+ ]
+}

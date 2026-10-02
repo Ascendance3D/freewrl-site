@@ -137,6 +137,8 @@ That Worker serves freewrl.org only.
 | `src/data/history.json` | archived upstream pages + engine README | `scripts/data/build_history.py` |
 | `public/data/tests-manifest.json` | archive `URL_MANIFEST.csv` | `scripts/make_tests_manifest.py` |
 | `public/media/archive/` | archived images, resized to WebP/JPEG | `scripts/make_archive_media.py`; originals stay under `/legacy/` |
+| `public/media/captures/` | real FreeWRL 6.7 window captures; sources and provenance in `media-src/captures/` (`captures.json`) | `npm run assets:captures` (`scripts/make_captures.py`); the MP4 clip is copied in as encoded |
+| `src/components/wordmark-paths.ts` | "FreeWRL" outlined from Nunito Black (SIL OFL 1.1) | `python3 scripts/make_wordmark.py <nunito-latin-900-normal.woff2>` |
 | `public/worlds/freewrl-landing.wrl` | written for this site; design notes in `LANDING_WORLD_DIRECTION.md` | `npm run world:hero` (`scripts/gen-landing-world.mjs`) |
 | `public/worlds/four-primitives.x3d` | written for this site | by hand |
 | `public/x_ite/<version>/` | npm `x_ite` (MIT), exact version in `package.json` | `scripts/sync-xite.mjs` (gitignored, runs on dev/build) |
@@ -156,6 +158,44 @@ That Worker serves freewrl.org only.
   plus favicons. The favicon is the hand and eye only. Sources are not modified.
 - `logo-work/EIA_*` are mood references of unknown licence. Gitignored. Never ship them.
 - `public/og-image.png`: `node scripts/make-og.mjs` with the local server running.
+
+### Logo status (2026-10-01)
+
+- Source of record: the official 128 px icon (`docs/assets/freewrl-logo-128.png` in
+  `Ascendance3D/freewrl`, extracted unmodified from `X3DFreeWRLIcon.icns`). Its provenance is clear.
+- Site artwork: `logo-work/1.png` / `2.png` (1254 px remakes). Who made them is still not recorded,
+  so their provenance is incomplete. They are good enough for the mark and favicons; keep using them.
+- No vector master exists. A clean remake (SVG hand, eye and lettering, with a named maker and
+  licence note) is still needed for print, large sizes and a proper lettering lock-up.
+- `logo-work/3.png` and `4.png` are tracked but not used by any script; their origin is not recorded.
+
+### Masthead wordmark
+
+The masthead shows the hand-and-eye mark (`freewrl-mark-512`) next to an inline SVG wordmark
+(`Wordmark` in `src/components/primitives.tsx`). It copies the logo lettering: white letters,
+yellow "ee" (`--gold`), and a black edge drawn outside the letters (`paint-order: stroke`).
+The same colours are used on light and dark grounds; in forced-colors mode the letters use
+`CanvasText`. The letters are outlines of Nunito Black, the closest free match to the logo's
+rounded lettering; the original lettering font is not known. No web font is loaded for it.
+
+## Captures and video
+
+Every screenshot and clip under `public/media/captures/` is a real FreeWRL window. How each was
+made (build, OS, GPU, tools, date) is in `media-src/captures/captures.json`, and every caption on
+the site shows the platform and date. Do not add mock-ups or retouched UI.
+
+To add one: put the PNG in `media-src/captures/`, add an entry to `captures.json`, run
+`npm run assets:captures`, then use `CaptureFigure`, `CaptureGallery` or `DemoVideo`
+(`src/components/media.tsx`). Clips: silent H.264 MP4, about 960×600 and under 1.5 MB, with a
+first-frame poster; they load only when played.
+
+Still wanted:
+
+- macOS (Apple Silicon) screenshots of the 6.7.0 beta 2 app: a `.wrl` opened from Finder with the
+  menu bar visible, plus one world close-up. The Download page shows a labelled slot for this.
+- macOS clip (10–15 s): double-click a `.wrl` in Finder, the window opens, one EXAMINE drag.
+- Linux clip of WALK or FLY in a larger world, and a short clip of the button bar (hover, click a mode).
+- One visually strong historical VRML world from the test corpus, rendered in 6.7.
 
 ## X_ITE
 

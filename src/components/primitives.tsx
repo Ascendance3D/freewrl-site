@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import media from "../data/archive-media.json"
+import { WORDMARK_GLYPHS, WORDMARK_VIEWBOX } from "./wordmark-paths"
 
 type MediaEntry = { original: string; width: number; height: number; files: { w: number; h: number; webp: string }[]; fallback: string }
 const MEDIA = media as Record<string, MediaEntry>
@@ -28,6 +29,20 @@ export function Mark({ size = 40, className = "" }: { size?: number; className?:
       <source type="image/webp" srcSet="/brand/freewrl-mark-512.webp" />
       <img src="/brand/freewrl-mark-512.png" width={size} height={size} alt="" decoding="async" />
     </picture>
+  )
+}
+
+/**
+ * The "FreeWRL" lettering from the logo, as vector outlines: white letters, yellow "ee",
+ * black edge. Reads the same on dark and light grounds. Decorative: give the link a label.
+ */
+export function Wordmark({ className = "" }: { className?: string }) {
+  return (
+    <svg className={`wordmark ${className}`} viewBox={WORDMARK_VIEWBOX} aria-hidden="true" focusable="false">
+      {WORDMARK_GLYPHS.map((g, i) => (
+        <path key={i} d={g.d} className={g.accent ? "wordmark__e" : undefined} />
+      ))}
+    </svg>
   )
 }
 

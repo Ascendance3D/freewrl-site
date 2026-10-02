@@ -42,9 +42,20 @@ skull data are preserved.
   `no-transform` is required: the freewrl.org zone has Automatic HTTPS Rewrites and Email
   Obfuscation on, and without it Cloudflare rewrote `http://` URLs inside archived HTML.
 - No directory indexes: `/` and `/<dir>/` return 404. The saved upstream listings work at
-  `/<dir>/index.html`. Their `/icons/*.gif` images 404.
+  `/<dir>/index.html`.
 - Byte ranges work (206 with the correct `Content-Range`).
 - No CORS policy: the site only links to these files, nothing fetches them cross-origin.
+
+## Listing icons
+
+The 250 saved listings reference 15 Apache icons as `/icons/<name>.gif`: `a`, `back`, `binary`,
+`blank`, `compressed`, `folder`, `image2`, `layout`, `movie`, `p`, `sound2`, `tar`, `text`,
+`unknown`, `world2`. The archive captured these live from `freewrl.sourceforge.io/icons/`
+(`raw/freewrl.sourceforge.io/icons/`, matching `URL_MANIFEST.csv`). Added 2026-10-01 as
+support objects under the key `icons/<name>.gif`, bytes unchanged: 15 objects, 4,359 bytes,
+`image/gif`, `public, max-age=604800`. The bucket holds 3,685 objects, 1,144,179,526 bytes.
+Hashes are in [`scripts/r2-tests/listing-icons.sha256`](scripts/r2-tests/listing-icons.sha256).
+Unreferenced upstream icons were not uploaded.
 
 ## Scripts
 
@@ -53,7 +64,7 @@ All need `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in the environment. 
 - `scripts/r2-tests/upload.py <log.tsv> [--only keys.txt]` — uploads with `wrangler r2 object put --remote`.
 - `scripts/r2-tests/put-s3.sh <keys.txt> <log.tsv>` — the Cloudflare API's WAF rejects keys containing `..`,
   so those 8 keys go through the R2 S3 endpoint.
-- `scripts/r2-tests/verify.py <outdir>` — checks the bucket listing (keys, sizes, metadata) and downloads
+- `scripts/r2-tests/verify.py <outdir>` — checks the bucket listing (corpus plus listing icons) (keys, sizes, metadata) and downloads
   every object from tests.freewrl.org to compare its SHA-256 with the manifest.
 - `scripts/r2-tests/cf-audit.sh <outdir> <tag>` — snapshots Cloudflare state for before/after audits.
 

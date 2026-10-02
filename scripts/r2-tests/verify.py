@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the R2 test corpus against tests-corpus.sha256.
+"""Verify the R2 test corpus against tests-corpus.sha256 and listing-icons.sha256.
 
 1. Lists every object in the bucket (Cloudflare REST API) and checks key set,
    size, Content-Type and Cache-Control against the manifest and upload.py rules.
@@ -18,6 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from upload import MANIFEST, BUCKET, SRC, content_type, cache_control  # noqa: E402
 
+ICONS = Path(__file__).resolve().parent / "listing-icons.sha256"
 BIG = 25 * 1024 * 1024
 UA = "freewrl-tests-verify/1"
 
@@ -65,6 +66,10 @@ def main():
     for l in open(MANIFEST):
         h, k = l.rstrip("\n").split("  ", 1)
         want[k] = (h, (SRC / k).stat().st_size)
+    # Apache icons the saved listings request as /icons/*.gif; keys are relative to the site root.
+    for l in open(ICONS):
+        h, k = l.rstrip("\n").split("  ", 1)
+        want[k] = (h, (SRC.parent / k).stat().st_size)
     bad = 0
 
     if not a.skip_list:

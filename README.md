@@ -61,10 +61,12 @@ A byte-exact copy is published on R2 at `https://tests.freewrl.org/` (see `TEST_
 ## Production
 
 - URL: https://freewrl.org
-- Release `v2026.10.02` (brand wordmark and site media): source `111a4f324640588da2799f6207e57a2eea51504e`,
-  merged to main as `e92e0c23c3d747bc8232fa89ec293fda6d21a412` (PR #2),
-  Worker version `6ebf13fb-61d0-4e58-a9df-553fc7cc0c13`, deployed 2026-10-02.
-- Rollback versions: `711d19d9-27b6-42a0-9422-647e08c9b8c8` (previous production, tests links to R2,
+- Release macOS media and capture modal: source `5877b728d4de5e5bac3add7a5f12bfbd230a15f8`,
+  merged to main as `f7143efb5c40f3dc1d9c419351e16de324da3480` (PR #3),
+  Worker version `b7797212-ff44-4ad2-bf57-58368c153d06`, deployed 2026-10-02.
+- Rollback versions: `6ebf13fb-61d0-4e58-a9df-553fc7cc0c13` (previous production, release `v2026.10.02`
+  brand wordmark and site media, merged as `e92e0c23c3d747bc8232fa89ec293fda6d21a412`, PR #2),
+  `711d19d9-27b6-42a0-9422-647e08c9b8c8` (tests links to R2,
   source `d48596e68521d9a97ce3f7931bb8aad2e4de8ce3`),
   `95aa3ecf-b0a9-4f3d-a916-79cc153bd576` (release `v2026.09.30`, source `c7682b56e8761f6fc78b40ba3c45604631f5c3a5`),
   `deb28a09-8ed7-4177-8523-f1dc9db05628` (`v2026.09.30` without analytics),

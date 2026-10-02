@@ -88,6 +88,29 @@ That Worker serves freewrl.org only.
   Web Analytics / RUM injection off: it would add a second beacon everywhere, including
   `/legacy/`, where the CSP blocks it. QA browsers stub the beacon host (`qa/analytics-stub.mjs`).
 
+### Credentials
+
+- Use the **account-owned API token** (account "Ascendance Productions") in the ignored
+  `.env.local` here: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Never put the
+  values in tracked files, QA artifacts, commit messages or shell rc files.
+- Precedence, highest first: an exported shell `CLOUDFLARE_API_TOKEN`, then `.env.local`
+  (Wrangler loads it by itself when run from this directory), then your personal
+  `wrangler login` OAuth session. A stale exported token shadows `.env.local`, and
+  repeated tries with it trip Cloudflare's auth rate limit (`code: 10502`).
+- So load `.env.local` explicitly, in a subshell, for both Wrangler and the scripts:
+  `(set -a; . ./.env.local; set +a; npx wrangler whoami)`. `env -u CLOUDFLARE_API_TOKEN npx wrangler …`
+  also works for Wrangler, but not for the curl/Python scripts, which read only the environment.
+- Verify an account-owned token with
+  `/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/tokens/verify`. `/client/v4/user/tokens/verify`
+  is for personal (user) tokens and returns `Invalid API Token` (`code: 1000`) for an
+  account token even when it is valid.
+- `wrangler whoami` should say "logged in with an Account API Token". If it says
+  "OAuth Token", you are on a personal login, not the FreeWRL token.
+- `scripts/r2-tests/*` check the token against the account endpoint before doing anything
+  and stop with a message if it is missing or not active. `qa/serve.sh` removes the
+  `CLOUDFLARE_*` variables and runs Wrangler `--local`, so it needs no credential.
+- Creating, rotating or deleting tokens needs Ryan's approval.
+
 ## Domain redirects
 
 - Canonical domain: `freewrl.org`.

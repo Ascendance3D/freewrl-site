@@ -11,6 +11,7 @@ set -uo pipefail
 here=$(cd "$(dirname "$0")" && pwd)
 src=${FREEWRL_TESTS_SRC:-$here/../../../archive-freewrl-site/raw/freewrl.sourceforge.io/tests}
 bucket=${FREEWRL_TESTS_BUCKET:-freewrl-tests}
+. "$here/cf-auth.sh"; cf_require_account_token
 A=$CLOUDFLARE_ACCOUNT_ID
 kid=$(curl -sS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
   "https://api.cloudflare.com/client/v4/accounts/$A/tokens/verify" | jq -r .result.id)

@@ -2,6 +2,7 @@
 # Snapshot the Cloudflare state the tests.freewrl.org lane must not disturb.
 # Usage: CLOUDFLARE_API_TOKEN=… CLOUDFLARE_ACCOUNT_ID=… cf-audit.sh <outdir> <before|after>
 set -euo pipefail
+. "$(dirname "$0")/cf-auth.sh"; cf_require_account_token
 out=$1; tag=$2; mkdir -p "$out"
 A=$CLOUDFLARE_ACCOUNT_ID
 cf() { curl -sS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "https://api.cloudflare.com/client/v4$1"; }

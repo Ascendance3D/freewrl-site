@@ -7,7 +7,8 @@
    Content-Length against the manifest (--sample N limits this to N objects plus
    every file over 25 MiB).
 
-Needs CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID for step 1.
+Needs CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID (the account token in .env.local)
+for step 1.
 
   verify.py <outdir> [--base https://tests.freewrl.org/] [--sample N] [--skip-list]
 """
@@ -16,7 +17,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from upload import MANIFEST, BUCKET, SRC, content_type, cache_control  # noqa: E402
+from upload import MANIFEST, BUCKET, SRC, content_type, cache_control, require_account_token  # noqa: E402
 
 ICONS = Path(__file__).resolve().parent / "listing-icons.sha256"
 BIG = 25 * 1024 * 1024
@@ -73,6 +74,7 @@ def main():
     bad = 0
 
     if not a.skip_list:
+        require_account_token()
         objs = list_objects()
         with open(out / "object-inventory.tsv", "w") as f:
             for k, o in sorted(objs.items()):

@@ -7,11 +7,11 @@ Every file listed in tests-corpus.sha256 is uploaded with `wrangler r2 object pu
 from cache_control(). Results go to a TSV log; a non-zero exit means at least
 one object failed after retries.
 
-Needs CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID in the environment.
+Needs CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID (the account token in .env.local).
 
   upload.py <log.tsv> [--only paths.txt] [--jobs 8]
 """
-import argparse, os, subprocess, sys, time
+import argparse, json, os, subprocess, sys, time, urllib.error, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -77,12 +77,33 @@ def put(key, retries=3):
     return key, f.stat().st_size, ctype, cache, attempt, "FAIL", err
 
 
+def require_account_token():
+    """Exit, without printing the token, unless CLOUDFLARE_API_TOKEN is an active
+    account token for CLOUDFLARE_ACCOUNT_ID. Account tokens verify at
+    /accounts/<id>/tokens/verify, not /user/tokens/verify."""
+    tok, acc = os.environ.get("CLOUDFLARE_API_TOKEN"), os.environ.get("CLOUDFLARE_ACCOUNT_ID")
+    status = None
+    if tok and acc:
+        req = urllib.request.Request(
+            f"https://api.cloudflare.com/client/v4/accounts/{acc}/tokens/verify",
+            headers={"Authorization": "Bearer " + tok, "User-Agent": "freewrl-tests-auth/1"})
+        try:
+            status = json.load(urllib.request.urlopen(req, timeout=30))["result"]["status"]
+        except (urllib.error.HTTPError, KeyError, TypeError):
+            pass
+    if status != "active":
+        sys.exit("CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID missing, or not an active token "
+                 "for this account (a stale shell export?). Load the FreeWRL account token: "
+                 "(set -a; . ./.env.local; set +a; <command>). See README, \"Credentials\".")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("log")
     ap.add_argument("--only")
     ap.add_argument("--jobs", type=int, default=8)
     a = ap.parse_args()
+    require_account_token()
     keys = [l.rstrip("\n").split("  ", 1)[1] for l in open(MANIFEST)]
     if a.only:
         want = {l.rstrip("\n") for l in open(a.only) if l.strip()}

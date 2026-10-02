@@ -166,5 +166,269 @@
    }
   ],
   "fallback": "/media/captures/linux-landing-navigate-poster-960.jpg"
+ },
+ "macos-window-hero": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Plaza",
+  "alt": "The FreeWRL window on macOS, with red, yellow and green window buttons and a Load bar at the top, showing a blue 3D plaza: a hand-and-eye sculpture inside a yellow ring, towers behind it, and FreeWRL's yellow-green navigation buttons along the bottom.",
+  "title": "FreeWRL 6.7 on macOS with a world open",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 2400,
+  "height": 1600,
+  "files": [
+   {
+    "w": 640,
+    "h": 427,
+    "webp": "/media/captures/macos-window-hero-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 853,
+    "webp": "/media/captures/macos-window-hero-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-window-hero-960.jpg"
+ },
+ "macos-window-full": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Plaza",
+  "alt": "The macOS menu bar reading FreeWRL and File above the FreeWRL window, which shows the plaza world with the hand-and-eye sculpture, over a forest desktop picture.",
+  "title": "FreeWRL in the macOS menu bar",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 2456,
+  "height": 1720,
+  "files": [
+   {
+    "w": 640,
+    "h": 448,
+    "webp": "/media/captures/macos-window-full-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 896,
+    "webp": "/media/captures/macos-window-full-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-window-full-960.jpg"
+ },
+ "macos-world-view": {
+  "world": "33.wrl (test corpus)",
+  "viewpoint": "after a short EXAMINE turn",
+  "alt": "A cube-shaped grid of hundreds of small see-through cones in many colours, from blue and pink to yellow and orange, on a black background, seen at an angle in the FreeWRL window.",
+  "title": "An old test world: transparent cones",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 2400,
+  "height": 1600,
+  "files": [
+   {
+    "w": 640,
+    "h": 427,
+    "webp": "/media/captures/macos-world-view-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 853,
+    "webp": "/media/captures/macos-world-view-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-world-view-960.jpg"
+ },
+ "macos-world-viewpoint": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Through the portal",
+  "alt": "The plaza sculpture framed by a dark stone portal, with 'Through the portal' in the status line at the bottom of the FreeWRL window.",
+  "title": "Viewpoint: Through the portal",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 2400,
+  "height": 1600,
+  "files": [
+   {
+    "w": 640,
+    "h": 427,
+    "webp": "/media/captures/macos-world-viewpoint-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 853,
+    "webp": "/media/captures/macos-world-viewpoint-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-world-viewpoint-960.jpg"
+ },
+ "macos-world-navigated": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Plaza, after a left-drag in EXAMINE",
+  "alt": "The plaza turned about a quarter of the way round: the yellow ring is seen edge-on as a thin upright band, with the blue ring circling it.",
+  "title": "EXAMINE: the world turned with a drag",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 2400,
+  "height": 1600,
+  "files": [
+   {
+    "w": 640,
+    "h": 427,
+    "webp": "/media/captures/macos-world-navigated-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 853,
+    "webp": "/media/captures/macos-world-navigated-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-world-navigated-960.jpg"
+ },
+ "macos-item-signal-storm-globe": {
+  "world": "Signal Storm Globe (Cybertown item)",
+  "viewpoint": "after START",
+  "alt": "Signal Storm Globe: a grey globe of rings and cyan and purple markers on a stand, above a small console with a green START lamp, on a black background.",
+  "title": "Signal Storm Globe",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 960,
+  "height": 800,
+  "files": [
+   {
+    "w": 640,
+    "h": 533,
+    "webp": "/media/captures/macos-item-signal-storm-globe-640.webp"
+   },
+   {
+    "w": 960,
+    "h": 800,
+    "webp": "/media/captures/macos-item-signal-storm-globe-960.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-item-signal-storm-globe-960.jpg"
+ },
+ "macos-item-pulse-prism-console": {
+  "world": "Pulse Prism Console (Cybertown item)",
+  "viewpoint": "after START",
+  "alt": "Pulse Prism Console: three glowing glass prisms in cyan, violet and amber on a grey console with a row of lit meter bars, on a black background.",
+  "title": "Pulse Prism Console",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 960,
+  "height": 800,
+  "files": [
+   {
+    "w": 640,
+    "h": 533,
+    "webp": "/media/captures/macos-item-pulse-prism-console-640.webp"
+   },
+   {
+    "w": 960,
+    "h": 800,
+    "webp": "/media/captures/macos-item-pulse-prism-console-960.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-item-pulse-prism-console-960.jpg"
+ },
+ "macos-item-plasma-disc-player": {
+  "world": "Plasma Disc Player (Cybertown item)",
+  "viewpoint": "after PLAY and OPEN",
+  "alt": "Plasma Disc Player: a tall grey cabinet with its doors open, showing a glowing blue and white spiral disc, with three buttons on top, on a black background.",
+  "title": "Plasma Disc Player",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 960,
+  "height": 800,
+  "files": [
+   {
+    "w": 640,
+    "h": 533,
+    "webp": "/media/captures/macos-item-plasma-disc-player-640.webp"
+   },
+   {
+    "w": 960,
+    "h": 800,
+    "webp": "/media/captures/macos-item-plasma-disc-player-960.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-item-plasma-disc-player-960.jpg"
+ },
+ "macos-finder-open-wrl-poster": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Finder, before the double-click",
+  "alt": "First frame of the Finder clip: a Finder window named FreeWRL Demo holding one file, freewrl-landing.wrl.",
+  "title": "Clip poster",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 1200,
+  "height": 912,
+  "files": [
+   {
+    "w": 640,
+    "h": 486,
+    "webp": "/media/captures/macos-finder-open-wrl-poster-640.webp"
+   },
+   {
+    "w": 1200,
+    "h": 912,
+    "webp": "/media/captures/macos-finder-open-wrl-poster-1200.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-finder-open-wrl-poster-960.jpg"
+ },
+ "macos-navigation-poster": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Plaza",
+  "alt": "First frame of the macOS navigation clip: the plaza world in FreeWRL.",
+  "title": "Clip poster",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 1200,
+  "height": 800,
+  "files": [
+   {
+    "w": 640,
+    "h": 427,
+    "webp": "/media/captures/macos-navigation-poster-640.webp"
+   },
+   {
+    "w": 1200,
+    "h": 800,
+    "webp": "/media/captures/macos-navigation-poster-1200.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-navigation-poster-960.jpg"
+ },
+ "macos-controls-poster": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Plaza",
+  "alt": "First frame of the macOS viewpoint clip: the plaza world at its first viewpoint, Plaza.",
+  "title": "Clip poster",
+  "label": "FreeWRL 6.7.0 beta 2 \u00b7 macOS, Apple Silicon",
+  "date": "2026-10-02",
+  "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input.",
+  "width": 1200,
+  "height": 800,
+  "files": [
+   {
+    "w": 640,
+    "h": 427,
+    "webp": "/media/captures/macos-controls-poster-640.webp"
+   },
+   {
+    "w": 1200,
+    "h": 800,
+    "webp": "/media/captures/macos-controls-poster-1200.webp"
+   }
+  ],
+  "fallback": "/media/captures/macos-controls-poster-960.jpg"
  }
 }

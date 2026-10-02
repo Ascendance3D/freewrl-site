@@ -1,5 +1,5 @@
 import releases from "../data/releases.json"
-import { CaptureFigure, CaptureGallery, PendingMedia } from "../components/media"
+import { CaptureFigure, CaptureGallery } from "../components/media"
 import { Commands, Facts, formatBytes, PageHead, SectionHead, Tag } from "../components/primitives"
 import { Link } from "../router"
 import { SITE } from "../routes"
@@ -10,6 +10,12 @@ export default function Download() {
     <>
       <PageHead
         kicker="Download"
+        media={
+          <CaptureFigure id="macos-window-hero" fig="D1" eager className="capture--hero" sizes="(min-width: 1024px) 45vw, (min-width: 760px) 720px, 100vw" title="FreeWRL 6.7 on macOS with a world open">
+            One window, the world inside it, and a navigation bar along the bottom. Captured from the macOS beta 2
+            release on an Apple Silicon Mac. Linux captures are under <a href="#looks">What it looks like</a>.
+          </CaptureFigure>
+        }
         title="FreeWRL 6.7"
         aside={latest && (
           <Facts
@@ -28,13 +34,6 @@ export default function Download() {
           This page lists only the files that have actually been published, with their checksums.
         </p>
       </PageHead>
-
-      <section className="frame section section--tight railed" aria-label="What FreeWRL looks like">
-        <CaptureFigure id="linux-window-ubuntu" fig="D1" eager className="capture--hero" sizes="(min-width: 1024px) 70vw, 100vw" title="FreeWRL 6.7 with a world open">
-          One window, the world inside it, and a navigation bar along the bottom. This capture is from Linux.
-          The macOS build draws the same window; a capture of it is still to come (see below).
-        </CaptureFigure>
-      </section>
 
       {latest && (
         <section className="frame section railed release" aria-labelledby="latest">
@@ -99,27 +98,33 @@ sudo ldconfig`}</Commands>
       </section>
 
       <section className="frame section railed" aria-labelledby="looks">
-        <SectionHead index="03" id="looks" title="What it looks like" kicker="Real captures of FreeWRL 6.7. Nothing here is a mock-up." />
-        <CaptureGallery
-          label="FreeWRL 6.7 on Ubuntu 24.04"
-          items={[
-            { id: "linux-four-primitives", fig: "D2", caption: <>An X3D file with the four basic shapes.</> },
-            { id: "linux-landing-examine", fig: "D3", caption: <>The plaza world, turned with a mouse drag.</> },
-            { id: "linux-landing-above", fig: "D4", caption: <>The same world from another viewpoint.</> },
-          ]}
-        />
-        <div className="media-split">
-          <div className="media-split__text prose">
-            <p>
-              The pictures above were taken on Ubuntu 24.04 from a source build. The macOS beta is the same program with the same
-              window and button bar. Its screenshots and a short clip will be added once they are captured on a Mac.
-            </p>
-            <p>A short clip of turning a world and changing viewpoints is on the <Link to="/use">Use</Link> page.</p>
-          </div>
-          <PendingMedia kind="Screenshot" title="FreeWRL 6.7 beta 2 on macOS, Apple Silicon">
-            Wanted: the notarized app opening a <code>.wrl</code> file from Finder, with the macOS menu bar in view.
-          </PendingMedia>
+        <SectionHead index="03" id="looks" title="What it looks like" kicker="Real captures of FreeWRL 6.7 on macOS and Linux. Nothing here is a mock-up." />
+        <div>
+          <h3 className="media-head">macOS, Apple Silicon</h3>
+          <CaptureGallery
+            label="FreeWRL 6.7 beta 2 on macOS"
+            items={[
+              { id: "macos-window-full", fig: "D2", caption: <>FreeWRL with its own menu bar, showing the plaza world.</> },
+              { id: "macos-world-viewpoint", fig: "D3", caption: <>The same world at another viewpoint, <em>Through the portal</em>.</> },
+              { id: "macos-world-view", fig: "D4", caption: <>A world from FreeWRL's old test set: hundreds of see-through cones.</> },
+            ]}
+          />
         </div>
+        <div>
+          <h3 className="media-head">Linux, Ubuntu 24.04</h3>
+          <CaptureGallery
+            label="FreeWRL 6.7 on Ubuntu 24.04"
+            items={[
+              { id: "linux-window-ubuntu", fig: "D5", caption: <>The FreeWRL window on the Ubuntu desktop, built from source.</> },
+              { id: "linux-four-primitives", fig: "D6", caption: <>An X3D file with the four basic shapes.</> },
+              { id: "linux-landing-examine", fig: "D7", caption: <>The plaza world, turned with a mouse drag.</> },
+            ]}
+          />
+        </div>
+        <p className="prose">
+          Both are the same program with the same window and button bar. Short clips of opening a world from Finder, turning it
+          and changing viewpoints are on the <Link to="/use">Use</Link> page.
+        </p>
       </section>
 
       <section className="frame section section--tight railed" aria-labelledby="others">

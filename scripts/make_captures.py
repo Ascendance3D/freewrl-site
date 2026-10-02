@@ -2,7 +2,9 @@
 """Web copies of real FreeWRL captures for freewrl.org.
 
 Reads media-src/captures/captures.json and the PNGs beside it (never writes
-them). Writes WebP at two widths plus a JPEG fallback to
+them). An optional "crop" [left, top, right, bottom] trims a capture for
+presentation only (e.g. a window's drop shadow, or empty space around an item);
+transparent pixels are laid on black, the capture frame colour. Writes WebP at two widths plus a JPEG fallback to
 public/media/captures/, and the index src/data/captures.json.
 Deterministic: same input -> same output. Run: npm run assets:captures
 """
@@ -18,7 +20,15 @@ meta = json.loads((SRC / "captures.json").read_text())
 
 index = {}
 for c in meta["captures"]:
-    im = Image.open(SRC / f"{c['id']}.png").convert("RGB")
+    src = Image.open(SRC / f"{c['id']}.png")
+    if "crop" in c:
+        src = src.crop(tuple(c["crop"]))
+    if src.mode in ("RGBA", "LA", "P"):
+        src = src.convert("RGBA")
+        im = Image.new("RGB", src.size, (0, 0, 0))
+        im.paste(src, mask=src.getchannel("A"))
+    else:
+        im = src.convert("RGB")
     w, h = im.size
     files = []
     for tw in sorted({min(w, 640), min(w, 1280)}):

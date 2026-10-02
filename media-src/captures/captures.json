@@ -1,10 +1,15 @@
 {
- "_about": "Real FreeWRL window captures. Source PNGs sit beside this file; scripts/make_captures.py writes the web copies. Never edit a capture by hand beyond resizing.",
+ "_about": "Real FreeWRL window captures. Source PNGs sit beside this file; scripts/make_captures.py writes the web copies. Never edit a capture by hand beyond resizing. macOS entries: \"source\" is the file in the capture package (PNG copied byte for byte; posters are frame 0 of the .mov, scaled to the clip size by scripts/make_macos_clips.sh); \"crop\" trims for presentation only.",
  "_platforms": {
   "linux-2026-10-01": {
    "label": "FreeWRL 6.7.0 · Ubuntu 24.04",
    "date": "2026-10-01",
    "detail": "FreeWRL 6.7.0 (libfreewrl 6.7.0), local autotools build of Ascendance3D/freewrl, built 2026-09-29. Ubuntu 24.04.5 LTS, X11, NVIDIA RTX 3060 Ti, driver 595.91.07, OpenGL 4.6. Window captured with ImageMagick import on 2026-10-01; clip recorded with ffmpeg x11grab. Input from xdotool (mouse drag, Page Down)."
+  },
+  "macos-2026-10-02": {
+   "label": "FreeWRL 6.7.0 beta 2 · macOS, Apple Silicon",
+   "date": "2026-10-02",
+   "detail": "FreeWRL 6.7.0 macOS Beta 2 (v6.7.0-macos-beta.2), the published notarized arm64 release, source commit 99415854db63. macOS 27.0.1 on an Apple M1, Retina display (2x). Captured with macOS screencapture on 2026-10-02; clips are re-encoded from the screencapture recordings. Real mouse and keyboard input."
   }
  },
  "captures": [
@@ -62,6 +67,162 @@
    "world": "freewrl-landing.wrl",
    "viewpoint": "Plaza",
    "alt": "First frame of the navigation clip: the plaza world in FreeWRL.",
+   "title": "Clip poster"
+  },
+  {
+   "id": "macos-window-hero",
+   "platform": "macos-2026-10-02",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Plaza",
+   "crop": [
+    112,
+    76,
+    2512,
+    1676
+   ],
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/screenshots/macos-window-hero.png",
+    "sha256": "fe506cbd31b04f2f33776b57da2f4a6a237058651937ed44d6002262bcbbff5a"
+   },
+   "alt": "The FreeWRL window on macOS, with red, yellow and green window buttons and a Load bar at the top, showing a blue 3D plaza: a hand-and-eye sculpture inside a yellow ring, towers behind it, and FreeWRL's yellow-green navigation buttons along the bottom.",
+   "title": "FreeWRL 6.7 on macOS with a world open"
+  },
+  {
+   "id": "macos-window-full",
+   "platform": "macos-2026-10-02",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Plaza",
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/screenshots/macos-window-full.png",
+    "sha256": "ed2991dca556e7bc3e0c730d8d046a63ef6a3cae78bd03b3f2932d7ca0fe4f66"
+   },
+   "alt": "The macOS menu bar reading FreeWRL and File above the FreeWRL window, which shows the plaza world with the hand-and-eye sculpture, over a forest desktop picture.",
+   "title": "FreeWRL in the macOS menu bar"
+  },
+  {
+   "id": "macos-world-view",
+   "platform": "macos-2026-10-02",
+   "world": "33.wrl (test corpus)",
+   "viewpoint": "after a short EXAMINE turn",
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/screenshots/macos-world-view.png",
+    "sha256": "fc4045c27cbbc1c0630b755bb5364a561132597f41c0a4725d80956edd39fc2c"
+   },
+   "alt": "A cube-shaped grid of hundreds of small see-through cones in many colours, from blue and pink to yellow and orange, on a black background, seen at an angle in the FreeWRL window.",
+   "title": "An old test world: transparent cones"
+  },
+  {
+   "id": "macos-world-viewpoint",
+   "platform": "macos-2026-10-02",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Through the portal",
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/screenshots/macos-world-viewpoint.png",
+    "sha256": "625256cd51a5c5b1be365f9f4dee6004bbd53384d45a31607867f2111d4f96c0"
+   },
+   "alt": "The plaza sculpture framed by a dark stone portal, with 'Through the portal' in the status line at the bottom of the FreeWRL window.",
+   "title": "Viewpoint: Through the portal"
+  },
+  {
+   "id": "macos-world-navigated",
+   "platform": "macos-2026-10-02",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Plaza, after a left-drag in EXAMINE",
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/screenshots/macos-world-navigated.png",
+    "sha256": "71350ef57855936697a7b0b7aa4f1f607007671f60cf1cc046b4d53842b9083f"
+   },
+   "alt": "The plaza turned about a quarter of the way round: the yellow ring is seen edge-on as a thin upright band, with the blue ring circling it.",
+   "title": "EXAMINE: the world turned with a drag"
+  },
+  {
+   "id": "macos-item-signal-storm-globe",
+   "platform": "macos-2026-10-02",
+   "world": "Signal Storm Globe (Cybertown item)",
+   "viewpoint": "after START",
+   "crop": [
+    720,
+    690,
+    1680,
+    1490
+   ],
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/screenshots/macos-item-signal-storm-globe.png",
+    "sha256": "44dc6b65a855bab7e685e21728d576dfd43f95d9c3b39fabf118b7b69946b904"
+   },
+   "alt": "Signal Storm Globe: a grey globe of rings and cyan and purple markers on a stand, above a small console with a green START lamp, on a black background.",
+   "title": "Signal Storm Globe"
+  },
+  {
+   "id": "macos-item-pulse-prism-console",
+   "platform": "macos-2026-10-02",
+   "world": "Pulse Prism Console (Cybertown item)",
+   "viewpoint": "after START",
+   "crop": [
+    720,
+    690,
+    1680,
+    1490
+   ],
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/screenshots/macos-item-pulse-prism-console.png",
+    "sha256": "30ef62a175c11eb1511daa51452cd093454bfb9d1f40833dbf1d2b045adcc54a"
+   },
+   "alt": "Pulse Prism Console: three glowing glass prisms in cyan, violet and amber on a grey console with a row of lit meter bars, on a black background.",
+   "title": "Pulse Prism Console"
+  },
+  {
+   "id": "macos-item-plasma-disc-player",
+   "platform": "macos-2026-10-02",
+   "world": "Plasma Disc Player (Cybertown item)",
+   "viewpoint": "after PLAY and OPEN",
+   "crop": [
+    720,
+    690,
+    1680,
+    1490
+   ],
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/screenshots/macos-item-plasma-disc-player.png",
+    "sha256": "14be45d125aba915e445936c08358b0e589121606634970ae68442da06ba2f37"
+   },
+   "alt": "Plasma Disc Player: a tall grey cabinet with its doors open, showing a glowing blue and white spiral disc, with three buttons on top, on a black background.",
+   "title": "Plasma Disc Player"
+  },
+  {
+   "id": "macos-finder-open-wrl-poster",
+   "platform": "macos-2026-10-02",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Finder, before the double-click",
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/videos/macos-finder-open-wrl.mov",
+    "sha256": "84ba4316d56e091373c8b7f6fbbdb12a2aebf60632270899fc7d2e12e5d622e1"
+   },
+   "alt": "First frame of the Finder clip: a Finder window named FreeWRL Demo holding one file, freewrl-landing.wrl.",
+   "title": "Clip poster"
+  },
+  {
+   "id": "macos-navigation-poster",
+   "platform": "macos-2026-10-02",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Plaza",
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/videos/macos-navigation.mov",
+    "sha256": "be39351168efeeca016c5221bd7526e80de44e5a55a0700a3f70bec495461b8b"
+   },
+   "alt": "First frame of the macOS navigation clip: the plaza world in FreeWRL.",
+   "title": "Clip poster"
+  },
+  {
+   "id": "macos-controls-poster",
+   "platform": "macos-2026-10-02",
+   "world": "freewrl-landing.wrl",
+   "viewpoint": "Plaza",
+   "source": {
+    "file": "freewrl-macos-media-2026-10-02/videos/macos-controls.mov",
+    "sha256": "91e1bf8787c6c3b739dce1045705fcc0072b1eafb61bc38dc0f9ef4ffb68dbe8"
+   },
+   "alt": "First frame of the macOS viewpoint clip: the plaza world at its first viewpoint, Plaza.",
    "title": "Clip poster"
   }
  ]

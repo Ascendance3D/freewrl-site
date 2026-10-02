@@ -57,6 +57,35 @@ support objects under the key `icons/<name>.gif`, bytes unchanged: 15 objects, 4
 Hashes are in [`scripts/r2-tests/listing-icons.sha256`](scripts/r2-tests/listing-icons.sha256).
 Unreferenced upstream icons were not uploaded.
 
+## Executable-like files
+
+The corpus includes historical helper programs and test assets with executable-style extensions.
+They are upstream files, preserved byte for byte like every other file. Each matches
+`tests-corpus.sha256` and the archive's `URL_MANIFEST.csv` (path, size, SHA-256, all `source=live`),
+and each is linked from its saved upstream listing, dated 2022–2023.
+
+| extension | files | bytes | Content-Type | where |
+|---|---:|---:|---|---|
+| `.class` | 135 | 309,549 | `application/octet-stream` | `25_Geospatial/x3dEarthExamples/population/` (a Java viewer and Apache Commons Math) |
+| `.bat` | 21 | 11,231 | `text/plain` | run scripts in `28_Distributed_interactive_simulation/`, `41_Volume_rendering/`, `25_Geospatial/Mars/`, … |
+| `.dll` | 6 | 442,368 | `application/octet-stream` | `brick`, `tiles`, `voronoi` in `10_Grouping/helpers/` and `numbered/helpers/` |
+| `.jar` | 1 | 332,273 | `application/java-archive` | `25_Geospatial/x3dEarthExamples/population/uscensus.jar` |
+| `.exe` | 1 | 1,497,600 | `application/octet-stream` | `41_Volume_rendering/unu.exe` (Teem 1.11 `unu`, called by the `run_unu*.bat` files) |
+
+The corpus has no `.com`, `.scr`, `.msi`, `.cmd`, `.ps1`, `.vbs`, `.sh`, `.command` or `.app`
+files. A magic-byte check of all 3,670 files found Windows PE headers only in the 7 `.exe`/`.dll`
+files, no ELF or Mach-O binaries, and Java class headers only in the `.class` files. Other script and
+source files (`.py` 10, `.vb` 15, `.pl` 3) are plain text. Two zips also hold `.class` or `.vb`
+source: `x3dEarthExamples/Web3D2008_X3D-Earth_Mashups_Tutorial.zip` and `vbScreenShotProgram/Source_Files.zip`.
+
+These files are served as static R2 objects, like the rest of the corpus. No `Content-Disposition` is set, so
+`.bat` files display as text and the others download. Neither the website nor R2 runs them. There are
+no user accounts. On 2026-10-01, Chrome downloaded `unu.exe` from its saved listing with no Safe Browsing
+warning (download danger type: not dangerous). No file was opened, run or sent to an outside scanner.
+
+Current policy: the files are preserved and served as they are, with no extra note on the website.
+Adding a note, unlinking them from `/tests/`, or removing their public access is the owner's decision.
+
 ## Scripts
 
 All need `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in the environment. Never commit them.

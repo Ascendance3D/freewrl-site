@@ -1,4 +1,5 @@
 import use from "../data/use.json"
+import { CaptureFigure, CaptureGallery, DemoVideo } from "../components/media"
 import { Commands, PageHead, SectionHead } from "../components/primitives"
 
 type Key = { key: string; action: string; verified: boolean }
@@ -20,21 +21,44 @@ export default function Use() {
         </p>
       </PageHead>
 
+      <section className="frame section section--tight railed" aria-label="What FreeWRL looks like">
+        <CaptureFigure id="linux-landing-plaza" fig="U1" eager className="capture--hero" sizes="(min-width: 1024px) 70vw, 100vw">
+          This is the whole program: one window with the world in it. The yellow bar along the bottom is the
+          navigation button bar. The name of the current viewpoint, here <em>Plaza</em>, shows below it.
+        </CaptureFigure>
+      </section>
+
       <section className="frame section railed" aria-labelledby="open">
         <SectionHead index="01" id="open" title="Open a world" />
-        <div className="split">
-          <Commands title="Linux / macOS terminal">{`freewrl world.wrl
+        <div className="media-split">
+          <div className="media-split__text">
+            <Commands title="Linux / macOS terminal">{`freewrl world.wrl
 freewrl https://example.org/world.x3d
 freewrl --geometry 1280x800 world.x3dv`}</Commands>
-          <div className="prose">
-            <p>On macOS, double-click a <code>.wrl</code>, <code>.x3d</code> or <code>.x3dv</code> file, or drop it on FreeWRL.</p>
-            <p>FreeWRL also reads gzipped files (<code>.wrz</code>, <code>.x3dz</code>) and loads worlds over HTTP and HTTPS.</p>
+            <div className="prose">
+              <p>On macOS, double-click a <code>.wrl</code>, <code>.x3d</code> or <code>.x3dv</code> file, or drop it on FreeWRL.</p>
+              <p>FreeWRL also reads gzipped files (<code>.wrz</code>, <code>.x3dz</code>) and loads worlds over HTTP and HTTPS.</p>
+            </div>
           </div>
+          <CaptureFigure id="linux-four-primitives" fig="U2" sizes="(min-width: 1100px) 40vw, 100vw">
+            <code>freewrl --geometry 1280x800 four-primitives.x3d</code>. The file opens at its first viewpoint, <em>Front</em>.
+          </CaptureFigure>
         </div>
       </section>
 
       <section className="frame section railed" aria-labelledby="modes">
         <SectionHead index="02" id="modes" title="Navigation modes" kicker="A world can limit the modes with NavigationInfo. A key for a mode the world does not allow is ignored." />
+        <DemoVideo
+          src="/media/captures/linux-landing-navigate-960.mp4"
+          poster="linux-landing-navigate-poster"
+          fig="U3"
+          title="Turning a world, then changing viewpoint"
+          length="11 s"
+        >
+          The world opens in EXAMINE mode. A left drag to the left turns the whole world around its centre.
+          Then <kbd>Page Down</kbd> twice moves to the next viewpoints, <em>Under the tower</em> and <em>Through the portal</em>.
+          FreeWRL animates each move.
+        </DemoVideo>
         <table className="table table--modes">
           <thead><tr><th>Mode</th><th>Key</th><th>What it does</th></tr></thead>
           <tbody>
@@ -49,8 +73,28 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
         </table>
       </section>
 
+      <section className="frame section railed" aria-labelledby="viewpoints">
+        <SectionHead index="03" id="viewpoints" title="Viewpoints" kicker="Places the world's author set up for you. Most worlds have a few." />
+        <div className="prose">
+          <p>
+            <kbd>Page Down</kbd> or <kbd>v</kbd> goes to the next viewpoint, <kbd>Page Up</kbd> or <kbd>b</kbd> to the previous one.
+            <kbd>Home</kbd> and <kbd>End</kbd> jump to the first and the last. If you get lost, go back to a viewpoint.
+          </p>
+        </div>
+        <CaptureGallery
+          label="The same world from two viewpoints"
+          items={[
+            { id: "linux-landing-portal", fig: "U4", caption: <>Second <kbd>Page Down</kbd> from the start.</> },
+            { id: "linux-landing-above", fig: "U5", caption: <>Third <kbd>Page Down</kbd>. The name at the bottom left changes with each viewpoint.</> },
+          ]}
+        />
+      </section>
+
       <section className="frame section railed" aria-labelledby="mouse">
-        <SectionHead index="03" id="mouse" title="Mouse" kicker="Left button unless it says otherwise. The wheel only zooms in PAN mode." />
+        <SectionHead index="04" id="mouse" title="Mouse" kicker="Left button unless it says otherwise. The wheel only zooms in PAN mode." />
+        <CaptureFigure id="linux-landing-examine" fig="U6" sizes="(min-width: 1100px) 50vw, 100vw" className="capture--narrow">
+          The plaza after a short left drag in EXAMINE mode. Compare it with U1: the whole world has turned.
+        </CaptureFigure>
         <table className="table">
           <thead><tr><th>Mode</th><th>Input</th><th>Result</th></tr></thead>
           <tbody>
@@ -62,7 +106,7 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
       </section>
 
       <section className="frame section railed" aria-labelledby="keys">
-        <SectionHead index="04" id="keys" title="Keys" kicker="The same on Linux and macOS. On macOS, Command-key shortcuts go to the menu, not to FreeWRL." />
+        <SectionHead index="05" id="keys" title="Keys" kicker="The same on Linux and macOS. On macOS, Command-key shortcuts go to the menu, not to FreeWRL." />
         <div className="keygrid">
           {GROUPS.map(([title, list]) => (
             <div key={title} className="keygrid__group">
@@ -84,7 +128,7 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
       </section>
 
       <section className="frame section railed" aria-labelledby="options">
-        <SectionHead index="05" id="options" title="Command-line options" kicker="The most useful ones. freewrl --help lists all of them. Use the long forms." />
+        <SectionHead index="06" id="options" title="Command-line options" kicker="The most useful ones. freewrl --help lists all of them. Use the long forms." />
         <table className="table">
           <thead><tr><th>Option</th><th>What it does</th></tr></thead>
           <tbody>
@@ -96,7 +140,7 @@ freewrl --geometry 1280x800 world.x3dv`}</Commands>
       </section>
 
       <section className="frame section railed" aria-labelledby="changed">
-        <SectionHead index="06" id="changed" title="Changed since the old manual" />
+        <SectionHead index="07" id="changed" title="Changed since the old manual" />
         <ul className="prose changes">
           <li>Slide left and right is <kbd>j</kbd> / <kbd>l</kbd>. The old page said 7 / 9, but those keys roll the view.</li>
           <li>NumLock no longer toggles the headlight on Linux. Use <kbd>h</kbd>.</li>

@@ -1,4 +1,5 @@
 import releases from "../data/releases.json"
+import { CaptureFigure, CaptureGallery, PendingMedia } from "../components/media"
 import { Commands, Facts, formatBytes, PageHead, SectionHead, Tag } from "../components/primitives"
 import { Link } from "../router"
 import { SITE } from "../routes"
@@ -27,6 +28,13 @@ export default function Download() {
           This page lists only the files that have actually been published, with their checksums.
         </p>
       </PageHead>
+
+      <section className="frame section section--tight railed" aria-label="What FreeWRL looks like">
+        <CaptureFigure id="linux-window-ubuntu" fig="D1" eager className="capture--hero" sizes="(min-width: 1024px) 70vw, 100vw" title="FreeWRL 6.7 with a world open">
+          One window, the world inside it, and a navigation bar along the bottom. This capture is from Linux.
+          The macOS build draws the same window; a capture of it is still to come (see below).
+        </CaptureFigure>
+      </section>
 
       {latest && (
         <section className="frame section railed release" aria-labelledby="latest">
@@ -90,8 +98,32 @@ sudo ldconfig`}</Commands>
         </div>
       </section>
 
+      <section className="frame section railed" aria-labelledby="looks">
+        <SectionHead index="03" id="looks" title="What it looks like" kicker="Real captures of FreeWRL 6.7. Nothing here is a mock-up." />
+        <CaptureGallery
+          label="FreeWRL 6.7 on Ubuntu 24.04"
+          items={[
+            { id: "linux-four-primitives", fig: "D2", caption: <>An X3D file with the four basic shapes.</> },
+            { id: "linux-landing-examine", fig: "D3", caption: <>The plaza world, turned with a mouse drag.</> },
+            { id: "linux-landing-above", fig: "D4", caption: <>The same world from another viewpoint.</> },
+          ]}
+        />
+        <div className="media-split">
+          <div className="media-split__text prose">
+            <p>
+              The pictures above were taken on Ubuntu 24.04 from a source build. The macOS beta is the same program with the same
+              window and button bar. Its screenshots and a short clip will be added once they are captured on a Mac.
+            </p>
+            <p>A short clip of turning a world and changing viewpoints is on the <Link to="/use">Use</Link> page.</p>
+          </div>
+          <PendingMedia kind="Screenshot" title="FreeWRL 6.7 beta 2 on macOS, Apple Silicon">
+            Wanted: the notarized app opening a <code>.wrl</code> file from Finder, with the macOS menu bar in view.
+          </PendingMedia>
+        </div>
+      </section>
+
       <section className="frame section section--tight railed" aria-labelledby="others">
-        <SectionHead index="03" id="others" title="Windows, Android, iOS" />
+        <SectionHead index="04" id="others" title="Windows, Android, iOS" />
         <div className="prose">
           <p>
             Nobody maintains these builds now. The last upstream Windows and Android builds are still on the
@@ -105,7 +137,7 @@ sudo ldconfig`}</Commands>
 
       {older.length > 0 && (
         <section className="frame section section--tight railed" aria-labelledby="older">
-          <SectionHead index="04" id="older" title="Earlier releases" />
+          <SectionHead index="05" id="older" title="Earlier releases" />
           <div>
           <table className="table table--stack">
             <thead><tr><th>Tag</th><th>Published</th><th>File</th><th>SHA-256</th></tr></thead>

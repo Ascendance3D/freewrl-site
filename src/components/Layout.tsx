@@ -2,7 +2,7 @@ import { useState, type ReactNode } from "react"
 import releases from "../data/releases.json"
 import { Link, useRouter } from "../router"
 import { ROUTES, SITE } from "../routes"
-import { Mark } from "./primitives"
+import { Mark, Wordmark } from "./primitives"
 
 const latest = releases.releases[0]
 
@@ -36,7 +36,7 @@ function Masthead() {
       <div className="masthead__bar frame">
         <Link to="/" className="masthead__brand" aria-label="FreeWRL home">
           <Mark size={44} />
-          <span className="masthead__word">FreeWRL</span>
+          <Wordmark className="masthead__word" />
         </Link>
         <button
           type="button"

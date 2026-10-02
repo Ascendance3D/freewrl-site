@@ -23,7 +23,8 @@ for (const w of WIDTHS) {
       const h1s = [...document.querySelectorAll("h1")]
       const h1 = h1s[0]
       const cs = (el) => getComputedStyle(el)
-      const fams = new Set([...document.querySelectorAll("body *")].map((e) => cs(e).fontFamily.split(",")[0].replace(/"/g, "").trim()))
+      // children of <video>/<audio> are fallback markup the browser never renders, so they have no computed font
+      const fams = new Set([...document.querySelectorAll("body *:not(video *, audio *)")].map((e) => cs(e).fontFamily.split(",")[0].replace(/"/g, "").trim()))
       // reading text only; marginal notes, captions and labels are meant to be smaller
       const bodyP = [...document.querySelectorAll("main .prose p:not(.caption, .mono), main p.prose, main .page-head__lede p, main .stage__body > p:first-child, main .exhibit-row__text > p, main .ledger__col > p:not(.mono, .caption, .ledger__big)")]
       const minBody = bodyP.length ? Math.min(...bodyP.map((e) => parseFloat(cs(e).fontSize))) : 16
@@ -35,7 +36,11 @@ for (const w of WIDTHS) {
       const firstScreen = [...document.querySelectorAll("main *")].filter((e) => {
         const b = e.getBoundingClientRect(); return b.top < 900 && b.bottom > 120 && b.width > 0 && b.width < W * 0.6 && e.children.length === 0 && (e.textContent.trim() || e.tagName === "IMG" || e.tagName === "CANVAS")
       })
-      const rightUsed = firstScreen.some((e) => e.getBoundingClientRect().left > W * 0.66)
+      // or a wide capture/canvas spanning into the last quarter (media only: a full-width text block does not count)
+      const wideMedia = [...document.querySelectorAll("main img, main video, main canvas")].filter((e) => {
+        const b = e.getBoundingClientRect(); return b.top < 900 && b.bottom > 120 && b.width >= W * 0.4 && b.right > W * 0.75
+      })
+      const rightUsed = firstScreen.some((e) => e.getBoundingClientRect().left > W * 0.66) || wideMedia.length > 0
       return {
         h1Count: h1s.length, h1Size: h1 ? parseFloat(cs(h1).fontSize) : 0, h1Upper: h1 ? cs(h1).textTransform === "uppercase" : false,
         hScroll: document.documentElement.scrollWidth - W, fams: [...fams], minBody, upperH, small, rightUsed,

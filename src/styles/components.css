@@ -283,7 +283,7 @@ mark.param { background: var(--mark); color: inherit; padding: 0 2px; outline: 1
 @media (min-width: 1280px) { .shots--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 /* text beside a capture: words left, picture right, picture first on small screens */
-.media-split { display: grid; grid-template-columns: 1fr; gap: var(--space-s) var(--gap); align-items: start; }
+.media-split { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-s) var(--gap); align-items: start; }
 .media-split > .capture, .media-split > .pending { order: -1; }
 .media-split__text > * + * { margin-top: 16px; }
 @media (min-width: 1100px) {

@@ -61,12 +61,16 @@ A byte-exact copy is published on R2 at `https://tests.freewrl.org/` (see `TEST_
 ## Production
 
 - URL: https://freewrl.org
-- Release `v2026.09.30`: source `c7682b56e8761f6fc78b40ba3c45604631f5c3a5`,
-  Worker version `95aa3ecf-b0a9-4f3d-a916-79cc153bd576`.
-- Rollback versions: `deb28a09-8ed7-4177-8523-f1dc9db05628` (same release without analytics),
+- Release `v2026.10.02` (brand wordmark and site media): source `111a4f324640588da2799f6207e57a2eea51504e`,
+  merged to main as `e92e0c23c3d747bc8232fa89ec293fda6d21a412` (PR #2),
+  Worker version `6ebf13fb-61d0-4e58-a9df-553fc7cc0c13`, deployed 2026-10-02.
+- Rollback versions: `711d19d9-27b6-42a0-9422-647e08c9b8c8` (previous production, tests links to R2,
+  source `d48596e68521d9a97ce3f7931bb8aad2e4de8ce3`),
+  `95aa3ecf-b0a9-4f3d-a916-79cc153bd576` (release `v2026.09.30`, source `c7682b56e8761f6fc78b40ba3c45604631f5c3a5`),
+  `deb28a09-8ed7-4177-8523-f1dc9db05628` (`v2026.09.30` without analytics),
   `b7bcb7f1-e285-4c95-b8fc-1c538a3b825a` (pre-launch site).
 - X_ITE is pinned to 16.4.1.
-- The test corpus is on R2 at https://tests.freewrl.org/ (`TEST_CORPUS.md`). Release `v2026.09.30` still links to the upstream copy; source links to R2 from `feat: link tests browser to R2 corpus` on.
+- The test corpus is on R2 at https://tests.freewrl.org/ (`TEST_CORPUS.md`). Production links to it; release `v2026.09.30` linked to the upstream copy.
 - freewrl.com, www.freewrl.com and www.freewrl.org redirect to freewrl.org (see below).
 
 ## Cloudflare

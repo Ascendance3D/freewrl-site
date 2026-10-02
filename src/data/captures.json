@@ -1,0 +1,170 @@
+{
+ "linux-landing-plaza": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Plaza",
+  "alt": "FreeWRL window showing a blue 3D plaza: a hand-and-eye sculpture inside a yellow ring, towers behind it, and FreeWRL's yellow navigation button bar along the bottom edge.",
+  "title": "A world open in FreeWRL",
+  "label": "FreeWRL 6.7.0 \u00b7 Ubuntu 24.04",
+  "date": "2026-10-01",
+  "detail": "FreeWRL 6.7.0 (libfreewrl 6.7.0), local autotools build of Ascendance3D/freewrl, built 2026-09-29. Ubuntu 24.04.5 LTS, X11, NVIDIA RTX 3060 Ti, driver 595.91.07, OpenGL 4.6. Window captured with ImageMagick import on 2026-10-01; clip recorded with ffmpeg x11grab. Input from xdotool (mouse drag, Page Down).",
+  "width": 1280,
+  "height": 800,
+  "files": [
+   {
+    "w": 640,
+    "h": 400,
+    "webp": "/media/captures/linux-landing-plaza-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 800,
+    "webp": "/media/captures/linux-landing-plaza-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/linux-landing-plaza-960.jpg"
+ },
+ "linux-window-ubuntu": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Plaza",
+  "alt": "The FreeWRL application window on the Ubuntu desktop, with its title bar and window controls, showing the same plaza world.",
+  "title": "The FreeWRL window on Ubuntu 24.04",
+  "label": "FreeWRL 6.7.0 \u00b7 Ubuntu 24.04",
+  "date": "2026-10-01",
+  "detail": "FreeWRL 6.7.0 (libfreewrl 6.7.0), local autotools build of Ascendance3D/freewrl, built 2026-09-29. Ubuntu 24.04.5 LTS, X11, NVIDIA RTX 3060 Ti, driver 595.91.07, OpenGL 4.6. Window captured with ImageMagick import on 2026-10-01; clip recorded with ffmpeg x11grab. Input from xdotool (mouse drag, Page Down).",
+  "width": 1308,
+  "height": 866,
+  "files": [
+   {
+    "w": 640,
+    "h": 424,
+    "webp": "/media/captures/linux-window-ubuntu-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 847,
+    "webp": "/media/captures/linux-window-ubuntu-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/linux-window-ubuntu-960.jpg"
+ },
+ "linux-landing-examine": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Plaza, after a left-drag in EXAMINE",
+  "alt": "The plaza world turned to one side after dragging with the mouse: the sculpture is seen from a new angle, with a beam in the foreground.",
+  "title": "EXAMINE: drag to turn the world",
+  "label": "FreeWRL 6.7.0 \u00b7 Ubuntu 24.04",
+  "date": "2026-10-01",
+  "detail": "FreeWRL 6.7.0 (libfreewrl 6.7.0), local autotools build of Ascendance3D/freewrl, built 2026-09-29. Ubuntu 24.04.5 LTS, X11, NVIDIA RTX 3060 Ti, driver 595.91.07, OpenGL 4.6. Window captured with ImageMagick import on 2026-10-01; clip recorded with ffmpeg x11grab. Input from xdotool (mouse drag, Page Down).",
+  "width": 1280,
+  "height": 800,
+  "files": [
+   {
+    "w": 640,
+    "h": 400,
+    "webp": "/media/captures/linux-landing-examine-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 800,
+    "webp": "/media/captures/linux-landing-examine-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/linux-landing-examine-960.jpg"
+ },
+ "linux-landing-portal": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Through the portal",
+  "alt": "The plaza seen through a dark stone portal, with the viewpoint name 'Through the portal' in the status bar.",
+  "title": "Viewpoint: Through the portal",
+  "label": "FreeWRL 6.7.0 \u00b7 Ubuntu 24.04",
+  "date": "2026-10-01",
+  "detail": "FreeWRL 6.7.0 (libfreewrl 6.7.0), local autotools build of Ascendance3D/freewrl, built 2026-09-29. Ubuntu 24.04.5 LTS, X11, NVIDIA RTX 3060 Ti, driver 595.91.07, OpenGL 4.6. Window captured with ImageMagick import on 2026-10-01; clip recorded with ffmpeg x11grab. Input from xdotool (mouse drag, Page Down).",
+  "width": 1280,
+  "height": 800,
+  "files": [
+   {
+    "w": 640,
+    "h": 400,
+    "webp": "/media/captures/linux-landing-portal-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 800,
+    "webp": "/media/captures/linux-landing-portal-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/linux-landing-portal-960.jpg"
+ },
+ "linux-landing-above": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "From above",
+  "alt": "The plaza from above: the sculpture on its platform, grid lines on the ground, and the viewpoint name 'From above' in the status bar.",
+  "title": "Viewpoint: From above",
+  "label": "FreeWRL 6.7.0 \u00b7 Ubuntu 24.04",
+  "date": "2026-10-01",
+  "detail": "FreeWRL 6.7.0 (libfreewrl 6.7.0), local autotools build of Ascendance3D/freewrl, built 2026-09-29. Ubuntu 24.04.5 LTS, X11, NVIDIA RTX 3060 Ti, driver 595.91.07, OpenGL 4.6. Window captured with ImageMagick import on 2026-10-01; clip recorded with ffmpeg x11grab. Input from xdotool (mouse drag, Page Down).",
+  "width": 1280,
+  "height": 800,
+  "files": [
+   {
+    "w": 640,
+    "h": 400,
+    "webp": "/media/captures/linux-landing-above-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 800,
+    "webp": "/media/captures/linux-landing-above-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/linux-landing-above-960.jpg"
+ },
+ "linux-four-primitives": {
+  "world": "four-primitives.x3d",
+  "viewpoint": "Front",
+  "alt": "Four lit shapes on a grey floor in FreeWRL: a blue box, a pale yellow sphere, a cyan cone and a dark grey cylinder.",
+  "title": "An X3D file: Box, Sphere, Cone, Cylinder",
+  "label": "FreeWRL 6.7.0 \u00b7 Ubuntu 24.04",
+  "date": "2026-10-01",
+  "detail": "FreeWRL 6.7.0 (libfreewrl 6.7.0), local autotools build of Ascendance3D/freewrl, built 2026-09-29. Ubuntu 24.04.5 LTS, X11, NVIDIA RTX 3060 Ti, driver 595.91.07, OpenGL 4.6. Window captured with ImageMagick import on 2026-10-01; clip recorded with ffmpeg x11grab. Input from xdotool (mouse drag, Page Down).",
+  "width": 1280,
+  "height": 800,
+  "files": [
+   {
+    "w": 640,
+    "h": 400,
+    "webp": "/media/captures/linux-four-primitives-640.webp"
+   },
+   {
+    "w": 1280,
+    "h": 800,
+    "webp": "/media/captures/linux-four-primitives-1280.webp"
+   }
+  ],
+  "fallback": "/media/captures/linux-four-primitives-960.jpg"
+ },
+ "linux-landing-navigate-poster": {
+  "world": "freewrl-landing.wrl",
+  "viewpoint": "Plaza",
+  "alt": "First frame of the navigation clip: the plaza world in FreeWRL.",
+  "title": "Clip poster",
+  "label": "FreeWRL 6.7.0 \u00b7 Ubuntu 24.04",
+  "date": "2026-10-01",
+  "detail": "FreeWRL 6.7.0 (libfreewrl 6.7.0), local autotools build of Ascendance3D/freewrl, built 2026-09-29. Ubuntu 24.04.5 LTS, X11, NVIDIA RTX 3060 Ti, driver 595.91.07, OpenGL 4.6. Window captured with ImageMagick import on 2026-10-01; clip recorded with ffmpeg x11grab. Input from xdotool (mouse drag, Page Down).",
+  "width": 960,
+  "height": 600,
+  "files": [
+   {
+    "w": 640,
+    "h": 400,
+    "webp": "/media/captures/linux-landing-navigate-poster-640.webp"
+   },
+   {
+    "w": 960,
+    "h": 600,
+    "webp": "/media/captures/linux-landing-navigate-poster-960.webp"
+   }
+  ],
+  "fallback": "/media/captures/linux-landing-navigate-poster-960.jpg"
+ }
+}

@@ -10,6 +10,12 @@ export default function Download() {
     <>
       <PageHead
         kicker="Download"
+        media={
+          <CaptureFigure id="macos-window-hero" fig="D1" eager className="capture--hero" sizes="(min-width: 1024px) 45vw, (min-width: 760px) 720px, 100vw" title="FreeWRL 6.7 on macOS with a world open">
+            One window, the world inside it, and a navigation bar along the bottom. Captured from the macOS beta 2
+            release on an Apple Silicon Mac. Linux captures are under <a href="#looks">What it looks like</a>.
+          </CaptureFigure>
+        }
         title="FreeWRL 6.7"
         aside={latest && (
           <Facts
@@ -28,13 +34,6 @@ export default function Download() {
           This page lists only the files that have actually been published, with their checksums.
         </p>
       </PageHead>
-
-      <section className="frame section section--tight railed" aria-label="What FreeWRL looks like">
-        <CaptureFigure id="macos-window-hero" fig="D1" eager className="capture--hero" sizes="(min-width: 1024px) 70vw, 100vw" title="FreeWRL 6.7 on macOS with a world open">
-          One window, the world inside it, and a navigation bar along the bottom. Captured from the macOS beta 2
-          release on an Apple Silicon Mac. Linux captures are under <a href="#looks">What it looks like</a>.
-        </CaptureFigure>
-      </section>
 
       {latest && (
         <section className="frame section railed release" aria-labelledby="latest">

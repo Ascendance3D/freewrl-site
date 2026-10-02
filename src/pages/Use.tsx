@@ -14,19 +14,21 @@ export default function Use() {
   const keys = new Map((use.keys as Key[]).map((k) => [k.key, k]))
   return (
     <>
-      <PageHead kicker="Use" title={<>Open a world. Look around.</>}>
+      <PageHead
+        kicker="Use"
+        title={<>Open a world. Look around.</>}
+        media={
+          <CaptureFigure id="linux-landing-plaza" fig="U1" eager className="capture--hero" sizes="(min-width: 1024px) 45vw, (min-width: 760px) 720px, 100vw">
+            This is the whole program: one window with the world in it. The yellow bar along the bottom is the
+            navigation button bar. The name of the current viewpoint, here <em>Plaza</em>, shows below it.
+          </CaptureFigure>
+        }
+      >
         <p>
           Open a file from the command line, or on macOS from Finder. Then move with the mouse or keys. Every key on
           this page was checked in the current FreeWRL source. Parts are adapted from the upstream <a href="/legacy/use.html">use.html</a>.
         </p>
       </PageHead>
-
-      <section className="frame section section--tight railed" aria-label="What FreeWRL looks like">
-        <CaptureFigure id="linux-landing-plaza" fig="U1" eager className="capture--hero" sizes="(min-width: 1024px) 70vw, 100vw">
-          This is the whole program: one window with the world in it. The yellow bar along the bottom is the
-          navigation button bar. The name of the current viewpoint, here <em>Plaza</em>, shows below it.
-        </CaptureFigure>
-      </section>
 
       <section className="frame section railed" aria-labelledby="open">
         <SectionHead index="01" id="open" title="Open a world" />

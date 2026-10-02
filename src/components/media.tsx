@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import { useRef, useState, type KeyboardEvent, type MouseEvent, type ReactNode, type TouchEvent } from "react"
 import captures from "../data/captures.json"
 
 type Capture = {
@@ -23,20 +23,85 @@ function CapturePicture({ c, sizes, eager }: { c: Capture; sizes: string; eager?
   )
 }
 
+/** Every capture modal on the page, in reading order. */
+const pageLightboxes = () => [...document.querySelectorAll<HTMLDialogElement>("dialog.lightbox")]
+
 /**
  * A real FreeWRL window capture with caption and provenance.
- * The image links to the full-size WebP. Captures are listed in media-src/captures/captures.json.
+ * Clicking the image opens the full-size WebP in a centered modal; without JavaScript the link opens it directly.
+ * In the modal, Previous/Next (buttons, arrow keys or a swipe) step through every capture on the page.
+ * Captures are listed in media-src/captures/captures.json.
  */
 export function CaptureFigure({
   id, fig, title, children, sizes = "(min-width: 1100px) 60vw, 100vw", eager = false, className = "",
 }: { id: string; fig?: string; title?: ReactNode; children?: ReactNode; sizes?: string; eager?: boolean; className?: string }) {
   const c = capture(id)
   const full = c.files[c.files.length - 1]
+  const dialog = useRef<HTMLDialogElement>(null)
+  const touchX = useRef<number | null>(null)
+  const [pos, setPos] = useState({ n: 0, of: 0 })
+  const show = () => {
+    const all = pageLightboxes()
+    setPos({ n: all.indexOf(dialog.current!) + 1, of: all.length })
+    dialog.current?.showModal()
+  }
+  const open = (e: MouseEvent) => {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+    e.preventDefault()
+    show()
+  }
+  // hand over to the neighbouring capture's modal; the browser keeps the page scroll locked throughout
+  const step = (by: number) => {
+    const all = pageLightboxes()
+    const next = all[(all.indexOf(dialog.current!) + by + all.length) % all.length]
+    if (!next || next === dialog.current) return
+    dialog.current?.close()
+    next.dispatchEvent(new CustomEvent("lightbox:open"))
+  }
+  const key = (e: KeyboardEvent) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); step(1) }
+    if (e.key === "ArrowLeft") { e.preventDefault(); step(-1) }
+  }
+  const touchStart = (e: TouchEvent) => { touchX.current = e.touches[0].clientX }
+  const touchEnd = (e: TouchEvent) => {
+    if (touchX.current === null) return
+    const dx = e.changedTouches[0].clientX - touchX.current
+    touchX.current = null
+    if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1)
+  }
+  const bind = (el: HTMLDialogElement | null) => {
+    dialog.current = el
+    if (el && !el.dataset.bound) { el.dataset.bound = "1"; el.addEventListener("lightbox:open", show) }
+  }
   return (
     <figure className={`capture ${className}`}>
-      <a className="capture__img" href={full.webp} aria-label={`Full-size capture: ${c.title}`}>
+      <a className="capture__img" href={full.webp} aria-label={`View full size: ${c.title}`} aria-haspopup="dialog" onClick={open}>
         <CapturePicture c={c} sizes={sizes} eager={eager} />
       </a>
+      <dialog ref={bind} className="lightbox" aria-label={c.title} onKeyDown={key} onTouchStart={touchStart} onTouchEnd={touchEnd}
+        onClick={(e) => { if (e.target === e.currentTarget) dialog.current?.close() }}>
+        <form method="dialog" className="lightbox__bar">
+          <p className="lightbox__title">
+            {fig && <span className="mono lightbox__fig">{fig}</span>}
+            {title ?? c.title}
+          </p>
+          <button className="lightbox__close" autoFocus>Close ✕</button>
+        </form>
+        <div className="lightbox__stage">
+          <img src={full.webp} width={full.w} height={full.h} alt={c.alt} loading="lazy" decoding="async" />
+          {pos.of > 1 && <>
+            <button type="button" className="lightbox__nav lightbox__nav--prev" aria-label="Previous image" onClick={() => step(-1)}>‹</button>
+            <button type="button" className="lightbox__nav lightbox__nav--next" aria-label="Next image" onClick={() => step(1)}>›</button>
+          </>}
+        </div>
+        <p className="lightbox__meta mono">
+          {pos.of > 1 && <span aria-live="polite">{pos.n} / {pos.of}</span>}
+          <span>{c.label}</span>
+          <span>{c.world}</span>
+          <span>{full.w} × {full.h}</span>
+          <span><a href={full.webp}>Open image file</a></span>
+        </p>
+      </dialog>
       <figcaption className="capture__caption">
         <p className="capture__title">
           {fig && <span className="mono capture__fig">{fig}</span>}
@@ -59,7 +124,7 @@ export function CaptureGallery({ items, label }: { items: { id: string; fig?: st
     <ul className={`shots shots--${items.length}`} aria-label={label}>
       {items.map((it) => (
         <li key={it.id}>
-          <CaptureFigure id={it.id} fig={it.fig} sizes={`(min-width: 1100px) ${Math.round(60 / items.length)}vw, (min-width: 760px) 50vw, 100vw`}>
+          <CaptureFigure id={it.id} fig={it.fig} sizes="(min-width: 1100px) 20vw, (min-width: 900px) 30vw, (min-width: 560px) 50vw, 100vw">
             {it.caption}
           </CaptureFigure>
         </li>

@@ -89,7 +89,7 @@ Adding a note, unlinking them from `/tests/`, or removing their public access is
 ## Scripts
 
 All need the account token from `.env.local` (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`); see README,
-"Credentials". Run them as `(set -a; . ./.env.local; set +a; scripts/r2-tests/…)`. Each checks the token
+"Credentials". Run them as `scripts/cf-env.sh scripts/r2-tests/…`. Each checks the token
 first and stops if it is missing or not active. Never commit the values.
 
 - `scripts/r2-tests/upload.py <log.tsv> [--only keys.txt]` — uploads with `wrangler r2 object put --remote`.

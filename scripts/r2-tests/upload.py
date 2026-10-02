@@ -93,8 +93,8 @@ def require_account_token():
             pass
     if status != "active":
         sys.exit("CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID missing, or not an active token "
-                 "for this account (a stale shell export?). Load the FreeWRL account token: "
-                 "(set -a; . ./.env.local; set +a; <command>). See README, \"Credentials\".")
+                 "for this account (a stale shell export?). Run it through scripts/cf-env.sh, "
+                 "which loads .env.local. See README, \"Credentials\".")
 
 
 def main():

@@ -92,14 +92,17 @@ That Worker serves freewrl.org only.
 
 - Use the **account-owned API token** (account "Ascendance Productions") in the ignored
   `.env.local` here: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Never put the
-  values in tracked files, QA artifacts, commit messages or shell rc files.
+  values in tracked files, QA artifacts, commit messages or shell rc files. Do not export a
+  global `CLOUDFLARE_API_TOKEN` for FreeWRL.
 - Precedence, highest first: an exported shell `CLOUDFLARE_API_TOKEN`, then `.env.local`
   (Wrangler loads it by itself when run from this directory), then your personal
   `wrangler login` OAuth session. A stale exported token shadows `.env.local`, and
   repeated tries with it trip Cloudflare's auth rate limit (`code: 10502`).
-- So load `.env.local` explicitly, in a subshell, for both Wrangler and the scripts:
-  `(set -a; . ./.env.local; set +a; npx wrangler whoami)`. `env -u CLOUDFLARE_API_TOKEN npx wrangler …`
-  also works for Wrangler, but not for the curl/Python scripts, which read only the environment.
+- So run Cloudflare commands through `scripts/cf-env.sh`, which drops any `CLOUDFLARE_*`
+  already in the environment, loads `.env.local`, verifies the token and runs the command:
+  `scripts/cf-env.sh npx wrangler whoami`, `scripts/cf-env.sh scripts/r2-tests/cf-audit.sh <outdir> <tag>`.
+  It fails if `.env.local` or either variable is missing. Nothing changes in your shell.
+  If a stale token shows up in your shell anyway, `unset CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID`.
 - Verify an account-owned token with
   `/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/tokens/verify`. `/client/v4/user/tokens/verify`
   is for personal (user) tokens and returns `Invalid API Token` (`code: 1000`) for an

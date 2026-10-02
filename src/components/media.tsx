@@ -81,7 +81,7 @@ export function DemoVideo({
   return (
     <figure className="capture capture--video">
       <div className="capture__img">
-        <video controls muted playsInline preload="none" poster={img.webp} width={img.w} height={img.h}>
+        <video controls muted playsInline preload="none" poster={img.webp} width={img.w} height={img.h} style={{ aspectRatio: `${img.w} / ${img.h}` }}>
           <source src={src} type="video/mp4" />
           <a href={src}>Download the clip (MP4)</a>
         </video>
